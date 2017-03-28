@@ -1,0 +1,42 @@
+body,ul,ol,div,li,p,h1,h2,h3,h4,h5,h6,a,dl,dd,dt{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #656565;
+}
+.clearfix:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+.clearfix{
+    zoom:1;
+}
+
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+input{
+    border:none;
+    outline:none;
+}
+
+
