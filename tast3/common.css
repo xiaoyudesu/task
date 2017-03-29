@@ -1,0 +1,46 @@
+body,div,p,h3{
+    padding:0;
+    margin:0;
+}
+ body{
+     background-color: #6ccdd5;
+ }
+
+ .back{
+     height:70px;
+     padding:20px 0 0 30px;
+ }
+.container{
+    margin:auto;
+    width:70%;
+    color: #fff;
+    font-size:18px;
+}
+
+.logo{
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.text{
+    height:150px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.round1,.round2{
+    text-align: center;
+}
+
+.round1{
+    float: left;
+}
+
+.round2{
+    float: right;
+}
+
