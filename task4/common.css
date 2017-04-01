@@ -52,17 +52,17 @@ body{
 .main{
     margin-top:.5rem;
     width:100%;
-    overflow:hidden;
 }
 .telNum,.password{
     line-height: .5rem;
+    vertical-align: middle;
     height:.5rem;
     margin-top: .1rem;
     width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding-left:.7rem;
+    padding-left: .7rem;
     padding-right: .1rem;
 }
 
@@ -92,7 +92,6 @@ body{
 
 .telNum img,.password img{
     height: .2rem;
-    vertical-align: middle;
     margin-left: 5%;
 }
 
