@@ -5,7 +5,7 @@ html,body,div,h1,h2,ul,ol,input,p{
 }
 
  html{
-     font-size:62.5%;
+     font-size:625%;
  }
 
  input{
@@ -19,14 +19,14 @@ html,body,div,h1,h2,ul,ol,input,p{
 body{
     background: #eff0f4;
     color: #fff;
-    font-size: 1.6rem;
+    font-size: .16rem;
 }
 
 .header{
     width:90%;
-    height:4rem;
+    height:.5rem;
     padding:0 5%;
-    line-height: 4rem;
+    line-height: .5rem;
     background: #5fc0cd;
     position: fixed;
     top:0;
@@ -50,36 +50,39 @@ body{
     text-align: center;
 }
 .main{
-    margin-top:4rem;
+    margin-top:.5rem;
     width:100%;
-    min-width:300px;
-    min-width: 250px;
+    overflow:hidden;
 }
 .telNum,.password{
-    line-height: 4rem;
-    height:4rem;
-    margin-top: .5rem;
+    line-height: .5rem;
+    height:.5rem;
+    margin-top: .1rem;
     width: 100%;
-    height: 4rem;
-    padding-left: 8rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left:.7rem;
+    padding-right: .1rem;
 }
 
 .telNum{
-    background: #fff url("images/task4-1.png") no-repeat 2rem .5rem;
-    background-size:auto 3rem;
+    background: #fff url("images/task4-1.png") no-repeat .2rem .1rem;
+    background-size:auto .25rem;
 }
 
 .password{
-    background: #fff url("images/task4-2.png") no-repeat 2rem .5rem;
-    background-size:auto 3rem;
+    background: #fff url("images/task4-2.png") no-repeat .2rem .1rem;
+    background-size:auto .25rem;
 }
 
-.btn{
+.btn input{
     background-color: #5fc0cd;
     width:100%;
-    height:4rem;
-    margin-top:.5rem;;
-    font-size: 1.6rem;
+    height: .5rem;
+    line-height: 30px;
+    margin-top: .1rem;
+    font-size: .16rem;
     color: #fff;
     border-radius: 0;
 }
@@ -88,14 +91,14 @@ body{
  }
 
 .telNum img,.password img{
-    height:2rem;
+    height: .2rem;
     vertical-align: middle;
     margin-left: 5%;
 }
 
 .help{
     float: right;
-    margin:.5rem;
+    margin: .05rem;
 }
 
 .help a{
