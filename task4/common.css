@@ -59,13 +59,19 @@ body{
     line-height: 4rem;
     height:4rem;
     margin-top: .5rem;
-    background-color: #fff;
+    width: 100%;
+    height: 4rem;
+    padding-left: 8rem;
 }
 
-.telNum input,.password input {
-    width: 80%;
-    height: 4rem;
-    float: right;
+.telNum{
+    background: #fff url("images/task4-1.png") no-repeat 2rem .5rem;
+    background-size:auto 3rem;
+}
+
+.password{
+    background: #fff url("images/task4-2.png") no-repeat 2rem .5rem;
+    background-size:auto 3rem;
 }
 
 .btn{
