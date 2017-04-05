@@ -93,7 +93,7 @@ nav select{
     margin:0;
     text-align: center;
     border-right: 1px solid #e1e5e7;
-    font-size: .12em;
+    font-size: .12rem;
     color: #999;
     background: url("images/task-2.png") no-repeat 80% center;
     background-size: .1rem;
@@ -127,6 +127,7 @@ main .task li li{
 .task .cost{
     float: right;
     text-align: right;
+    height:.9rem;
     line-height: .9rem;
     color: #e63b0e;
 }
