@@ -1,0 +1,224 @@
+/*reset*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size:625%;
+}
+
+body{
+    font-size: .16rem;
+}
+
+button,input,option,select{
+    border: none;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+ul{
+    list-style: none;
+}
+
+/*layout*/
+header{
+    width: 96%;
+    height: .6rem;
+    padding:0 2%;
+    background: #5fc0cd;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+header .btn-bg{
+    width:40%;
+    height:.4rem;
+    border-radius: .1rem;
+    font-size: .14rem;
+    background: #55a8b3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-bg button{
+    width:50%;
+    height:100%;
+    background: transparent;
+    color: #fff;
+    font-size: .14rem;
+    border-radius: .1rem;
+
+}
+
+.btn-bg button:hover{
+    width: 50%;
+    height:100%;
+    background: #fff;
+    color: #55a8b3;
+    font-size: .16rem;
+    border-radius: .1rem;
+}
+
+header .location-logo{
+    width: .3rem;
+    height: .3rem;
+    background: url("images/task-1.png") no-repeat;
+    -webkit-background-size:auto .3rem;
+    background-size: auto .3rem;
+    position: absolute;
+    margin:auto;
+    top:0;
+    bottom:0;
+    right:3%;
+}
+
+nav{
+    height: .6rem;
+    padding: .6rem 2% 0 2%;
+    border-bottom: #e1e5e7 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: .6rem;
+}
+
+nav select{
+    margin:0;
+    text-align: center;
+    border-right: 1px solid #e1e5e7;
+    font-size: .12em;
+    color: #999;
+    background: url("images/task-2.png") no-repeat 80% center;
+    background-size: .1rem;
+    flex-grow: 1;
+    padding-left:10%;
+}
+
+main{
+    font-size: .12rem;
+}
+
+main .task>li{
+    height:.9rem;
+    padding: .1rem .3rem .1rem .6rem;
+    border-bottom: 1px solid #e1e5e7;
+}
+
+main .task li li{
+    line-height:.3rem;
+    color: #999;
+}
+
+.task .task1 .task-date{
+    color: #000;
+}
+
+.task ul{
+    float: left;
+/*    width:100%;*/
+}
+.task .cost{
+    float: right;
+    text-align: right;
+    line-height: .9rem;
+    color: #e63b0e;
+}
+
+.task .cost .tri{
+    width: 0rem;
+    height: 0rem;
+    margin-left: .1rem;
+    display: inline-block;
+    border-left: .1rem solid #81cdd8;
+    border-top: .12rem solid transparent;
+    border-bottom: .12rem solid transparent;
+    vertical-align: middle;
+}
+
+.task .cost .tri-bg{
+    width: 0rem;
+    height: 0rem;
+    margin-left: -.14rem;
+    display: inline-block;
+    border-left: .1rem solid #fff;
+    border-top: .12rem solid transparent;
+    border-bottom: .12rem solid transparent;
+    vertical-align: middle;
+}
+
+.task .date-logo{
+    height: .18rem;
+    width:.18rem;
+    margin-left: -.28rem;
+    margin-right: .1rem;
+    background: url("images/task-3.png");
+    background-size: auto .18rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.task .location-logo{
+    height: .18rem;
+    width: .18rem;
+    margin-left:  -.28rem;
+    margin-right:  .1rem;
+    background: url("images/task-3.png") .19rem 0;
+    background-size: auto .18rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+footer{
+    width: 100%;
+    height: 1rem;
+    background: #f8fafb;
+    position: fixed;
+    bottom:0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .14rem;
+}
+
+footer div{
+    margin:auto 10%;
+}
+
+footer .home-logo{
+    width: .3rem;
+    height: .3rem;
+    background: url("images/task-1.png") no-repeat  100%;
+    background-size: auto .3rem;
+    display: block;
+}
+
+footer .home{
+    color: #5fc0cd;
+}
+
+footer .my-logo{
+    width: .3rem;
+    height: .3rem;
+    background: url("images/task-1.png") no-repeat 49%;
+    background-size: auto .3rem;
+    display: block;
+}
+
+footer .my{
+    color: #cacbcb;
+}
+
+footer .write{
+    width:.6rem;
+    height:.6rem;
+    background: url("images/task-4.png") no-repeat;
+    background-size: .6rem;
+}
