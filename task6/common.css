@@ -1,225 +1,198 @@
 /*reset*/
-html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
-    margin: 0;
+html,body,ol,ul,li,p,div,input,button,h1,h2,h3,.btn{
     padding: 0;
+    margin: 0;
 }
 
 html{
-    font-size:625%;
+    font-size: 625%;
 }
 
 body{
-    font-size: .16rem;
+    font-size: .14rem;
 }
 
-button,input,option,select{
-    border: none;
-    outline: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
+a{
+    text-decoration: none;
 }
 
 ul{
     list-style: none;
 }
+input,button{
+    outline: none;
+    border: 0;
+}
 
 /*layout*/
 header{
-    width: 96%;
-    height: .6rem;
-    padding:0 2%;
-    background: #5fc0cd;
-    vertical-align: middle;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: .6rem;
+    background-color: #5fc0cd;
+    text-align: center;
+    line-height: .6rem;
 }
 
-header .btn-bg{
-    width:40%;
-    height:.4rem;
+header .btn-group{
+    width: 40%;
     border-radius: .1rem;
-    font-size: .14rem;
-    background: #55a8b3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #55a8b3;
 }
 
-.btn-bg button{
-    width:50%;
-    height:100%;
-    background: transparent;
-    color: #fff;
-    font-size: .14rem;
-    border-radius: .1rem;
-
-}
-
-.btn-bg button:hover{
+header .btn-group button{
+    float: left;
     width: 50%;
-    height:100%;
-    background: #fff;
-    color: #55a8b3;
-    font-size: .14rem;
+    height: .4rem;
     border-radius: .1rem;
+    line-height: .4rem;
+}
+.btn-l{
+    background-color: transparent;
+    color: #fff;
 }
 
-header .location-logo{
-    width: .3rem;
-    height: .3rem;
-    background: url("images/task-1.png") no-repeat;
-    -webkit-background-size:auto .3rem;
-    background-size: auto .3rem;
+.btn-r{
+    background-color: #fff;
+    color: #5fc0cd;
+}
+
+header img{
     position: absolute;
-    margin:auto;
     top:0;
-    bottom:0;
-    right:3%;
+    bottom: 0;
+    right: 3%;
+    margin: auto;
+    width: .3rem;
 }
 
 nav{
     height: .6rem;
-    padding: .6rem 2% 0 2%;
-    border-bottom: #e1e5e7 1px solid;
+    padding: 0 3%;
+    margin-top: .6rem;
     display: flex;
-    align-items: center;
     justify-content: center;
-    line-height: .6rem;
+    align-items: center;
 }
 
-nav select{
-    margin:0;
+nav div.dropdown{
+    width: 33.3%;
+}
+
+nav button{
+    position: relative;
+    background: #fff;
+    width: 100%;
+    border-right: solid 1px #e1e5e7;
+    color: #a7a7a7;
+}
+
+nav button .caret{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: .1rem;
+    margin: auto;
+}
+
+nav ul{
+    width: 100%;
+    min-width: 100%!important;
+}
+
+nav ul li{
     text-align: center;
-    border-right: 1px solid #e1e5e7;
-    font-size: .12rem;
-    color: #999;
-    background: url("images/task-2.png") no-repeat 80% center;
-    background-size: .1rem;
-    flex-grow: 1;
-    padding-left:10%;
 }
 
 main{
-    font-size: .12rem;
+    margin-bottom: .8rem;
 }
 
-main .task>li{
-    height:.9rem;
-    padding: .1rem .3rem .1rem .6rem;
-    border-bottom: 1px solid #e1e5e7;
+main ul{
+    border-top: solid 1px #e1e5e7;
+    padding: .1rem 3%;
 }
 
-main .task li li{
-    line-height:.3rem;
-    color: #999;
+main ul li{
+    line-height: .2rem;
+    vertical-align: baseline;
+    color: #a7a7a7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.task .task1 .task-date{
+main img{
+    width: .12rem;
+    margin-right: .04rem;
+}
+
+main li.date{
+    position: relative;
+    padding-left: .16rem;
     color: #000;
+    height: .2rem;
+    overflow: hidden;
 }
 
-.task ul{
-    float: left;
-/*    width:100%;*/
-}
-.task .cost{
+main li.date .cost{
     float: right;
-    text-align: right;
-    height:.9rem;
-    line-height: .9rem;
+    display: inline-block;
     color: #e63b0e;
 }
 
-.task .cost .tri{
-    width: 0rem;
-    height: 0rem;
-    margin-left: .1rem;
+main .cost .arrow{
+    position: relative;
     display: inline-block;
-    border-left: .1rem solid #81cdd8;
-    border-top: .12rem solid transparent;
-    border-bottom: .12rem solid transparent;
-    vertical-align: middle;
 }
 
-.task .cost .tri-bg{
-    width: 0rem;
-    height: 0rem;
-    margin-left: -.14rem;
+main .cost .arrow-r{
     display: inline-block;
-    border-left: .1rem solid #fff;
-    border-top: .12rem solid transparent;
-    border-bottom: .12rem solid transparent;
+    width: 0;
+    height: 0;
     vertical-align: middle;
+    border-top: .07rem solid transparent;
+    border-bottom: .07rem solid transparent;
+    border-left: .08rem solid #5fc0cd;
 }
 
-.task .date-logo{
-    height: .18rem;
-    width:.18rem;
-    margin-left: -.28rem;
-    margin-right: .1rem;
-    background: url("images/task-3.png");
-    background-size: auto .18rem;
+main .cost .arrow-l{
+    position: relative;
+    left: .1rem;
     display: inline-block;
+    width: 0;
+    height: 0;
     vertical-align: middle;
-}
-
-.task .location-logo{
-    height: .18rem;
-    width: .18rem;
-    margin-left:  -.28rem;
-    margin-right:  .1rem;
-    background: url("images/task-3.png") .19rem 0;
-    background-size: auto .18rem;
-    display: inline-block;
-    vertical-align: middle;
+    border-top: .07rem solid transparent;
+    border-bottom: .07rem solid transparent;
+    border-left: .08rem solid #fff;
 }
 
 footer{
-    width: 100%;
-    height: 1rem;
-    background: #f8fafb;
     position: fixed;
-    bottom:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: .8rem;
+    padding: 0 3%;
     text-align: center;
+    vertical-align: middle;
+    background-color: #f8fafb;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: .14rem;
 }
 
-footer div{
-    margin:auto 10%;
+footer button{
+    background-color: transparent;
+    margin: auto;
 }
 
-footer .home-logo{
-    width: .3rem;
-    height: .3rem;
-    background: url("images/task-1.png") no-repeat  100%;
-    background-size: auto .3rem;
-    display: block;
+.home img,.user img {
+    max-height: .3rem;
 }
 
-footer .home{
-    color: #5fc0cd;
-}
-
-footer .my-logo{
-    width: .3rem;
-    height: .3rem;
-    background: url("images/task-1.png") no-repeat 49%;
-    background-size: auto .3rem;
-    display: block;
-}
-
-footer .my{
-    color: #cacbcb;
-}
-
-footer .write{
-    width:.6rem;
-    height:.6rem;
-    background: url("images/task-4.png") no-repeat;
-    background-size: .6rem;
+.write img{
+    max-height: .6rem;
 }
