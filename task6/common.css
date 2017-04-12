@@ -90,6 +90,10 @@ nav button{
     color: #a7a7a7;
 }
 
+.dropdown button.patient{
+    border-right: 0;
+}
+
 nav button .caret{
     position: absolute;
     top: 0;
@@ -193,6 +197,13 @@ footer button{
     max-height: .3rem;
 }
 
+footer .home{
+    color: #5fc0cd;
+}
+
+footer .user{
+    color: #999;
+}
 .write img{
     max-height: .6rem;
 }
