@@ -11,9 +11,31 @@ html{
 }
 
 button{
-    border: 0;
+    background-color: transparent;
     outline: none;
-    background: transparent;
+    border: 0;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+
+a:hover{
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000;
+    color: #fff;
+}
+
+a:active{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid transparent;
 }
 
 /*layout*/
@@ -71,12 +93,15 @@ main .vote-please{
     font-size: .18rem;
 }
 
-main .vote-please img{
+main .vote-please a{
     position: absolute;
     top: 0;
     bottom: 0;
     right: 3%;
     margin: auto;
+}
+
+main a img{
     width: .4rem;
 
 }
@@ -137,13 +162,16 @@ main .net .box{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    line-height: 8vw;
     margin-top: -25vw;
-    padding-top: 26.5vw;
+    padding-top: 25vw;
     opacity: 0;
 }
-
-.box .action img{
+.box .action a{
     width: 20%;
+}
+.box .action img{
+    width: 100%;
 }
 
 .box .action:hover{
@@ -163,7 +191,7 @@ footer{
     color: #fff;
 }
 
-footer button{
+footer a{
     position: absolute;
     top: 0;
     bottom: 0;
@@ -173,5 +201,9 @@ footer button{
     width: 80%;
     height: .4rem;
     background-color: #fbb435;
+    text-align: center;
+    line-height: .4rem;
+    color: #fff;
 }
+
 

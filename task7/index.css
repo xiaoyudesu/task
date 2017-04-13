@@ -9,13 +9,35 @@ ol, ul, li, footer, header,menu, nav, audio, video,button {
 html{
     font-size: 625%;
 }
-
 button{
-    border: 0;
-    outline: none;
-    background: transparent;
+    background-color: transparent;
 }
 
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover{
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000;
+}
+
+a:active{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
 /*layout*/
 body{
     background-color: #f0f0f0;
@@ -83,6 +105,8 @@ main .game .chosen{
 }
 
 main .game .edition{
+    display: block;
+    width: 100%;
     height: .6rem;
     margin: .1rem 0;
     line-height: .6rem;

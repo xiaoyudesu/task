@@ -19,9 +19,23 @@ button{
 ul{
     list-style: none;
 }
+
+a:hover{
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000;
+    color: #fff;
+}
+
+a:active{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
 /*layout*/
 body{
-    /*background-color: #29bde0;*/
+    background-color: #29bde0;
 }
 
 header{
@@ -135,7 +149,7 @@ footer{
     background-color: rgba(153,223,240,.5);
 }
 
-footer button{
+footer a{
     position: absolute;
     top: 0;
     bottom: 0;
@@ -145,14 +159,16 @@ footer button{
     border-radius: .1rem;
     color: #fff;
     font-size: .2rem;
+    text-align: center;
+    line-height: .4rem;
 }
 
-footer button.btn-l{
+footer .btn-l{
     left: 3%;
     background-color: #f66f6f;
 }
 
-footer button.btn-r{
+footer .btn-r{
     right: 3%;
     background-color: #fbb435;
 }
