@@ -1,0 +1,153 @@
+/*background-image*/
+.user,
+.dot,
+.arrow,
+.fast,
+.contact,
+.rule,
+.qiniu,
+.photo-1,
+.photo-2,
+.photo-3,
+.photo-4,
+.alibaba,
+.yuntongxun,
+.kingsoftcloud,
+.qiniu{
+    background-image: url("images/task8-1.png");
+    background-repeat: no-repeat;
+}
+
+.user{height:13px;width:13px;background-position: 0 0;}
+.dot{height:16px;width:16px;background-position: 0 -13px;}
+.arrow-l{height:47px;width:27px;background-position: 0 -101px;}
+.arrow-r{height:30px;width:32px;background-position: 0 -148px;}
+.fast{height:62px;width:43px;background-position: 0 -178px;}
+.contact{height:55px;width:52px;background-position: 0 -240px;}
+.rule{height:48px;width:60px;background-position: 0 -295px;}
+.qiniu{height:124px;width:124px;background-position: 0 -435px;}
+.huanxin{height:69px;width:134px;background-position: 0 -687px;}
+.photo-1{height:136px;width:140px;background-position: 0 -756px;}
+.photo-2{height:116px;width:146px;background-position: 0 -892px;}
+.photo-3{height:161px;width:159px;background-position: 0 -1008px;}
+.photo-4{height:128px;width:128px;background-position: 0 -559px;}
+.alibaba{height:184px;width:184px;background-position: 0 -1169px;}
+.yuntongxun{height:191px;width:191px;background-position: 0 -1353px;}
+.kingsoftcloud{height:137px;width:237px;background-position: 0 -1544px;}
+
+h4{
+    text-align: center;
+}
+
+div{
+    margin: auto;
+}
+
+.row{
+    margin: 10%;
+}
+
+.slogan>div{
+    position: relative;
+    padding: 3vw;
+    height: 20vw;
+    margin-bottom: 20px;
+}
+
+.slogan>div>div{
+    position: absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    top: 0;
+}
+
+.slogan>div>h4{
+    margin-top: 50px;
+    text-align: center;
+    line-height: 3em;
+
+}
+
+.slogan>div .study-num,.slogan>div .work-num{
+    position: static;
+    margin-top: 50px;
+    color: #29b078;
+    vertical-align: middle;
+}
+
+.slogan>div .work-num{
+    margin-top:20px;
+}
+
+.contact-box{
+    border-right: 1px #ccc dashed;
+}
+
+.num{
+    vertical-align: middle;
+    color: #29b078;
+}
+
+.user{
+    display: inline-block;
+    margin: 0;
+    margin-right: .5em;
+}
+
+.slogan>div>p,.text{
+    color: #999;
+}
+
+.study-path>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+
+.study-path span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-left: ;
+    color: #29b078;
+    background-color: #fff;
+    box-shadow: #ccc 1px 1px 3px ;
+    border-radius: 50%;
+    float: left;
+    vertical-align: middle;
+
+}
+
+.study-path span div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+
+}
+
+@media (max-width: 768px) {
+    p{
+        text-align: center;
+    }
+
+    .slogan>div>h4{
+        margin-top: 0;
+    }
+    .slogan>div{
+        height:auto;
+    }
+
+    .slogan>div>div{
+        position: static;
+    }
+
+    .contact-box{
+        border:0;
+    }
+}

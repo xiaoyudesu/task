@@ -48,7 +48,7 @@ header{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 999;
     height: .6rem;
     padding: 0 2%;
     background: #29bde0;
@@ -165,7 +165,7 @@ main .net .box{
     line-height: 8vw;
     margin-top: -25vw;
     padding-top: 25vw;
-    opacity: 0;
+    /*opacity: 0;*/
 }
 .box .action a{
     width: 20%;
@@ -174,16 +174,18 @@ main .net .box{
     width: 100%;
 }
 
+/*
 .box .action:hover{
     opacity: 1;
 }
+*/
 
 footer{
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 999;
     height: .8rem;
     border-top: 1px solid #fff;
     background-color: #29bde0;
@@ -206,4 +208,13 @@ footer a{
     color: #fff;
 }
 
+.action{
+    /*visibility: hidden;*/
+    position: relative;
+    z-index: -1;
+}
 
+.box:hover .action{
+    /*visibility: visible;*/
+    z-index: 1;
+}
