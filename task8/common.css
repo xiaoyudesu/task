@@ -29,6 +29,9 @@ html{
     font-size: 625%;
 }
 
+body{
+    background-color: #fafafa;
+}
 button{
     border: 0;
     outline: none;
@@ -122,6 +125,12 @@ footer{
     padding-top: 40px;
     background-color: #29b078;
     color: #fff;
+
+
+}
+
+footer p{
+    color: #fff;
 }
 
 footer li{
@@ -164,7 +173,7 @@ footer a:hover{
     text-decoration: none;
 }
 
-a:active{
+footer a:active{
     color: #000;
 }
 
@@ -183,7 +192,9 @@ a:active{
 
     .navbar-default .navbar-nav>.active>a,
     .navbar-default .navbar-nav>.active>a:focus,
-    .navbar-default .navbar-nav>.active>a:hover{
+    .navbar-default .navbar-nav>.active>a:hover,
+    .navbar-default .navbar-nav>li>a:focus,
+    .navbar-default .navbar-nav>li>a:hover{
         border-bottom: 4px solid #fff;
     }
 
