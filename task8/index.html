@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="common.css" type="text/css">
     <link rel="stylesheet" href="index.css" type="text/css">
     <title>技能树首页</title>
+    <script>
+        $(document).ready(function(){
+            $('#myCarousel').carousel({interval:3000});//每隔5秒自动轮播
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -43,9 +48,6 @@
     </nav>
 
 
-
-
-
     <main>
         <div id="myCarousel" class="carousel slide">
             <!-- 轮播（Carousel）指标 -->
@@ -56,13 +58,13 @@
             </ol>
             <!-- 轮播（Carousel）项目 -->
             <div class="carousel-inner">
-                <div class="item active">
+                <div class="item active loop1">
                     <img src="images/task8-1.banner.png" alt="First slide">
                 </div>
-                <div class="item">
+                <div class="item loop2">
                     <img src="images/task8-1.banner.png" alt="Second slide">
                 </div>
-                <div class="item">
+                <div class="item loop3">
                     <img src="images/task8-1.banner.png" alt="Third slide">
                 </div>
             </div>

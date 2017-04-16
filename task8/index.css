@@ -65,13 +65,9 @@ p{
 
 .slogan>div .study-num,.slogan>div .work-num{
     position: static;
-    margin-top: 50px;
+    margin-top: 25px;
     color: #29b078;
     vertical-align: middle;
-}
-
-.slogan>div .work-num{
-    margin-top:20px;
 }
 
 .contact-box{
