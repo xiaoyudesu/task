@@ -48,27 +48,34 @@ p{
     margin-bottom: 20px;
 }
 
-.slogan>div>div{
+.slogan-logo{
+    height: 65px;
+    position: relative;
+}
+
+.slogan-logo>div{
     position: absolute;
-    left:0;
-    right:0;
-    margin:auto;
-    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
 }
 
 .slogan>div>h4{
-    margin-top: 50px;
     text-align: center;
     line-height: 3em;
-
 }
 
 .slogan>div .study-num,.slogan>div .work-num{
-    position: static;
     margin-top: 25px;
     color: #29b078;
     vertical-align: middle;
 }
+
+.slogan>div .study-num{
+    margin-top: 65px;
+}
+
 
 .contact-box{
     border-right: 1px #ccc dashed;
@@ -111,7 +118,6 @@ p{
     border-radius: 50%;
     float: left;
     vertical-align: middle;
-
 }
 
 .study-path span div{
@@ -135,9 +141,6 @@ p{
 }
 
 .student-show>div>div{
-    /*height:0;
-    */
-    /*padding-bottom: 40%;*/
     margin: 15px 0;
     padding: 20px;
     border: 1px solid #ccc;
@@ -149,7 +152,6 @@ p{
     height:120px;
     width: 120px;
     border-radius: 50%;
-    /*border: solid 1px #000*/;
     box-shadow: #ccc 2px 2px 2px;
 }
 
@@ -229,17 +231,6 @@ p{
 
     p{
         text-align: center;
-    }
-
-    .slogan>div>h4{
-        margin-top: 0;
-    }
-    .slogan>div{
-        height:auto;
-    }
-
-    .slogan>div>div{
-        position: static;
     }
 
     .contact-box{
