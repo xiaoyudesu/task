@@ -27,11 +27,13 @@ button {
 
 html{
     font-size: 625%;
+    font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
 }
 
 body{
     background-color: #fafafa;
 }
+
 button{
     border: 0;
     outline: none;
