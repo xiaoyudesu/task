@@ -81,6 +81,7 @@ header a{
     color: #ccc;
     text-decoration: none;
 }
+
 header .container{
     position: relative;
 }
@@ -102,6 +103,7 @@ header .share button{
     border-radius: 0;
     background-color: #29b078;
 }
+
 .navbar-header,
 .collapse,
 .navbar-nav,
@@ -125,7 +127,6 @@ header .share button{
     outline: none;
 }
 
-
 .navbar-brand img{
     max-height: 100%;
 }
@@ -140,8 +141,6 @@ footer{
     padding-top: 40px;
     background-color: #29b078;
     color: #fff;
-
-
 }
 
 footer p{
@@ -151,7 +150,6 @@ footer p{
 footer li{
     height: .4rem;
 }
-
 
 footer li div{
     display: inline;
@@ -190,7 +188,6 @@ footer a:hover{
 footer a:active{
     color: #000;
 }
-
 
 @media (min-width: 768px){
     .navbar-header,
