@@ -7,6 +7,10 @@ main a{
     text-decoration: none;
 }
 
+main a:hover{
+    color: #f9a372;
+}
+
 main h4{
     text-align: center;
     line-height: 3em;
@@ -27,7 +31,6 @@ main p{
 }
 
 .box{
-    margin: 0 3% 3% 3% ;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -46,6 +49,7 @@ main p{
     line-height:3em;
 }
 
+.box-l li a:focus,
 .box-l li a.active{
     color: #f9a372;
 }
@@ -59,11 +63,15 @@ main p{
     border: 1px solid #ff650e;
 }
 
-
+.box li a:hover span,
+.box li a:focus span,
 .box li a.active span{
     background-color: #f9a372;
 }
 
+.box-r{
+    margin-bottom: 5em;
+}
 
 .box-r>div>img{
     max-height:100px ;

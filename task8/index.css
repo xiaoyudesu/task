@@ -14,8 +14,8 @@
 
 .user{height:13px;width:13px;background-position: 0 0;}
 .arrow-b{height:30px;width:32px;background-position: 0 -148px;}
-.fast{height:62px;width:43px;background-position: 0 -178px;}
-.contact{height:55px;width:52px;background-position: 0 -240px;}
+.fast{height:62px;width:43px;background-position: 0 -176px;}
+.contact{height:55px;width:52px;background-position: 0 -239px;}
 .rule{height:48px;width:60px;background-position: 0 -295px;}
 .photo-1{height:136px;width:140px;background-position: 0 -756px;}
 .photo-2{height:116px;width:146px;background-position: 0 -892px;}
@@ -28,10 +28,6 @@ main{
 
 main h4{
     text-align: center;
-}
-
-div{
-    margin: auto;
 }
 
 p{
@@ -88,7 +84,6 @@ p{
 
 .user{
     display: inline-block;
-    margin: 0;
     margin-right: .5em;
 }
 
@@ -105,6 +100,11 @@ p{
     height: 6em;
     font-size: .14rem;
     color: #999;
+}
+
+.study-path>div .text{
+    display: flex;
+    align-items: center;
 }
 
 .study-path span{
@@ -188,6 +188,10 @@ p{
     text-align: center;
 }
 
+.student-show .inner>div{
+    margin: auto;
+}
+
 
 .business>li{
     position: relative;
@@ -233,6 +237,10 @@ p{
         text-align: center;
     }
 
+    .text p{
+        text-align: left;
+    }
+
     .contact-box{
         border:0;
     }
@@ -244,5 +252,71 @@ p{
     .business>li{
         width:50%;
     }
+}
+
+
+.lte-9 .study-path>div{
+    position: relative;
+}
+
+.lte-9 .study-path .text{
+    display: table-cell;
+    vertical-align: middle;
+    height: 5em;
+}
+
+.lte-9 .study-path .text p{
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    padding-left: 3em;
+}
+
+.lte-9 .study-path>div span,
+/*.lte-9 .study-path>div p,*/
+.lte-9 .study-path>div .arrow-b{
+    position: absolute;
+    top:0;
+    bottom:0;
+    margin:auto;
+}
+
+
+.lte-9 .study-path>div span{
+    left: 0;
+    height: 3em;
+    width: 3em;
+}
+
+
+.lte-9 .study-path>div .arrow-b{
+    right: .5em;
+}
+
+.lte-9 .study-path span div{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 1em;
+    width: .5em;
+    margin: auto;
+}
+
+
+
+.lte-8 .study-path{
+    display: table;
+}
+
+.lte-8 .study-path>div{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.lte-8 .study-path>div span>{
+    width: 3em;
+
 }
 

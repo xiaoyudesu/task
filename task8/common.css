@@ -47,6 +47,12 @@ a{
     text-decoration: none;
 }
 
+a:hover,
+a:focus{
+    text-decoration: none;
+    outline: none;
+}
+
 /*position定位*/
 .wechat,
 .weibo,
@@ -69,23 +75,22 @@ header{
     background-color: #fff;
 }
 
+header a{
+    color: #ccc;
+    text-decoration: none;
+}
 header .container{
     position: relative;
 }
 
 header .share{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    display: inline-block;
-    height: .25rem;
-    margin: auto 0;
-    padding-right: .15rem;
+    display: flex;
+    align-items: center;
+    height: .4rem;
 }
 
 header .share button{
-    padding-left: .3rem;
+    margin-left: .1rem;
 }
 
 .navbar{
@@ -109,7 +114,15 @@ header .share button{
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover{
     background-color: #29b078;
+    outline: none;
 }
+
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover{
+    color: #fff;
+    outline: none;
+}
+
 
 .navbar-brand img{
     max-height: 100%;
@@ -166,7 +179,6 @@ footer li div:first-child{
 }
 
 footer a:hover{
-    /*display: inline-block;*/
     border-bottom: 1px solid #fff;
     padding-bottom: .2em;
     color: #fff;
@@ -193,9 +205,15 @@ footer a:active{
     .navbar-default .navbar-nav>.active>a,
     .navbar-default .navbar-nav>.active>a:focus,
     .navbar-default .navbar-nav>.active>a:hover,
-    .navbar-default .navbar-nav>li>a:focus,
     .navbar-default .navbar-nav>li>a:hover{
         border-bottom: 4px solid #fff;
+        color: #fff;
+        outline: none;
+    }
+
+    .navbar-default .navbar-nav>li>a:focus{
+        color: #fff;
+        outline: none;
     }
 
 }
@@ -211,16 +229,27 @@ footer a:active{
         border: 0;
     }
 
-    .navbar-default .navbar-toggle:focus,
     .navbar-default .navbar-toggle:hover{
-        background-color: #4c4a52;
+        background-color: #fff;
     }
 
+    .navbar-default .navbar-toggle:focus{
+        background-color: transparent;
+        outline: none;
+    }
+
+    .navbar-default .navbar-nav li a:focus,{
+        color: #fff;
+        outline: none;
+    }
+    
+    .navbar-default .navbar-nav li a:hover,
     .navbar-default .navbar-nav>.active>a,
     .navbar-default .navbar-nav>.active>a:focus,
     .navbar-default .navbar-nav>.active>a:hover{
-        background-color: #fff;
-        color: #000;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        outline: none;
     }
 
     .navbar-brand{
@@ -246,3 +275,16 @@ footer a:active{
     }
 }
 
+.lte-9 .container{
+    position: relative;
+}
+
+.lte-9 .share{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    margin: auto;
+    height: 25px;
+}

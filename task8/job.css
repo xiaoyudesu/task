@@ -3,6 +3,11 @@ main a{
     color: #000;
 }
 
+main a:hover{
+    text-decoration: none;
+    /*color: #fff;*/
+}
+
 main{
     color: #999;
 }
@@ -45,6 +50,13 @@ main h4{
 }
 .direction li a.active{
     background-color: #29b078;
+    color: #fff;
+}
+
+.direction li a:hover{
+    background-color: #29b078;
+    text-decoration: none;
+    color: #fff;
 }
 
 .red{
@@ -85,27 +97,10 @@ td[colspan="10"]{
 
 .big-box{
     position: relative;
+    padding: auto;
+    width: 100%;
 }
 
-.hide-seek{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    padding: 10%;
-    margin: 0;
-    background-color: rgba(0,0,0,.8);
-    visibility: hidden;
-    -webkit-transition: width 2s,height 2s;
-    -moz-transition: width 2s,height 2s;
-    -ms-transition: width 2s,height 2s;
-    -o-transition: width 2s,height 2s;
-    transition: width 2s,height 2s;
-    width:100%;
-    height:0;
-}
 
 .hide-seek .job-name{
     height: 70px;
@@ -120,8 +115,89 @@ td[colspan="10"]{
     color: #fff;
 }
 
+
+.hide-seek{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    margin: auto;
+    visibility: hidden;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+
 .big-box:hover .hide-seek{
-    visibility: visible;
     width: 100%;
     height: 100%;
+    padding: 10%;
+    border-radius: 0;
+    background-color: rgba(0,0,0,.8);
+    visibility: visible;
+    animation: run ease-in-out 2s;
+}
+
+
+.lte-9 .hide-seek{
+    width:0;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.lte-9 .big-box:hover .hide-seek {
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -ms-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    -webkit-transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    -ms-transform: rotate(720deg);
+    -o-transform: rotate(720deg);
+    transform: rotate(720deg);
+}
+
+
+
+
+
+@keyframes run {
+    0% {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+    
+    
+    25% {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+        border-radius: 50%;
+        width: 10%;
+        height: 10%;
+        background-color: rgba(255, 255, 255, .2);
+        font-size: .1em;
+        transform-origin: top left;
+    }
+
+    100%{
+        -webkit-transform: rotate(-720deg);
+        -moz-transform: rotate(-720deg);
+        -ms-transform: rotate(-720deg);
+        -o-transform: rotate(-720deg);
+        transform: rotate(-720deg);
+    } 
+    
 }
