@@ -227,6 +227,13 @@ main p{
     list-style: disc;
 }
 
+@media (max-width: 992px) and (min-width: 768px) {
+    .slogan>div{
+        height: 230px;
+        padding-bottom:0;
+    }
+}
+
 
 @media (max-width: 768px) {
      main .container{
@@ -288,9 +295,11 @@ main p{
 }
 
 
+
 .lte-9 .study-path>div .arrow-b{
     right: .5em;
 }
+
 
 .lte-9 .study-path span div{
     position: absolute;
