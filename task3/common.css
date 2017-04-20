@@ -8,15 +8,20 @@ html{
     font-size: 62.5%;
 }
 
-
 /*layout*/
- body{
+ .container{
+     max-width: 500px;
+     min-width: 270px;
+     height: 100vh;
+     margin: auto;
      background-color: #6ccdd5;
+     overflow: hidden;
  }
 
  .back{
-     margin: 3vh;
+     padding: 3vh;
  }
+
 .main{
     margin:auto;
     width:70%;
@@ -31,7 +36,7 @@ html{
 
 .text{
     height: 35vh;
-    margin-top:2vh;
+    padding-top:2vh;
 }
 
 a{

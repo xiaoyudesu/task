@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="images" ImageName="logo" IsPhone="false" PhoneFigure="2" PhoneUnit="rem" SpriteImgFileType="Png" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="logo-3.png" LocationX="0" LocationY="0" />
+    <Sprite Path="logo-1.png" LocationX="0" LocationY="20" />
+    <Sprite Path="logo-2.png" LocationX="0" LocationY="35" />
+  </SpriteList>
+</SpriteFile>

@@ -1,0 +1,438 @@
+/*reset*/
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+button,
+label,
+select,
+input,
+option {
+    margin:0;
+    padding:0;
+}
+
+html{
+    font-size: 625%;
+}
+
+body{
+    font:.16rem/1.5 "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+}
+
+button{
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover,
+a:focus{
+    text-decoration: none;
+    outline: none;
+}
+
+
+/*layout*/
+header{
+    height: 2em;
+    background-color: #1d7ad9;
+    line-height: 2em;
+    color: #fff;
+}
+
+
+.enter-bar{
+    line-height: 2em;
+}
+
+.enter-bar .sign-in{
+    display: inline-block;
+    padding:0  .5em;
+    border-left: 1px solid #fff;
+    color: #fff;
+}
+
+.enter-bar .sign-up{
+    display: inline-block;
+    padding: 0 1em;
+    background-color: #fff;
+    color: #000;
+}
+
+nav,footer{
+    background-color: #f9f9f9;
+}
+
+.navbar-default{
+    border: 0;
+}
+
+.navbar-default ul{
+    padding:1em 0;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 1em 0;
+    padding-left: 3em;
+}
+
+
+.navbar-default .navbar-nav>li>a{
+    padding: 1em;
+    color: #000;
+    text-align: center;
+    background-color: #fff;
+    -webkit-box-shadow:  1px 1px 1px #ccc;
+    -moz-box-shadow:  1px 1px 1px #ccc;
+    box-shadow:  1px 1px 1px #ccc;
+    border-radius: 5px;
+}
+
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover{
+    color: #fff;
+    background-color: #1D7AD9;
+}
+
+
+.chart-box{
+    position: relative;
+    width: 60%;
+    height: 2em;
+    margin: 2em 0;
+}
+
+.bg-line{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    margin: auto;
+    width: 100%;
+    height:.3em;
+    border-radius: 5px;
+    background-color: #ccc;
+}
+
+
+.step{
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 2em;
+    color: #ccc;
+}
+
+
+.over-chart{
+    position: relative;
+    width: 100%;
+    height: 2em;
+    text-align: center;
+}
+
+.line{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    width: 100%;
+    height: .3em;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #ccc;
+}
+
+.round{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    margin: auto;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.step:hover,
+.step.active{
+    color: #ff7f02;
+}
+
+.step:hover .line,
+.step.active .line{
+    background-color: #ff7f02;
+}
+
+.step:hover .round,
+.step.active .round{
+    background-color: #ff7f02;
+}
+
+
+
+main .main-text{
+    margin-top: 2em;
+    line-height: 2em;
+    background-color: #fbfcff;
+}
+
+main .main-text .vertical-line{
+    height: 1em;
+    padding-right: .5em;
+    display: inline-block;
+    vertical-align: middle;
+    border-left: 2px solid #1D7AD9;
+}
+
+.head-title{
+    background-color: #fff;
+}
+
+.logo-1,
+.logo-2,
+.logo-3{background:url(images/logo.png) no-repeat;}
+.logo-3{height:20px;width:15px;background-position: 0 0;}
+.logo-1{height:15px;width:19px;background-position: 0 -20px;}
+.logo-2{height:20px;width:22px;background-position: 0 -35px;}
+
+.title{
+    color: #1D7AD9;
+    background-color: #f3f3f3;
+    line-height: 3em;
+}
+
+.title span{
+    display: inline-block;
+    margin:0 .5em;
+    vertical-align: middle;
+}
+
+.row{
+    padding-left: 2em;
+}
+
+.row .row{
+    padding-left: 0;
+}
+
+.row>div{
+    line-height: 4em;
+}
+
+label{
+    display: flex;
+    line-height: 4em;
+    align-items: center;
+    font-weight: normal;
+}
+
+
+input[type="radio"]{
+    display: none;
+}
+
+label span{
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0 .5em;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #f8f9fb;
+}
+
+input[type="radio"]:checked+span{
+    width: .2em;
+    height: .2em;
+    box-sizing: content-box;
+    background-color: #fff;
+    border: .4em solid #1D7AD9;
+}
+
+select{
+    padding: 0 2em 0 .5em;
+    font-size: .9em;
+    line-height: 2em;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    border: 1px #e8e8e8 solid;
+    background: url("images/logo-4.png") no-repeat 97%;
+    color: #a1a1a1;
+    background-size: 1.3em;
+}
+
+
+input[type="number"]{
+    width: 50%;
+    max-width:7em;
+    padding-left:.5em;
+    font-size: .8em;
+    line-height: 2em;
+    border: 1px solid #E8E8E8;
+}
+
+
+.next{
+    display: block;
+    margin: 10em auto;
+    padding: .3em 2em;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #e15053;
+    text-align: center;
+}
+
+
+footer a{
+    color: #999;
+}
+
+footer a.active{
+    color: #1D7AD9;
+}
+
+footer>.container>.row{
+    padding: 5em 0;
+    color: #999;
+}
+
+.footer-c div{
+    height: 3em;
+
+}
+
+.footer-r{
+    display: flex;
+    align-items: center;
+}
+.footer-r>div{
+    line-height: 2em;
+}
+
+.footer-r img{
+}
+
+.footer-r p{
+    height: 2em;
+}
+
+
+.footer-d{
+    line-height: 2em;
+    color: #fff;
+    text-align: center;
+    background-color: #1D7AD9;
+}
+
+.footer-d a{
+    padding: 0 2em;
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    .row{
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    .chart-box{
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .chart-box{
+        width:100%;
+        height: auto;
+    }
+
+    .bg-line{
+        display: none;
+    }
+    .step{
+        float: none;
+        width: 100%;
+    }
+    main .main-text{
+        margin-top: 0;
+    }
+    .navbar-default ul{
+        width: 95%;
+        margin: auto;
+    }
+
+    nav ul li{
+        padding-left: 0;
+    }
+
+    .main-text .row{
+        padding-left:0;
+    }
+
+    .main-text>.row>[class^="col-"]{
+        display: flex;
+        justify-content: center;
+    }
+
+    .row .row{
+        margin: 0 .5em;
+    }
+    select{
+        margin: 2em 0;
+    }
+
+    .footer-c div{
+        height: 2em;
+    }
+    .footer-r{
+        display: block;
+    }
+    
+}
