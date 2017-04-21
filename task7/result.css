@@ -1,7 +1,26 @@
 /*reset*/
-html, body, div, span,
-h1, h2, h3, h4, h5, h6, p, img,
-ol, ul, li, footer, header,menu, nav, audio, video,button {
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+button {
     margin:0;
     padding:0;
 }
@@ -72,7 +91,7 @@ header .more{
 }
 main{
     padding-top: .2rem;
-    margin: .6rem 0;
+    margin-top: .6rem;
     background-color: #29bde0;
 }
 
@@ -112,6 +131,7 @@ main .key-word{
 }
 
 main .detail{
+    padding-bottom: .6rem;
     background-color: #fff;
 }
 
