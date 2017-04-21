@@ -34,7 +34,7 @@ html{
 }
 
 body{
-    font:.16rem/1.5 "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    font:.14rem/1.5 "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
 }
 
 button{
@@ -71,16 +71,16 @@ header{
     line-height: 2em;
 }
 
-.enter-bar .sign-in{
-    display: inline-block;
-    padding:0  .5em;
+.enter-bar>a{
+    float: left;
+    padding:0  1em;
     border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
     color: #fff;
 }
 
-.enter-bar .sign-up{
-    display: inline-block;
-    padding: 0 1em;
+.enter-bar>a:hover{
+    padding: 0 1.5em;
     background-color: #fff;
     color: #000;
 }
@@ -105,7 +105,7 @@ nav ul li{
 
 
 .navbar-default .navbar-nav>li>a{
-    padding: 1em;
+    padding: .5em 1em;
     color: #000;
     text-align: center;
     background-color: #fff;
@@ -238,6 +238,8 @@ main .main-text .vertical-line{
 .logo-2{height:20px;width:22px;background-position: 0 -35px;}
 
 .title{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     color: #1D7AD9;
     background-color: #f3f3f3;
     line-height: 3em;
@@ -249,11 +251,11 @@ main .main-text .vertical-line{
     vertical-align: middle;
 }
 
-.row{
+main .main-text .row{
     padding-left: 2em;
 }
 
-.row .row{
+main .row .row{
     padding-left: 0;
 }
 
@@ -277,16 +279,15 @@ label span{
     display: inline-block;
     width: 1em;
     height: 1em;
-    margin: 0 .5em;
+    margin: 0 1em;
     border-radius: 50%;
     border: 1px solid #ccc;
     background-color: #f8f9fb;
 }
 
 input[type="radio"]:checked+span{
-    width: .2em;
-    height: .2em;
-    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
     background-color: #fff;
     border: .4em solid #1D7AD9;
 }
@@ -314,6 +315,11 @@ input[type="number"]{
     border: 1px solid #E8E8E8;
 }
 
+.next-box{
+    margin-bottom: 4em;
+    border-top: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+}
 
 .next{
     display: block;
@@ -330,7 +336,8 @@ footer a{
     color: #999;
 }
 
-footer a.active{
+footer a.active,
+footer a:hover{
     color: #1D7AD9;
 }
 
@@ -373,7 +380,7 @@ footer>.container>.row{
 }
 
 @media (min-width: 992px) {
-    .row{
+    main .row{
         display: flex;
         align-items: center;
     }
