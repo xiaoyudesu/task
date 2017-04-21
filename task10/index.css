@@ -211,23 +211,29 @@ nav ul li{
 }
 
 
-
 main .main-text{
-    margin-top: 2em;
+    margin-bottom: 5em;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+main .input-box{
     line-height: 2em;
     background-color: #fbfcff;
 }
 
-main .main-text .vertical-line{
+.head-title{
+    margin-top: 2em;
+    line-height: 2em;
+
+}
+
+.head-title .vertical-line{
     height: 1em;
     padding-right: .5em;
     display: inline-block;
     vertical-align: middle;
     border-left: 2px solid #1D7AD9;
-}
-
-.head-title{
-    background-color: #fff;
 }
 
 .logo-1,
@@ -251,7 +257,7 @@ main .main-text .vertical-line{
     vertical-align: middle;
 }
 
-main .main-text .row{
+main .input-box .row{
     padding-left: 2em;
 }
 
@@ -316,7 +322,6 @@ input[type="number"]{
 }
 
 .next-box{
-    margin-bottom: 4em;
     border-top: 1px #ccc solid;
     border-bottom: 1px #ccc solid;
 }
@@ -353,6 +358,7 @@ footer>.container>.row{
 .footer-r{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 .footer-r>div{
     line-height: 2em;
@@ -406,7 +412,7 @@ footer>.container>.row{
         float: none;
         width: 100%;
     }
-    main .main-text{
+    .head-title{
         margin-top: 0;
     }
     .navbar-default ul{
@@ -418,11 +424,11 @@ footer>.container>.row{
         padding-left: 0;
     }
 
-    .main-text .row{
+    .input-box .row{
         padding-left:0;
     }
 
-    .main-text>.row>[class^="col-"]{
+    .input-box>.row>[class^="col-"]{
         display: flex;
         justify-content: center;
     }
