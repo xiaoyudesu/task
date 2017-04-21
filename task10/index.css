@@ -336,7 +336,6 @@ footer a{
     color: #999;
 }
 
-footer a.active,
 footer a:hover{
     color: #1D7AD9;
 }
