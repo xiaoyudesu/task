@@ -384,6 +384,10 @@ footer>.container>.row{
     color: #fff;
 }
 
+.footer-d a:hover{
+    color: #000;
+}
+
 @media (min-width: 992px) {
     main .row{
         display: flex;
