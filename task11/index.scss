@@ -168,3 +168,56 @@ html{
     }
   }
 }
+
+
+
+
+
+
+
+div {
+  　　　　hi {
+    　　　　　　color:red;
+    　　　　}
+  　　}
+
+
+  　$blue : #1875e7;　
+    div {
+    　　　color : $blue;
+  　　}
+
+
+　@mixin left {
+  　　　　float: left;
+  　　　　margin-left: 10px;
+  　　}
+
+  div{
+  　　　　@include left;
+  　　}
+
+@import "path/a.scss";
+
+@import "path/b.css";
+
+　.class1 {
+       　　　　border: 1px solid #ddd;
+       　　}
+
+　　.class2 {
+  　　　　border: 1px solid #ddd;
+  　　　　font-size:120%;
+  　　}
+
+
+　 lighten(#cc3, 10%) // #d6d65c
+　　darken(#cc3, 10%) // #a3a329
+　　grayscale(#cc3) // #808080
+　　complement(#cc3) // #33c
+
+　body {
+  　　　　margin: (14px/2);
+  　　　　top: 50px + 100px;
+  　　　　right: $var * 10%;
+  　　}

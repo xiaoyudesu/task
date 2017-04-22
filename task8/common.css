@@ -75,6 +75,7 @@ header{
     color: #29b078;
     line-height: .4rem;
     background-color: #fff;
+    overflow: hidden;
 }
 
 header a{
