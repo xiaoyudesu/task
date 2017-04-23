@@ -1,0 +1,268 @@
+@charset "UTF-8";
+/*reset*/
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+button,
+label,
+select,
+input,
+option {
+  margin: 0;
+  padding: 0; }
+
+button {
+  border: 0;
+  outline: none;
+  background: transparent; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none; }
+
+span {
+  display: inline-block; }
+
+/*layout*/
+.container {
+  width: 90%;
+  height: 100%;
+  margin: auto; }
+
+header .container,
+nav .container,
+footer .container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  margin: auto; }
+
+footer .container {
+  justify-content: space-around; }
+
+p {
+  display: flex;
+  align-items: center; }
+
+/*纯css的select框模拟，可修改各种样式*/
+/*开始*/
+.select-box {
+  position: relative;
+  width: 33.3%;
+  height: 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #e1e5e7; }
+
+.select-head span[id]:target {
+  display: block;
+  z-index: 1; }
+
+span.checked {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  font-size: 28px;
+  color: #999;
+  background-color: #fff; }
+
+.select-head span[id] {
+  display: none;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: auto;
+  line-height: 80px;
+  text-align: center;
+  font-size: 28px;
+  color: #999;
+  background-color: #fff; }
+
+.select-body {
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px #ccc;
+  border-radius: 5px;
+  border: 1px solid #e1e5e7; }
+
+.select-body a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 28px;
+  color: #999; }
+
+.select-body a:hover {
+  background-color: #5fc0cd; }
+
+.select-box:hover .select-body {
+  z-index: 2; }
+
+/*结尾*/
+.line-gradients {
+  width: 1px;
+  height: 100%;
+  background: -webkit-radial-gradient(#e3e7e8, #fff);
+  /* Safari 5.1 - 6.0 */
+  background: -o-radial-gradient(#e3e7e8, #fff);
+  /* Opera 11.6 - 12.0 */
+  background: -moz-radial-gradient(#e3e7e8, #fff);
+  /* Firefox 3.6 - 15 */
+  background: radial-gradient(#e3e7e8, #fff);
+  /*  */ }
+
+.caret {
+  height: 8px;
+  width: 13px;
+  background: url(images/img2.png) 0 0 no-repeat;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  z-index: 999; }
+
+html {
+  font-size: 625%; }
+  html body {
+    font: 0.28rem/1.5 "Heiti SC","Helvetica Neue","Microsoft Yahei",Helvetica,Arial,"Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+    letter-spacing: .1em; }
+    html body header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      height: .9rem;
+      background-color: #5fc0cd; }
+      html body header .btn-box {
+        display: inline-block;
+        width: 30%;
+        min-width: 10em;
+        height: 2.5em;
+        margin: auto;
+        text-align: center;
+        background-color: #55a8b3;
+        border-radius: 10px; }
+        html body header .btn-box button {
+          float: left;
+          width: 50%;
+          height: 100%;
+          font-size: .34rem;
+          color: #fff;
+          border-radius: 10px; }
+          html body header .btn-box button:hover {
+            color: #5fc0cd;
+            background-color: #fff; }
+      html body header .location-logo2 {
+        height: 44px;
+        width: 42px;
+        background: url(images/img2.png) 0 -129px no-repeat; }
+    html body nav {
+      height: .8rem;
+      margin-top: .9rem;
+      border-bottom: 1px solid #e1e5e7; }
+    html body main {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1rem;
+      background-color: #fff; }
+      html body main li {
+        padding: .5em;
+        font-size: .28rem;
+        border-bottom: 1px solid #e1e5e7; }
+        html body main li .service-date .date-logo {
+          padding-left: .2rem;
+          height: 24px;
+          width: 24px;
+          background: url(images/img2.png) 0 -64px no-repeat; }
+        html body main li .date-info {
+          display: block;
+          padding-left: 1.5em; }
+          html body main li .date-info date {
+            color: #000; }
+          html body main li .date-info .cost {
+            display: flex;
+            align-items: center;
+            float: right;
+            font-size: .3rem;
+            color: #e63b0e;
+            text-align: right; }
+            html body main li .date-info .cost .tri {
+              height: 33px;
+              width: 19px;
+              background: url(images/img2.png) 0 -31px no-repeat;
+              margin-left: .5em; }
+        html body main li .location {
+          font-size: .26rem; }
+          html body main li .location .location-logo3 {
+            padding-left: .22rem;
+            height: 23px;
+            width: 19px;
+            background: url(images/img2.png) 0 -8px no-repeat; }
+    html body footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      height: 1rem;
+      margin: auto;
+      font-size: .2rem;
+      background-color: #f8fafb; }
+      html body footer .home {
+        color: #5fc0cd; }
+        html body footer .home .home-logo {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          height: 40px;
+          width: 46px;
+          background: url(images/img2.png) 0 -173px no-repeat; }
+      html body footer .write {
+        height: 94px;
+        width: 94px;
+        background: url(images/img2.png) 0 -213px no-repeat; }
+      html body footer .my {
+        color: #999; }
+        html body footer .my .my-logo {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          height: 41px;
+          width: 42px;
+          background: url(images/img2.png) 0 -88px no-repeat; }
+
+/*# sourceMappingURL=list.css.map */

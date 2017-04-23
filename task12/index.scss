@@ -1,0 +1,251 @@
+@charset "utf-8";
+
+/*reset*/
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+button,
+label,
+select,
+input,
+option {
+  margin:0;
+  padding:0;
+}
+
+button{
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover,
+a:focus{
+  text-decoration: none;
+  outline: none;
+}
+
+/*layout*/
+@mixin location-logo{
+  height:23px;
+  width:18px;
+  background:url(images/img.png) 0 0 no-repeat;
+}
+
+@mixin back{
+  height:37px;
+  width:22px;
+  background:url(images/img.png) 0 -23px no-repeat;
+}
+
+@mixin star{
+  height:23px;
+  width:24px;
+  background:url(images/img.png) 0 -60px no-repeat;
+}
+
+@mixin user-logo{
+  height:169px;
+  width:169px;
+  background:url(images/img.png)  0 -83px no-repeat;
+}
+
+@mixin banner-bg{
+  background:url(images/banner-bg.png) no-repeat;
+  background-size: cover;
+}
+
+
+
+$blue: #5fc0cd;
+$bold: .32rem;
+
+.container{
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+}
+
+ul li{
+  display: flex;
+  align-items: center;
+  line-height: 1rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e1e5e7;
+}
+
+.star{
+  display: inline-block;
+  padding-right: .5em;
+  @include star;
+}
+
+.line{
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin: auto .5em;
+  background-color: #e1e5e7;
+}
+
+.left{
+  color: #999;
+  font-weight: $bold;
+}
+
+.red{
+  color: #e26163;
+  font-weight: $bold;
+}
+
+button{
+  width: 50%;
+  height: 2em;
+  margin: 2.5%;
+  font-size: .34rem;
+  color: #5fc0cd;
+  border: 2px solid #5fc0cd;
+  border-radius: 5px;
+  &:hover,
+  &:active{
+    background-color: #5fc0cd;
+    color: #fff;
+  }
+}
+
+html{
+  font-size: 625%;
+  body{
+    font:0.32rem/1.5 "Heiti SC","Helvetica Neue","Microsoft Yahei",Helvetica,Arial,"Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+    letter-spacing: .1em;
+
+    header{
+      line-height: 2em;
+      background-color: $blue;
+      color: #fff;
+      .container{
+        position: relative;
+        .back{
+          position: absolute;
+          top:0;
+          bottom:0;
+          left: 0;
+          margin: auto;
+          @include back;
+        }
+        p{
+          width: 100%;
+          text-align: center;
+          font-size: .36rem;
+        }
+      }
+    }
+
+    main{
+      .banner{
+        height: 3.28rem;
+        @include banner-bg;
+        .container{
+          display: flex;
+          align-items: center;
+          height: 100%;
+          .user{
+            display: flex;
+            align-items: center;
+            .user-logo {
+              display: inline-block;
+              @include user-logo;
+            }
+            .user-info{
+              padding-left: 1em;
+              font-size: .24rem;
+              color: #fff;
+              p{
+                .user-name {
+                  font-size: .36rem;
+                  font-weight: bold;
+                }
+
+                .age{
+                  font-size:.28rem;
+                  padding-left:1em;
+                }
+              }
+              p{
+                display: flex;
+                align-items: center;
+                .location-logo{
+                  padding-right: .5em;
+                  display: inline-block;
+                  @include location-logo;
+                }
+              }
+            }
+          }
+
+        }
+      }
+      .user-resume{
+        .title{
+          height: 1rem;
+          font-weight: bold;
+          box-sizing: border-box;
+          border-bottom: 1px solid #e1e5e7;
+          .line-blue{
+            width: 1px;
+            height: 1em;
+            background-color: #5fc0cd;
+          }
+          .line-blue{
+            display: inline-block;
+            margin-right: .29rem;
+            border-right: 2px solid #5fc0cd;
+          }
+        }
+        ul{
+          padding-left: .3rem;
+          .last-text{
+            width: calc(100% -  200px);
+            line-height: 1em;
+            font-size: .28rem;
+          }
+        }
+      }
+    }
+    footer{
+      justify-content: space-around;
+      height: 6em;
+      padding-top: 2em;
+      border-top: 1px solid #e1e5e7;
+    }
+  }
+}
+
