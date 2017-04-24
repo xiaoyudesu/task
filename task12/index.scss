@@ -53,27 +53,27 @@ a:focus{
 
 /*layout*/
 @mixin location-logo{
-  height:23px;
-  width:18px;
-  background:url(images/img.png) 0 0 no-repeat;
+  height:.23rem;
+  width:.18rem;
+  //background:url(images/img.png) 0 0 no-repeat;
 }
 
 @mixin back{
-  height:37px;
-  width:22px;
-  background:url(images/img.png) 0 -23px no-repeat;
+  height:.37rem;
+  width:.22rem;
+  //background:url(images/img.png) 0 -23px no-repeat;
 }
 
 @mixin star{
-  height:23px;
-  width:24px;
-  background:url(images/img.png) 0 -60px no-repeat;
+  height:.23rem;
+  width:.24rem;
+  //background:url(images/img.png) 0 -60px no-repeat;
 }
 
 @mixin user-logo{
-  height:169px;
-  width:169px;
-  background:url(images/img.png)  0 -83px no-repeat;
+  height:1.69rem;
+  width:1.69rem;
+  //background:url(images/img.png)  0 -83px no-repeat;
 }
 
 @mixin banner-bg{
@@ -84,7 +84,7 @@ a:focus{
 
 
 $blue: #5fc0cd;
-$bold: .32rem;
+$bold: 500;
 
 .container{
   display: flex;
@@ -97,7 +97,8 @@ $bold: .32rem;
 ul li{
   display: flex;
   align-items: center;
-  line-height: 1rem;
+  padding: .3rem 0;
+  line-height: .4rem;
   box-sizing: border-box;
   border-bottom: 1px solid #e1e5e7;
 }
@@ -117,6 +118,8 @@ ul li{
 }
 
 .left{
+  display: inline-block;
+  min-width: 1.43rem;
   color: #999;
   font-weight: $bold;
 }
@@ -132,7 +135,7 @@ button{
   margin: 2.5%;
   font-size: .34rem;
   color: #5fc0cd;
-  border: 2px solid #5fc0cd;
+  border: .02rem solid #5fc0cd;
   border-radius: 5px;
   &:hover,
   &:active{
@@ -191,7 +194,7 @@ html{
               p{
                 .user-name {
                   font-size: .36rem;
-                  font-weight: bold;
+                  font-weight: $bold;
                 }
 
                 .age{
@@ -216,7 +219,7 @@ html{
       .user-resume{
         .title{
           height: 1rem;
-          font-weight: bold;
+          font-weight: $bold;
           box-sizing: border-box;
           border-bottom: 1px solid #e1e5e7;
           .line-blue{
@@ -233,9 +236,8 @@ html{
         ul{
           padding-left: .3rem;
           .last-text{
-            width: calc(100% -  200px);
-            line-height: 1em;
             font-size: .28rem;
+            line-height: 1.5em;
           }
         }
       }
@@ -249,3 +251,20 @@ html{
   }
 }
 
+@media (max-width: 992px) {
+  html{
+    font-size: 500%;
+  }
+}
+
+@media (max-width: 768px) {
+  html{
+    font-size: 400%;
+  }
+}
+
+@media (max-width: 500px) {
+  html{
+    font-size: 300%;
+  }
+}

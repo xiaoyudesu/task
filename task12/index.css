@@ -55,16 +55,16 @@ a:focus {
 ul li {
   display: flex;
   align-items: center;
-  line-height: 1rem;
+  padding: .3rem 0;
+  line-height: .4rem;
   box-sizing: border-box;
   border-bottom: 1px solid #e1e5e7; }
 
 .star {
   display: inline-block;
   padding-right: .5em;
-  height: 23px;
-  width: 24px;
-  background: url(images/img.png) 0 -60px no-repeat; }
+  height: .23rem;
+  width: .24rem; }
 
 .line {
   display: inline-block;
@@ -74,12 +74,14 @@ ul li {
   background-color: #e1e5e7; }
 
 .left {
+  display: inline-block;
+  min-width: 1.43rem;
   color: #999;
-  font-weight: 0.32rem; }
+  font-weight: 500; }
 
 .red {
   color: #e26163;
-  font-weight: 0.32rem; }
+  font-weight: 500; }
 
 button {
   width: 50%;
@@ -87,7 +89,7 @@ button {
   margin: 2.5%;
   font-size: .34rem;
   color: #5fc0cd;
-  border: 2px solid #5fc0cd;
+  border: .02rem solid #5fc0cd;
   border-radius: 5px; }
   button:hover, button:active {
     background-color: #5fc0cd;
@@ -110,9 +112,8 @@ html {
           bottom: 0;
           left: 0;
           margin: auto;
-          height: 37px;
-          width: 22px;
-          background: url(images/img.png) 0 -23px no-repeat; }
+          height: .37rem;
+          width: .22rem; }
         html body header .container p {
           width: 100%;
           text-align: center;
@@ -130,16 +131,15 @@ html {
           align-items: center; }
           html body main .banner .container .user .user-logo {
             display: inline-block;
-            height: 169px;
-            width: 169px;
-            background: url(images/img.png) 0 -83px no-repeat; }
+            height: 1.69rem;
+            width: 1.69rem; }
           html body main .banner .container .user .user-info {
             padding-left: 1em;
             font-size: .24rem;
             color: #fff; }
             html body main .banner .container .user .user-info p .user-name {
               font-size: .36rem;
-              font-weight: bold; }
+              font-weight: 500; }
             html body main .banner .container .user .user-info p .age {
               font-size: .28rem;
               padding-left: 1em; }
@@ -149,12 +149,11 @@ html {
               html body main .banner .container .user .user-info p .location-logo {
                 padding-right: .5em;
                 display: inline-block;
-                height: 23px;
-                width: 18px;
-                background: url(images/img.png) 0 0 no-repeat; }
+                height: .23rem;
+                width: .18rem; }
     html body main .user-resume .title {
       height: 1rem;
-      font-weight: bold;
+      font-weight: 500;
       box-sizing: border-box;
       border-bottom: 1px solid #e1e5e7; }
       html body main .user-resume .title .line-blue {
@@ -168,13 +167,22 @@ html {
     html body main .user-resume ul {
       padding-left: .3rem; }
       html body main .user-resume ul .last-text {
-        width: calc(100% -  200px);
-        line-height: 1em;
-        font-size: .28rem; }
+        font-size: .28rem;
+        line-height: 1.5em; }
     html body footer {
       justify-content: space-around;
       height: 6em;
       padding-top: 2em;
       border-top: 1px solid #e1e5e7; }
+
+@media (max-width: 992px) {
+  html {
+    font-size: 500%; } }
+@media (max-width: 768px) {
+  html {
+    font-size: 400%; } }
+@media (max-width: 500px) {
+  html {
+    font-size: 300%; } }
 
 /*# sourceMappingURL=index.css.map */

@@ -56,6 +56,25 @@ span{
 }
 /*layout*/
 $blue: #5fc0cd;
+$scale: 625%;
+
+
+
+@mixin width-scale{
+  -webkit-transform: scale($scale/625%,$scale/625%);
+  -moz-transform: scale($scale/625%,$scale/625%);
+  -ms-transform: scale($scale/625%,$scale/625%);
+  -o-transform: scale($scale/625%,$scale/625%);
+  transform: scale($scale/625%,$scale/625%);
+}
+
+@mixin width-scale-d{
+  -webkit-transform: scale(625%/$scale,625%/$scale);
+  -moz-transform: scale(625%/$scale,625%/$scale);
+  -ms-transform: scale(625%/$scale,625%/$scale);
+  -o-transform: scale(625%/$scale,625%/$scale);
+  transform: scale(625%/$scale,625%/$scale);
+}
 
 @mixin caret{
   height:8px;
@@ -64,15 +83,15 @@ $blue: #5fc0cd;
 }
 
 @mixin location-logo3{
-  height:23px;
-  width:19px;
+  height: 23px;
+  width: 19px;
   background:url(images/img2.png) 0 -8px no-repeat;
 }
 
 @mixin tri{
-  height:33px;
-  width:19px;
-  background:url(images/img2.png) 0 -31px no-repeat;
+  height:  33px;
+  width: 19px;
+  background:url(images/img2.png) 0 31px no-repeat;
 }
 
 @mixin date-logo{
@@ -121,6 +140,10 @@ footer .container{
   margin: auto;
 }
 
+header .container{
+  position: relative;
+}
+
 footer .container{
   justify-content: space-around;
 }
@@ -132,12 +155,10 @@ p{
 /*开始*/
 .select-box{
   position: relative;
-  //width: 200px;
   width: 33.3%;
   height: 80px;
   background-color: #fff;
   border-bottom: 1px solid #e1e5e7;
-  //box-shadow: 2px 2px 2px #ccc;
 }
 
 
@@ -151,8 +172,8 @@ span.checked{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
-  font-size: 28px;
+  height: .8rem;
+  font-size: .28rem;
   color: #999;
   background-color: #fff;
 }
@@ -166,9 +187,9 @@ span.checked{
   right: 0;
   width: 100%;
   margin: auto;
-  line-height: 80px;
+  line-height: .8rem;
   text-align: center;
-  font-size: 28px;
+  font-size: .28rem;
   color: #999;
   background-color: #fff;
 }
@@ -180,7 +201,7 @@ span.checked{
   width: 100%;
   background-color: #fff;
   box-shadow: 2px 2px 2px #ccc;
-  border-radius: 5px;
+  border-radius: .05rem;
   border: 1px solid #e1e5e7;
 }
 
@@ -188,7 +209,7 @@ span.checked{
   display: block;
   text-decoration: none;
   text-align: center;
-  font-size: 28px;
+  font-size: .28rem;
   color: #999;
 }
 
@@ -214,16 +235,17 @@ span.checked{
 }
 
 .caret{
+  @include width-scale;
   @include caret;
   display: block;
   position: absolute;
   top: 50%;
   right: 4%;
-  z-index: 999;
+  z-index: 99;
 }
 
 html{
-  font-size: 625%;
+  font-size: $scale;
   body{
     font: 0.28rem/1.5 "Heiti SC","Helvetica Neue","Microsoft Yahei",Helvetica,Arial,"Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
     letter-spacing: .1em;
@@ -258,6 +280,12 @@ html{
         }
       }
       .location-logo2{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        @include width-scale;
         @include location-logo2;
       }
     }
@@ -278,12 +306,13 @@ html{
         .service-date{
           .date-logo{
             padding-left: .2rem;
+            @include width-scale;
             @include date-logo;
           }
         }
         .date-info{
           display: block;
-          padding-left: 1.5em;
+          padding-left: .4rem;
           date{
             color: #000;
           }
@@ -295,6 +324,7 @@ html{
             color: #e63b0e;
             text-align: right;
             .tri{
+              @include width-scale;
               @include  tri;
               margin-left: .5em;
             }
@@ -305,6 +335,7 @@ html{
           font-size: .26rem;
           .location-logo3{
             padding-left: .22rem;
+            @include width-scale;
             @include  location-logo3;
           }
         }
@@ -321,6 +352,7 @@ html{
       font-size: .2rem;
       background-color: #f8fafb;
       .home{
+        @include width-scale;
         color: $blue;
         .home-logo{
           display: flex;
@@ -330,10 +362,16 @@ html{
         }
       }
       .write{
+        @include width-scale;
         @include write-logo;
       }
       .my{
         color: #999;
+        @include  width-scale;
+        .my-text{
+          @include width-scale-d;
+        }
+
         .my-logo{
           display: flex;
           justify-content: center;
@@ -342,5 +380,20 @@ html{
         }
       }
     }
+  }
+}
+
+@media (man-width: 768px) {
+  $scale: 300%;
+
+  .write,.my-logo,.home-logo{
+    -webkit-transform: scale($scale/625%,$scale/625%);
+    -moz-transform: scale($scale/625%,$scale/625%);
+    -ms-transform: scale($scale/625%,$scale/625%);
+    -o-transform: scale($scale/625%,$scale/625%);
+    transform: scale($scale/625%,$scale/625%);
+  }
+  html{
+    font-size: $scale;
   }
 }
