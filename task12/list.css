@@ -32,7 +32,8 @@ option {
 button {
   border: 0;
   outline: none;
-  background: transparent; }
+  background: transparent;
+  cursor: pointer; }
 
 ul {
   list-style: none; }
@@ -67,7 +68,11 @@ header .container {
   position: relative; }
 
 footer .container {
-  justify-content: space-around; }
+  justify-content: space-around;
+  letter-spacing: 0; }
+
+footer span {
+  cursor: pointer; }
 
 p {
   display: flex;
@@ -78,9 +83,9 @@ p {
 .select-box {
   position: relative;
   width: 33.3%;
-  height: 80px;
+  height: .8rem;
   background-color: #fff;
-  border-bottom: 1px solid #e1e5e7; }
+  border-bottom: .01rem solid #e1e5e7; }
 
 .select-head span[id]:target {
   display: block;
@@ -117,9 +122,9 @@ span.checked {
   top: 100%;
   width: 100%;
   background-color: #fff;
-  box-shadow: 2px 2px 2px #ccc;
+  box-shadow: .02rem .02rem .02rem #ccc;
   border-radius: .05rem;
-  border: 1px solid #e1e5e7; }
+  border: .01rem solid #e1e5e7; }
 
 .select-body a {
   display: block;
@@ -136,7 +141,7 @@ span.checked {
 
 /*结尾*/
 .line-gradients {
-  width: 1px;
+  width: .01rem;
   height: 100%;
   background: -webkit-radial-gradient(#e3e7e8, #fff);
   /* Safari 5.1 - 6.0 */
@@ -148,14 +153,8 @@ span.checked {
   /*  */ }
 
 .caret {
-  -webkit-transform: scale(1, 1);
-  -moz-transform: scale(1, 1);
-  -ms-transform: scale(1, 1);
-  -o-transform: scale(1, 1);
-  transform: scale(1, 1);
-  height: 8px;
-  width: 13px;
-  background: url(images/img2.png) 0 0 no-repeat;
+  height: .08rem;
+  width: .13rem;
   display: block;
   position: absolute;
   top: 50%;
@@ -166,7 +165,8 @@ html {
   font-size: 625%; }
   html body {
     font: 0.28rem/1.5 "Heiti SC","Helvetica Neue","Microsoft Yahei",Helvetica,Arial,"Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
-    letter-spacing: .1em; }
+    letter-spacing: .1em;
+    color: #999; }
     html body header {
       position: fixed;
       top: 0;
@@ -183,15 +183,15 @@ html {
         margin: auto;
         text-align: center;
         background-color: #55a8b3;
-        border-radius: 10px; }
+        border-radius: .1rem; }
         html body header .btn-box button {
           float: left;
           width: 50%;
           height: 100%;
           font-size: .34rem;
           color: #fff;
-          border-radius: 10px; }
-          html body header .btn-box button:hover {
+          border-radius: 0.1rem; }
+          html body header .btn-box button:hover, html body header .btn-box button.active {
             color: #5fc0cd;
             background-color: #fff; }
       html body header .location-logo2 {
@@ -200,18 +200,12 @@ html {
         bottom: 0;
         right: 0;
         margin: auto;
-        -webkit-transform: scale(1, 1);
-        -moz-transform: scale(1, 1);
-        -ms-transform: scale(1, 1);
-        -o-transform: scale(1, 1);
-        transform: scale(1, 1);
-        height: 44px;
-        width: 42px;
-        background: url(images/img2.png) 0 -129px no-repeat; }
+        height: .44rem;
+        width: .42rem; }
     html body nav {
       height: .8rem;
       margin-top: .9rem;
-      border-bottom: 1px solid #e1e5e7; }
+      border-bottom: .01rem solid #e1e5e7; }
     html body main {
       position: relative;
       z-index: 1;
@@ -222,18 +216,13 @@ html {
         font-size: .28rem;
         border-bottom: 1px solid #e1e5e7; }
         html body main li .service-date .date-logo {
-          padding-left: .2rem;
-          -webkit-transform: scale(1, 1);
-          -moz-transform: scale(1, 1);
-          -ms-transform: scale(1, 1);
-          -o-transform: scale(1, 1);
-          transform: scale(1, 1);
-          height: 24px;
-          width: 24px;
-          background: url(images/img2.png) 0 -64px no-repeat; }
+          padding-right: .1rem;
+          height: .24rem;
+          width: .24rem; }
         html body main li .date-info {
           display: block;
-          padding-left: .4rem; }
+          padding-left: .36rem;
+          color: #000; }
           html body main li .date-info date {
             color: #000; }
           html body main li .date-info .cost {
@@ -244,27 +233,16 @@ html {
             color: #e63b0e;
             text-align: right; }
             html body main li .date-info .cost .tri {
-              -webkit-transform: scale(1, 1);
-              -moz-transform: scale(1, 1);
-              -ms-transform: scale(1, 1);
-              -o-transform: scale(1, 1);
-              transform: scale(1, 1);
-              height: 33px;
-              width: 19px;
-              background: url(images/img2.png) 0 31px no-repeat;
+              height: .33rem;
+              width: .19rem;
               margin-left: .5em; }
         html body main li .location {
           font-size: .26rem; }
           html body main li .location .location-logo3 {
-            padding-left: .22rem;
-            -webkit-transform: scale(1, 1);
-            -moz-transform: scale(1, 1);
-            -ms-transform: scale(1, 1);
-            -o-transform: scale(1, 1);
-            transform: scale(1, 1);
-            height: 23px;
-            width: 19px;
-            background: url(images/img2.png) 0 -8px no-repeat; }
+            padding-right: .12rem;
+            padding-left: .03rem;
+            height: .23rem;
+            width: .19rem; }
     html body footer {
       position: fixed;
       bottom: 0;
@@ -276,58 +254,61 @@ html {
       font-size: .2rem;
       background-color: #f8fafb; }
       html body footer .home {
-        -webkit-transform: scale(1, 1);
-        -moz-transform: scale(1, 1);
-        -ms-transform: scale(1, 1);
-        -o-transform: scale(1, 1);
-        transform: scale(1, 1);
-        color: #5fc0cd; }
+        color: #5fc0cd;
+        display: flex;
+        align-items: center;
+        flex-direction: column; }
         html body footer .home .home-logo {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          height: 40px;
-          width: 46px;
-          background: url(images/img2.png) 0 -173px no-repeat; }
+          height: .40rem;
+          width: .46rem; }
       html body footer .write {
-        -webkit-transform: scale(1, 1);
-        -moz-transform: scale(1, 1);
-        -ms-transform: scale(1, 1);
-        -o-transform: scale(1, 1);
-        transform: scale(1, 1);
-        height: 94px;
-        width: 94px;
-        background: url(images/img2.png) 0 -213px no-repeat; }
+        height: .94rem;
+        width: .94rem; }
       html body footer .my {
         color: #999;
-        -webkit-transform: scale(1, 1);
-        -moz-transform: scale(1, 1);
-        -ms-transform: scale(1, 1);
-        -o-transform: scale(1, 1);
-        transform: scale(1, 1); }
-        html body footer .my .my-text {
-          -webkit-transform: scale(1, 1);
-          -moz-transform: scale(1, 1);
-          -ms-transform: scale(1, 1);
-          -o-transform: scale(1, 1);
-          transform: scale(1, 1); }
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
         html body footer .my .my-logo {
-          display: flex;
-          justify-content: center;
-          flex-direction: column;
-          height: 41px;
-          width: 42px;
-          background: url(images/img2.png) 0 -88px no-repeat; }
+          height: .41rem;
+          width: .41rem; }
 
-@media (man-width: 768px) {
-  .write, .my-logo, .home-logo {
-    -webkit-transform: scale(0.48, 0.48);
-    -moz-transform: scale(0.48, 0.48);
-    -ms-transform: scale(0.48, 0.48);
-    -o-transform: scale(0.48, 0.48);
-    transform: scale(0.48, 0.48); }
+header, nav, main, footer {
+  max-width: 800px;
+  margin: auto; }
 
+@media (max-width: 700px) {
+  html {
+    font-size: 600%; } }
+@media (max-width: 650px) {
+  html {
+    font-size: 550%; } }
+@media (max-width: 600px) {
+  html {
+    font-size: 500%; } }
+@media (max-width: 550px) {
+  html {
+    font-size: 450%; } }
+@media (max-width: 500px) {
+  html {
+    font-size: 400%; } }
+@media (max-width: 450px) {
+  html {
+    font-size: 350%; } }
+@media (max-width: 400px) {
   html {
     font-size: 300%; } }
+@media (max-width: 350px) {
+  html {
+    font-size: 250%; } }
+@media (max-width: 300px) {
+  html {
+    font-size: 200%; } }
+@media (max-width: 250px) {
+  html {
+    font-size: 200%; } }
+@media (max-width: 200px) {
+  html {
+    font-size: 150%; } }
 
 /*# sourceMappingURL=list.css.map */

@@ -31,7 +31,8 @@ option {
 button {
   border: 0;
   outline: none;
-  background: transparent; }
+  background: transparent;
+  cursor: pointer; }
 
 ul {
   list-style: none; }
@@ -58,7 +59,9 @@ ul li {
   padding: .3rem 0;
   line-height: .4rem;
   box-sizing: border-box;
-  border-bottom: 1px solid #e1e5e7; }
+  border-top: .01rem solid #e1e5e7; }
+  ul li:first-child {
+    border-top: none; }
 
 .star {
   display: inline-block;
@@ -68,7 +71,7 @@ ul li {
 
 .line {
   display: inline-block;
-  width: 1px;
+  width: .01rem;
   height: 1em;
   margin: auto .5em;
   background-color: #e1e5e7; }
@@ -90,7 +93,7 @@ button {
   font-size: .34rem;
   color: #5fc0cd;
   border: .02rem solid #5fc0cd;
-  border-radius: 5px; }
+  border-radius: .05rem; }
   button:hover, button:active {
     background-color: #5fc0cd;
     color: #fff; }
@@ -101,7 +104,7 @@ html {
     font: 0.32rem/1.5 "Heiti SC","Helvetica Neue","Microsoft Yahei",Helvetica,Arial,"Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
     letter-spacing: .1em; }
     html body header {
-      line-height: 2em;
+      line-height: .8rem;
       background-color: #5fc0cd;
       color: #fff; }
       html body header .container {
@@ -119,10 +122,14 @@ html {
           text-align: center;
           font-size: .36rem; }
     html body main .banner {
-      height: 3.28rem;
-      background: url(images/banner-bg.png) no-repeat;
-      background-size: cover; }
+      position: relative; }
+      html body main .banner .banner-bg {
+        width: 100%; }
       html body main .banner .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
         display: flex;
         align-items: center;
         height: 100%; }
@@ -151,38 +158,50 @@ html {
                 display: inline-block;
                 height: .23rem;
                 width: .18rem; }
-    html body main .user-resume .title {
-      height: 1rem;
-      font-weight: 500;
-      box-sizing: border-box;
-      border-bottom: 1px solid #e1e5e7; }
-      html body main .user-resume .title .line-blue {
-        width: 1px;
-        height: 1em;
-        background-color: #5fc0cd; }
-      html body main .user-resume .title .line-blue {
-        display: inline-block;
-        margin-right: .29rem;
-        border-right: 2px solid #5fc0cd; }
-    html body main .user-resume ul {
-      padding-left: .3rem; }
-      html body main .user-resume ul .last-text {
-        font-size: .28rem;
-        line-height: 1.5em; }
+    html body main .user-resume {
+      background-color: #fff; }
+      html body main .user-resume .title {
+        height: 1rem;
+        font-weight: 500;
+        box-sizing: border-box;
+        border-bottom: .01rem solid #e1e5e7; }
+        html body main .user-resume .title .line-blue {
+          width: .01rem;
+          height: 1em;
+          background-color: #5fc0cd; }
+        html body main .user-resume .title .line-blue {
+          display: inline-block;
+          margin-right: .29rem;
+          border-right: .02rem solid #5fc0cd; }
+      html body main .user-resume ul {
+        padding-left: .3rem; }
+        html body main .user-resume ul .last-text {
+          font-size: .28rem;
+          line-height: 1.5em; }
     html body footer {
       justify-content: space-around;
-      height: 6em;
-      padding-top: 2em;
-      border-top: 1px solid #e1e5e7; }
+      height: 5em;
+      padding-top: 1em;
+      border-top: .01rem solid #e1e5e7; }
 
-@media (max-width: 992px) {
+header, main, footer {
+  max-width: 800px;
+  margin: auto; }
+
+@media (max-width: 700px) {
   html {
     font-size: 500%; } }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   html {
     font-size: 400%; } }
-@media (max-width: 500px) {
+@media (max-width: 300px) {
   html {
     font-size: 300%; } }
+@media (max-width: 230px) {
+  html {
+    font-size: 200%; } }
+@media (max-width: 160px) {
+  html {
+    font-size: 100%; } }
 
 /*# sourceMappingURL=index.css.map */

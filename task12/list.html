@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=720,user-scalable=no">
+    <meta name="viewport" content="device-width,initial-scale=1,user-scalable=no">
     <link rel="stylesheet" href="list.css">
     <title>护工列表页-sass</title>
 </head>
@@ -13,9 +13,9 @@
     <div class="container">
         <div class="btn-box">
             <button>找雇主</button>
-            <button>找护工</button>
+            <button class="active">找护工</button>
         </div>
-        <span class="location-logo2"></span>
+        <button><img class="location-logo2" src="images/location-logo2.png"></button>
     </div>
 </header>
 <nav>
@@ -32,7 +32,7 @@
                 <a href="#b">阿什福德学院</a>
                 <a href="#c">澄空学园</a>
             </div>
-            <span class="caret"></span>
+            <img class="caret" src="images/caret.png">
         </div>
         <span class="line-gradients"></span>
         <div class="select-box2 select-box">
@@ -41,7 +41,7 @@
                 <span id="a2">茶叶蛋</span>
                 <span id="b2">切糕</span>
                 <span id="c2">辣条</span>
-                <span class="caret"></span>
+                <img class="caret" src="images/caret.png">
             </div>
             <div class="select-body">
                 <a href="#a2">茶叶蛋</a>
@@ -57,7 +57,7 @@
                 <span id="a3">生</span>
                 <span id="b3">死</span>
                 <span id="c3">量子态</span>
-                <span class="caret"></span>
+                <img class="caret" src="images/caret.png" >
             </div>
             <div class="select-body">
                 <a href="#a3">神</a>
@@ -66,29 +66,6 @@
             </div>
         </div>
 
-
-
-
-
-<!--
-
-        <select name="location" id="">
-            <option value="光坂高校">光坂高校</option>
-            <option value="阿什福德学院">阿什福德学园</option>
-            <option value="澄空学园">澄空学园</option>
-        </select>
-        <span class="line-gradients"></span>
-        <select name="accommodation" id="">
-            <option value="茶叶蛋">茶叶蛋</option>
-            <option value="切糕">切糕</option>
-            <option value="辣条">辣条</option>
-        </select>
-        <span class="line-Gradients"></span>
-        <select name="situation" id="">
-            <option value="神">神</option>
-            <option value="魔">魔</option>
-            <option value="人">人</option>
-        </select>-->
     </div>
 </nav>
 <main>
@@ -96,79 +73,80 @@
 
         <li>
             <div class="container">
-                <p class="service-date"><span class="date-logo"></span>服务日期</p>
-                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<span
-                        class="tri"></span></span></p>
-                <p class="location"><span class="location-logo3"></span>北京.通州.果园</p>
+                <p class="service-date"><img class="date-logo" src="images/date-logo.png">服务日期</p>
+                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<img
+                        class="tri" src="images/tri.png"></span></p>
+                <p class="location"><img class="location-logo3" src="images/location-logo3.png">北京.通州.果园</p>
             </div>
         </li>
 
         <li>
             <div class="container">
-                <p class="service-date"><span class="date-logo"></span>服务日期</p>
-                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<span
-                        class="tri"></span></span></p>
-                <p class="location"><span class="location-logo3"></span>北京.通州.果园</p>
+                <p class="service-date"><img class="date-logo" src="images/date-logo.png">服务日期</p>
+                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<img
+                        class="tri" src="images/tri.png"></span></p>
+                <p class="location"><img class="location-logo3" src="images/location-logo3.png">北京.通州.果园</p>
             </div>
         </li>
 
         <li>
             <div class="container">
-                <p class="service-date"><span class="date-logo"></span>服务日期</p>
-                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<span
-                        class="tri"></span></span></p>
-                <p class="location"><span class="location-logo3"></span>北京.通州.果园</p>
+                <p class="service-date"><img class="date-logo" src="images/date-logo.png">服务日期</p>
+                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<img
+                        class="tri" src="images/tri.png"></span></p>
+                <p class="location"><img class="location-logo3" src="images/location-logo3.png">北京.通州.果园</p>
             </div>
         </li>
 
         <li>
             <div class="container">
-                <p class="service-date"><span class="date-logo"></span>服务日期</p>
-                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<span
-                        class="tri"></span></span></p>
-                <p class="location"><span class="location-logo3"></span>北京.通州.果园</p>
+                <p class="service-date"><img class="date-logo" src="images/date-logo.png">服务日期</p>
+                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<img
+                        class="tri" src="images/tri.png"></span></p>
+                <p class="location"><img class="location-logo3" src="images/location-logo3.png">北京.通州.果园</p>
             </div>
         </li>
 
         <li>
             <div class="container">
-                <p class="service-date"><span class="date-logo"></span>服务日期</p>
-                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<span
-                        class="tri"></span></span></p>
-                <p class="location"><span class="location-logo3"></span>北京.通州.果园</p>
+                <p class="service-date"><img class="date-logo" src="images/date-logo.png">服务日期</p>
+                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<img
+                        class="tri" src="images/tri.png"></span></p>
+                <p class="location"><img class="location-logo3" src="images/location-logo3.png">北京.通州.果园</p>
             </div>
         </li>
 
         <li>
             <div class="container">
-                <p class="service-date"><span class="date-logo"></span>服务日期</p>
-                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<span
-                        class="tri"></span></span></p>
-                <p class="location"><span class="location-logo3"></span>北京.通州.果园</p>
+                <p class="service-date"><img class="date-logo" src="images/date-logo.png">服务日期</p>
+                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<img
+                        class="tri" src="images/tri.png"></span></p>
+                <p class="location"><img class="location-logo3" src="images/location-logo3.png">北京.通州.果园</p>
             </div>
         </li>
 
         <li>
             <div class="container">
-                <p class="service-date"><span class="date-logo"></span>服务日期</p>
-                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<span
-                        class="tri"></span></span></p>
-                <p class="location"><span class="location-logo3"></span>北京.通州.果园</p>
+                <p class="service-date"><img class="date-logo" src="images/date-logo.png">服务日期</p>
+                <p class="date-info"><span class="date">2015-7-5 至 2015-7-12</span><span class="cost">25元/小时<img
+                        class="tri" src="images/tri.png"></span></p>
+                <p class="location"><img class="location-logo3" src="images/location-logo3.png">北京.通州.果园</p>
             </div>
         </li>
-
-
 
 
     </ul>
 </main>
 <footer>
     <div class="container">
-        <span class="home"><span class="home-logo"></span>首页</span>
-        <span class="write"></span>
+        <span class="home">
+            <img class="home-logo" src="images/home-logo.png">
+            <span>首页</span>
+        </span>
+        <img class="write" src="images/write-logo.png">
         <span class="my">
-            <span class="my-logo"></span>
-            <span class="my-text">我的</span>
+            <img class="my-logo" src="images/my-logo.png">
+            <span>我的</span>
         </span>
     </div>
 </footer>

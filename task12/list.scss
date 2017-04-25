@@ -35,6 +35,7 @@ button{
   border: 0;
   outline: none;
   background: transparent;
+  cursor: pointer;
 }
 
 ul{
@@ -56,72 +57,45 @@ span{
 }
 /*layout*/
 $blue: #5fc0cd;
-$scale: 625%;
-
-
-
-@mixin width-scale{
-  -webkit-transform: scale($scale/625%,$scale/625%);
-  -moz-transform: scale($scale/625%,$scale/625%);
-  -ms-transform: scale($scale/625%,$scale/625%);
-  -o-transform: scale($scale/625%,$scale/625%);
-  transform: scale($scale/625%,$scale/625%);
-}
-
-@mixin width-scale-d{
-  -webkit-transform: scale(625%/$scale,625%/$scale);
-  -moz-transform: scale(625%/$scale,625%/$scale);
-  -ms-transform: scale(625%/$scale,625%/$scale);
-  -o-transform: scale(625%/$scale,625%/$scale);
-  transform: scale(625%/$scale,625%/$scale);
-}
 
 @mixin caret{
-  height:8px;
-  width:13px;
-  background:url(images/img2.png) 0 0 no-repeat;
+  height:.08rem;
+  width:.13rem;
 }
 
 @mixin location-logo3{
-  height: 23px;
-  width: 19px;
-  background:url(images/img2.png) 0 -8px no-repeat;
+  height: .23rem;
+  width:.19rem;
 }
 
 @mixin tri{
-  height:  33px;
-  width: 19px;
-  background:url(images/img2.png) 0 31px no-repeat;
+  height:.33rem;
+  width:.19rem;
 }
 
 @mixin date-logo{
-  height:24px;
-  width:24px;
-  background:url(images/img2.png) 0 -64px  no-repeat;
+  height:.24rem;
+  width:.24rem;
 }
 
 @mixin my-logo{
-  height:41px;
-  width:42px;
-  background:url(images/img2.png) 0 -88px no-repeat;
+  height:.41rem;
+  width:.41rem;
 }
 
 @mixin location-logo2{
-  height:44px;
-  width:42px;
-  background:url(images/img2.png) 0 -129px no-repeat;
+  height:.44rem;
+  width:.42rem;
 }
 
 @mixin home-logo{
-  height:40px;
-  width:46px;
-  background:url(images/img2.png) 0 -173px no-repeat;
+  height:.40rem;
+  width:.46rem;
 }
 
 @mixin write-logo{
-  height:94px;
-  width:94px;
-  background:url(images/img2.png) 0 -213px no-repeat;
+  height:.94rem;
+  width:.94rem;
 }
 
 .container{
@@ -146,6 +120,11 @@ header .container{
 
 footer .container{
   justify-content: space-around;
+  letter-spacing: 0;
+}
+
+footer span{
+  cursor: pointer;
 }
 p{
   display: flex;
@@ -156,9 +135,9 @@ p{
 .select-box{
   position: relative;
   width: 33.3%;
-  height: 80px;
+  height: .8rem;
   background-color: #fff;
-  border-bottom: 1px solid #e1e5e7;
+  border-bottom: .01rem solid #e1e5e7;
 }
 
 
@@ -200,9 +179,9 @@ span.checked{
   top: 100%;
   width: 100%;
   background-color: #fff;
-  box-shadow: 2px 2px 2px #ccc;
+  box-shadow: .02rem .02rem .02rem #ccc;
   border-radius: .05rem;
-  border: 1px solid #e1e5e7;
+  border: .01rem solid #e1e5e7;
 }
 
 .select-body a{
@@ -226,7 +205,7 @@ span.checked{
 
 
 .line-gradients{
-  width: 1px;
+  width: .01rem;
   height: 100%;
   background: -webkit-radial-gradient(#e3e7e8, #fff); /* Safari 5.1 - 6.0 */
   background: -o-radial-gradient(#e3e7e8, #fff); /* Opera 11.6 - 12.0 */
@@ -235,7 +214,6 @@ span.checked{
 }
 
 .caret{
-  @include width-scale;
   @include caret;
   display: block;
   position: absolute;
@@ -245,10 +223,11 @@ span.checked{
 }
 
 html{
-  font-size: $scale;
+  font-size: 625%;
   body{
     font: 0.28rem/1.5 "Heiti SC","Helvetica Neue","Microsoft Yahei",Helvetica,Arial,"Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
     letter-spacing: .1em;
+    color: #999;
     header{
       position: fixed;
       top: 0;
@@ -265,15 +244,16 @@ html{
         margin: auto;
         text-align: center;
         background-color: #55a8b3;
-        border-radius: 10px;
+        border-radius: .1rem;
         button{
           float: left;
           width: 50%;
           height: 100%;
           font-size: .34rem;
           color: #fff;
-          border-radius: 10px  ;
-          &:hover{
+          border-radius: .1rem  ;
+          &:hover,
+          &.active{
             color: $blue;
             background-color: #fff;
           }
@@ -285,14 +265,13 @@ html{
         bottom: 0;
         right: 0;
         margin: auto;
-        @include width-scale;
         @include location-logo2;
       }
     }
     nav{
       height: .8rem;
       margin-top: .9rem;
-      border-bottom: 1px solid #e1e5e7;
+      border-bottom: .01rem solid #e1e5e7;
     }
     main{
       position: relative;
@@ -305,14 +284,14 @@ html{
         border-bottom: 1px solid #e1e5e7;
         .service-date{
           .date-logo{
-            padding-left: .2rem;
-            @include width-scale;
+            padding-right: .1rem;
             @include date-logo;
           }
         }
         .date-info{
           display: block;
-          padding-left: .4rem;
+          padding-left: .36rem;
+          color: #000;
           date{
             color: #000;
           }
@@ -324,7 +303,6 @@ html{
             color: #e63b0e;
             text-align: right;
             .tri{
-              @include width-scale;
               @include  tri;
               margin-left: .5em;
             }
@@ -334,8 +312,8 @@ html{
         .location{
           font-size: .26rem;
           .location-logo3{
-            padding-left: .22rem;
-            @include width-scale;
+            padding-right: .12rem;
+            padding-left: .03rem;
             @include  location-logo3;
           }
         }
@@ -352,30 +330,23 @@ html{
       font-size: .2rem;
       background-color: #f8fafb;
       .home{
-        @include width-scale;
         color: $blue;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         .home-logo{
-          display: flex;
-          align-items: center;
-          flex-direction: column;
           @include home-logo;
         }
       }
       .write{
-        @include width-scale;
         @include write-logo;
       }
       .my{
         color: #999;
-        @include  width-scale;
-        .my-text{
-          @include width-scale-d;
-        }
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .my-logo{
-          display: flex;
-          justify-content: center;
-          flex-direction: column;
           @include my-logo;
         }
       }
@@ -383,17 +354,74 @@ html{
   }
 }
 
-@media (man-width: 768px) {
-  $scale: 300%;
 
-  .write,.my-logo,.home-logo{
-    -webkit-transform: scale($scale/625%,$scale/625%);
-    -moz-transform: scale($scale/625%,$scale/625%);
-    -ms-transform: scale($scale/625%,$scale/625%);
-    -o-transform: scale($scale/625%,$scale/625%);
-    transform: scale($scale/625%,$scale/625%);
-  }
+header,nav,main,footer{
+  max-width: 800px;
+  margin: auto;
+}
+
+@media (max-width: 700px) {
   html{
-    font-size: $scale;
+    font-size: 600%;
   }
 }
+
+@media (max-width: 650px) {
+  html{
+    font-size: 550%;
+  }
+}
+@media (max-width: 600px) {
+  html{
+    font-size: 500%;
+  }
+}
+
+@media (max-width: 550px) {
+  html{
+    font-size: 450%;
+  }
+}
+
+@media (max-width: 500px) {
+  html{
+    font-size: 400%;
+  }
+}
+
+@media (max-width: 450px) {
+  html{
+    font-size: 350%;
+  }
+}
+
+@media (max-width: 400px) {
+  html{
+    font-size: 300%;
+  }
+}
+
+
+@media (max-width: 350px) {
+  html {
+    font-size: 250%;
+  }
+}
+
+@media (max-width: 300px) {
+  html {
+    font-size: 200%;
+  }
+}
+
+@media (max-width: 250px) {
+  html {
+    font-size: 200%;
+  }
+}
+
+@media (max-width: 200px){
+  html{
+    font-size: 150%;
+  }
+ }
