@@ -193,7 +193,9 @@ html {
       height: 6em;
       background-color: #fff; }
 
-header, main, footer {
+header,
+main,
+footer {
   max-width: 800px;
   margin: auto; }
 

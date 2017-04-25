@@ -273,7 +273,10 @@ html {
           height: .41rem;
           width: .41rem; }
 
-header, nav, main, footer {
+header,
+nav,
+main,
+footer {
   max-width: 800px;
   margin: auto; }
 
