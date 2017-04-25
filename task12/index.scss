@@ -293,11 +293,28 @@ footer{
 
 @media (max-width: 700px) {
   html{
+    font-size: 600%;
+  }
+}
+
+@media (max-width: 650px) {
+  html{
+    font-size: 550%;
+  }
+}
+@media (max-width: 600px) {
+  html{
     font-size: 500%;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
+  html{
+    font-size: 450%;
+  }
+}
+
+@media (max-width: 500px) {
   html{
     font-size: 400%;
   }
@@ -309,21 +326,33 @@ footer{
   }
 }
 
-
 @media (max-width: 400px) {
   html{
     font-size: 300%;
   }
 }
 
-@media (max-width: 230px) {
-  html{
+
+@media (max-width: 350px) {
+  html {
+    font-size: 250%;
+  }
+}
+
+@media (max-width: 300px) {
+  html {
     font-size: 200%;
   }
 }
 
-@media (max-width: 160px) {
+@media (max-width: 250px) {
+  html {
+    font-size: 200%;
+  }
+}
+
+@media (max-width: 200px){
   html{
-    font-size: 100%;
+    font-size: 150%;
   }
 }
