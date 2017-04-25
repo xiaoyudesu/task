@@ -53,6 +53,9 @@ a:focus {
   height: 100%;
   margin: auto; }
 
+ul .container {
+  display: block; }
+
 ul li {
   display: flex;
   align-items: center;
@@ -88,7 +91,7 @@ ul li {
 
 button {
   width: 50%;
-  height: 2em;
+  height: 2.5em;
   margin: 2.5%;
   font-size: .34rem;
   color: #5fc0cd;
@@ -121,68 +124,74 @@ html {
           width: 100%;
           text-align: center;
           font-size: .36rem; }
-    html body main .banner {
-      position: relative; }
-      html body main .banner .banner-bg {
-        width: 100%; }
-      html body main .banner .container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        height: 100%; }
-        html body main .banner .container .user {
+    html body main {
+      margin-bottom: 6em; }
+      html body main .banner {
+        position: relative; }
+        html body main .banner .banner-bg {
+          width: 100%; }
+        html body main .banner .container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
           display: flex;
-          align-items: center; }
-          html body main .banner .container .user .user-logo {
+          align-items: center;
+          height: 100%; }
+          html body main .banner .container .user {
+            display: flex;
+            align-items: center; }
+            html body main .banner .container .user .user-logo {
+              display: inline-block;
+              height: 1.69rem;
+              width: 1.69rem; }
+            html body main .banner .container .user .user-info {
+              padding-left: 1em;
+              font-size: .24rem;
+              color: #fff; }
+              html body main .banner .container .user .user-info p .user-name {
+                font-size: .36rem;
+                font-weight: 500; }
+              html body main .banner .container .user .user-info p .age {
+                font-size: .28rem;
+                padding-left: 1em; }
+              html body main .banner .container .user .user-info p {
+                display: flex;
+                align-items: center; }
+                html body main .banner .container .user .user-info p .location-logo {
+                  padding-right: .5em;
+                  display: inline-block;
+                  height: .23rem;
+                  width: .18rem; }
+      html body main .user-resume {
+        background-color: #fff; }
+        html body main .user-resume .title {
+          height: 1rem;
+          font-weight: 500;
+          box-sizing: border-box; }
+          html body main .user-resume .title .line-blue {
+            width: .01rem;
+            height: 1em;
+            background-color: #5fc0cd; }
+          html body main .user-resume .title .line-blue {
             display: inline-block;
-            height: 1.69rem;
-            width: 1.69rem; }
-          html body main .banner .container .user .user-info {
-            padding-left: 1em;
-            font-size: .24rem;
-            color: #fff; }
-            html body main .banner .container .user .user-info p .user-name {
-              font-size: .36rem;
-              font-weight: 500; }
-            html body main .banner .container .user .user-info p .age {
-              font-size: .28rem;
-              padding-left: 1em; }
-            html body main .banner .container .user .user-info p {
-              display: flex;
-              align-items: center; }
-              html body main .banner .container .user .user-info p .location-logo {
-                padding-right: .5em;
-                display: inline-block;
-                height: .23rem;
-                width: .18rem; }
-    html body main .user-resume {
-      background-color: #fff; }
-      html body main .user-resume .title {
-        height: 1rem;
-        font-weight: 500;
-        box-sizing: border-box;
-        border-bottom: .01rem solid #e1e5e7; }
-        html body main .user-resume .title .line-blue {
-          width: .01rem;
-          height: 1em;
-          background-color: #5fc0cd; }
-        html body main .user-resume .title .line-blue {
-          display: inline-block;
-          margin-right: .29rem;
-          border-right: .02rem solid #5fc0cd; }
-      html body main .user-resume ul {
-        padding-left: .3rem; }
-        html body main .user-resume ul .last-text {
-          font-size: .28rem;
-          line-height: 1.5em; }
+            margin-right: .29rem;
+            border-right: .02rem solid #5fc0cd; }
+        html body main .user-resume ul {
+          padding-left: .3rem;
+          border-top: .01rem solid #e1e5e7;
+          border-bottom: .01rem solid #e1e5e7; }
+          html body main .user-resume ul .last-text {
+            font-size: .28rem;
+            line-height: 1.5em; }
     html body footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
       justify-content: space-around;
-      height: 5em;
-      padding-top: 1em;
-      border-top: .01rem solid #e1e5e7; }
+      height: 6em;
+      background-color: #fff; }
 
 header, main, footer {
   max-width: 800px;
@@ -194,7 +203,10 @@ header, main, footer {
 @media (max-width: 600px) {
   html {
     font-size: 400%; } }
-@media (max-width: 300px) {
+@media (max-width: 450px) {
+  html {
+    font-size: 350%; } }
+@media (max-width: 400px) {
   html {
     font-size: 300%; } }
 @media (max-width: 230px) {

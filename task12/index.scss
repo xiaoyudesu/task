@@ -85,6 +85,10 @@ $bold: 500;
   margin: auto;
 }
 
+ul .container{
+  display: block;
+}
+
 ul li{
   display: flex;
   align-items: center;
@@ -92,6 +96,7 @@ ul li{
   line-height: .4rem;
   box-sizing: border-box;
   border-top: .01rem solid #e1e5e7;
+
   &:first-child{
     border-top: none;
   }
@@ -125,12 +130,13 @@ ul li{
 
 button{
   width: 50%;
-  height: 2em;
+  height: 2.5em;
   margin: 2.5%;
   font-size: .34rem;
   color: #5fc0cd;
   border: .02rem solid #5fc0cd;
   border-radius: .05rem;
+
   &:hover,
   &:active{
     background-color: #5fc0cd;
@@ -141,6 +147,7 @@ button{
 
 html{
   font-size: 625%;
+
   body{
     font:0.32rem/1.5 "Heiti SC","Helvetica Neue","Microsoft Yahei",Helvetica,Arial,"Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
     letter-spacing: .1em;
@@ -149,8 +156,10 @@ html{
       line-height: .8rem;
       background-color: $blue;
       color: #fff;
+
       .container{
         position: relative;
+
         .back{
           position: absolute;
           top:0;
@@ -159,6 +168,7 @@ html{
           margin: auto;
           @include back;
         }
+
         p{
           width: 100%;
           text-align: center;
@@ -168,11 +178,14 @@ html{
     }
 
     main{
+        margin-bottom: 6em;
       .banner{
         position: relative;
+
         .banner-bg{
           width: 100%;
         }
+
         .container{
           position: absolute;
           top: 0;
@@ -181,18 +194,23 @@ html{
           display: flex;
           align-items: center;
           height: 100%;
+
           .user{
             display: flex;
             align-items: center;
+
             .user-logo {
               display: inline-block;
               @include user-logo;
             }
+
             .user-info{
               padding-left: 1em;
               font-size: .24rem;
               color: #fff;
+
               p{
+
                 .user-name {
                   font-size: .36rem;
                   font-weight: $bold;
@@ -203,6 +221,7 @@ html{
                   padding-left:1em;
                 }
               }
+
               p{
                 display: flex;
                 align-items: center;
@@ -219,24 +238,29 @@ html{
       }
       .user-resume{
         background-color: #fff;
+
         .title{
           height: 1rem;
           font-weight: $bold;
           box-sizing: border-box;
-          border-bottom: .01rem solid #e1e5e7;
+
           .line-blue{
             width: .01rem;
             height: 1em;
             background-color: #5fc0cd;
           }
+
           .line-blue{
             display: inline-block;
             margin-right: .29rem;
             border-right: .02rem solid #5fc0cd;
           }
         }
+
         ul{
           padding-left: .3rem;
+          border-top: .01rem solid #e1e5e7;
+          border-bottom: .01rem solid #e1e5e7;
           .last-text{
             font-size: .28rem;
             line-height: 1.5em;
@@ -245,10 +269,13 @@ html{
       }
     }
     footer{
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
       justify-content: space-around;
-      height: 5em;
-      padding-top: 1em;
-      border-top: .01rem solid #e1e5e7;
+      height: 6em;
+      background-color: #fff;
     }
   }
 }
@@ -271,11 +298,17 @@ header,main,footer{
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 450px) {
+  html{
+    font-size: 350%;
+  }
+}
+
+
+@media (max-width: 400px) {
   html{
     font-size: 300%;
   }
-  
 }
 
 @media (max-width: 230px) {
@@ -288,5 +321,4 @@ header,main,footer{
   html{
     font-size: 100%;
   }
-  
 }
