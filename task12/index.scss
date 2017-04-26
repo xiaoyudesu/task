@@ -181,13 +181,11 @@ html{
 
       .banner{
         position: relative;
-        line-height: .5;
-
-        //overflow: hidden;
+        overflow: hidden;
 
         .banner-bg{
           width: 100%;
-          //float: left;
+          float: left;
         }
 
         .container{
@@ -198,11 +196,9 @@ html{
           display: flex;
           align-items: center;
           height: 100%;
-          line-height: .5;
           .user{
             display: flex;
             align-items: center;
-            line-height: 1.5;
 
             .user-logo {
               display: inline-block;

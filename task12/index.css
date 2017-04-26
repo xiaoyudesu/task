@@ -126,9 +126,10 @@ html {
       margin-bottom: 6em; }
       html body main .banner {
         position: relative;
-        line-height: .5; }
+        overflow: hidden; }
         html body main .banner .banner-bg {
-          width: 100%; }
+          width: 100%;
+          float: left; }
         html body main .banner .container {
           position: absolute;
           top: 0;
@@ -136,12 +137,10 @@ html {
           right: 0;
           display: flex;
           align-items: center;
-          height: 100%;
-          line-height: .5; }
+          height: 100%; }
           html body main .banner .container .user {
             display: flex;
-            align-items: center;
-            line-height: 1.5; }
+            align-items: center; }
             html body main .banner .container .user .user-logo {
               display: inline-block;
               height: 1.69rem;
