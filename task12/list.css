@@ -283,7 +283,7 @@ header,
 nav,
 main,
 footer {
-  max-width: 800px;
+  max-width: 720px;
   margin: auto; }
 
 @media (max-width: 700px) {
