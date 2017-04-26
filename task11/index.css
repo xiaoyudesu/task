@@ -59,7 +59,9 @@ html {
   font-size: 625%; }
   html body {
     font: .16rem/1.5 "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
-    background-color: #eff0f4; }
+    background-color: #eff0f4;
+    max-width: 640px;
+    margin: auto; }
     html body header {
       position: fixed;
       top: 0;
@@ -119,5 +121,11 @@ html {
       float: right;
       font-size: .15rem;
       color: #5fc0cd; }
+
+.container,
+header,
+main {
+  max-width: 640px;
+  margin: auto; }
 
 /*# sourceMappingURL=index.css.map */

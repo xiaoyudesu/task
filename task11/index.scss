@@ -79,6 +79,9 @@ html{
   body{
     font:.16rem/1.5 "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
     background-color: #eff0f4;
+    max-width: 640px;
+    margin: auto;
+
     header{
       position: fixed;
       top: 0;
@@ -112,10 +115,10 @@ html{
       .tel-input {
         background-color: #fff;
         .container{
-
           @include fa;
           margin-top: .6rem;
           margin-bottom: .1rem;
+
           .iphone {
             height: .3rem;
             margin: 0 .1rem;
@@ -133,9 +136,9 @@ html{
         background-color: #fff;
 
         .container{
-
           @include fa;
           margin: .1rem auto;
+
           .locked{
             height: .3rem;
             margin: 0 .1rem;
@@ -155,6 +158,7 @@ html{
         font-size: .2rem;
         color: #fff;
         text-align: center;
+
         &:hover{
           color: darken(#fff,70%);
         }
@@ -169,55 +173,9 @@ html{
   }
 }
 
-
-
-
-
-
-
-div {
-  　　　　hi {
-    　　　　　　color:red;
-    　　　　}
-  　　}
-
-
-  　$blue : #1875e7;　
-    div {
-    　　　color : $blue;
-  　　}
-
-
-　@mixin left {
-  　　　　float: left;
-  　　　　margin-left: 10px;
-  　　}
-
-  div{
-  　　　　@include left;
-  　　}
-
-@import "path/a.scss";
-
-@import "path/b.css";
-
-　.class1 {
-       　　　　border: 1px solid #ddd;
-       　　}
-
-　　.class2 {
-  　　　　border: 1px solid #ddd;
-  　　　　font-size:120%;
-  　　}
-
-
-　 lighten(#cc3, 10%) // #d6d65c
-　　darken(#cc3, 10%) // #a3a329
-　　grayscale(#cc3) // #808080
-　　complement(#cc3) // #33c
-
-　body {
-  　　　　margin: (14px/2);
-  　　　　top: 50px + 100px;
-  　　　　right: $var * 10%;
-  　　}
+.container,
+header,
+main{
+  max-width: 640px;
+  margin: auto;
+}
