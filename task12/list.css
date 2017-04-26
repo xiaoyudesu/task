@@ -221,10 +221,16 @@ html {
           width: .24rem; }
         html body main li .date-info {
           display: block;
+          height: .42rem;
           padding-left: .36rem;
-          color: #000; }
-          html body main li .date-info date {
-            color: #000; }
+          color: #000;
+          white-space: nowrap;
+          overflow: hidden; }
+          html body main li .date-info .date {
+            color: #000;
+            overflow: hidden;
+            width: calc(100% - 2rem);
+            text-overflow: ellipsis; }
           html body main li .date-info .cost {
             display: flex;
             align-items: center;
@@ -273,45 +279,80 @@ html {
           height: .41rem;
           width: .41rem; }
 
+/*
 header,
 nav,
 main,
-footer {
+footer{
   max-width: 800px;
-  margin: auto; }
+  margin: auto;
+}
 
 @media (max-width: 700px) {
-  html {
-    font-size: 600%; } }
+  html{
+    font-size: 600%;
+  }
+}
+
 @media (max-width: 650px) {
-  html {
-    font-size: 550%; } }
+  html{
+    font-size: 550%;
+  }
+}
 @media (max-width: 600px) {
-  html {
-    font-size: 500%; } }
+  html{
+    font-size: 500%;
+  }
+}
+
 @media (max-width: 550px) {
-  html {
-    font-size: 450%; } }
+  html{
+    font-size: 450%;
+  }
+}
+
 @media (max-width: 500px) {
-  html {
-    font-size: 400%; } }
+  html{
+    font-size: 400%;
+  }
+}
+
 @media (max-width: 450px) {
-  html {
-    font-size: 350%; } }
+  html{
+    font-size: 350%;
+  }
+}
+
 @media (max-width: 400px) {
-  html {
-    font-size: 300%; } }
+  html{
+    font-size: 300%;
+  }
+}
+
+
 @media (max-width: 350px) {
   html {
-    font-size: 250%; } }
+    font-size: 250%;
+  }
+}
+
 @media (max-width: 300px) {
   html {
-    font-size: 200%; } }
+    font-size: 200%;
+  }
+}
+
 @media (max-width: 250px) {
   html {
-    font-size: 200%; } }
-@media (max-width: 200px) {
-  html {
-    font-size: 150%; } }
+    font-size: 200%;
+  }
+}
+
+@media (max-width: 200px){
+  html{
+    font-size: 150%;
+  }
+ }
+*/
 
 /*# sourceMappingURL=list.css.map */

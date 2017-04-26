@@ -301,11 +301,18 @@ html{
 
         .date-info{
           display: block;
+          height: .42rem;
           padding-left: .36rem;
           color: #000;
+          white-space: nowrap;
+          overflow: hidden;
 
-          date{
+          .date{
             color: #000;
+            overflow: hidden;
+            width: calc(100% - 2rem);
+            text-overflow: ellipsis;
+
           }
 
           .cost{
@@ -376,6 +383,7 @@ html{
 }
 
 
+/*
 header,
 nav,
 main,
@@ -449,3 +457,4 @@ footer{
     font-size: 150%;
   }
  }
+*/
