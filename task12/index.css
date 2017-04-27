@@ -192,10 +192,12 @@ html {
       height: 6em;
       background-color: #fff; }
 
+body,
 header,
 main,
 footer {
   max-width: 720px;
+  min-width: 300px;
   margin: auto; }
 
 @media (max-width: 700px) {
@@ -222,14 +224,25 @@ footer {
 @media (max-width: 350px) {
   html {
     font-size: 250%; } }
+/*
+
 @media (max-width: 300px) {
   html {
-    font-size: 200%; } }
+    font-size: 200%;
+  }
+}
+
 @media (max-width: 250px) {
   html {
-    font-size: 200%; } }
-@media (max-width: 200px) {
-  html {
-    font-size: 150%; } }
+    font-size: 200%;
+  }
+}
+
+@media (max-width: 200px){
+  html{
+    font-size: 150%;
+  }
+}
+*/
 
 /*# sourceMappingURL=index.css.map */

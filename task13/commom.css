@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/*common-var*/
+/*@media自适应查询*/
+@media (width: 700) {
+  html {
+    font-size: 700%; } }
+@media (width: 600) {
+  html {
+    font-size: 600%; } }
+@media (width: 500) {
+  html {
+    font-size: 500%; } }
+@media (width: 550) {
+  html {
+    font-size: 550%; } }
+@media (width: 500) {
+  html {
+    font-size: 500%; } }
+@media (width: 450) {
+  html {
+    font-size: 450%; } }
+@media (width: 400) {
+  html {
+    font-size: 400%; } }
+@media (width: 350) {
+  html {
+    font-size: 350%; } }
+@media (width: 300) {
+  html {
+    font-size: 300%; } }
+@media (width: 250) {
+  html {
+    font-size: 250%; } }
+/*common组件*/
+header {
+  height: .8rem;
+  font-size: .34rem; }
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 93.7%; }
+
+/*# sourceMappingURL=commom.css.map */

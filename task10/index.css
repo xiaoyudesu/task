@@ -57,6 +57,9 @@ a:focus{
     outline: none;
 }
 
+body{
+    min-width: 300px;
+}
 
 /*layout*/
 header{
@@ -64,6 +67,7 @@ header{
     background-color: #1d7ad9;
     line-height: 2em;
     color: #fff;
+    overflow: hidden;
 }
 
 

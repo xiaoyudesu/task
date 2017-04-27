@@ -1,0 +1,50 @@
+/*reset*/
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+button,
+label,
+select,
+input,
+option,
+button {
+  margin: 0;
+  padding: 0; }
+
+button {
+  border: 0;
+  outline: none;
+  background: transparent;
+  cursor: pointer; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none; }
+
+/*common-var*/
+
+/*# sourceMappingURL=reset.css.map */

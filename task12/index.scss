@@ -281,11 +281,12 @@ html{
   }
 }
 
-
+body,
 header,
 main,
 footer{
   max-width: 720px;
+  min-width: 300px;
   margin: auto;
 }
 
@@ -336,6 +337,7 @@ footer{
     font-size: 250%;
   }
 }
+/*
 
 @media (max-width: 300px) {
   html {
@@ -354,3 +356,4 @@ footer{
     font-size: 150%;
   }
 }
+*/
