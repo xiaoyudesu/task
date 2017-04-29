@@ -1,13 +1,14 @@
 @charset "utf-8";
 
-/*common-var*/
+/*全局变量*/
 $blue: #29bde0;
 $yellow: #fbb435;
 $gray: #9a9a9a;
 $bg-gray: #f0f0f0;
 
-/*common样式*/
-/*小组件*/
+
+
+/*基础样式*/
 .flex{
   display: flex;
   align-items: center;
@@ -25,6 +26,7 @@ $bg-gray: #f0f0f0;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1;
   margin: auto;
 }
 
@@ -32,6 +34,7 @@ $bg-gray: #f0f0f0;
   position: absolute;
   top: 0;
   bottom: 0;
+  z-index: 1;
   margin: auto;
 }
 
@@ -50,6 +53,7 @@ $bg-gray: #f0f0f0;
 .fr{
   float: right;
 }
+
 
 /*@media自适应查询*/
 @media (max-width: 600px) {
@@ -95,7 +99,6 @@ $bg-gray: #f0f0f0;
 }
 
 
-/*common模块*/
 /*限宽*/
 header,
 main,
@@ -105,7 +108,7 @@ footer{
   margin: auto;
 }
 
-/*header样式*/
+/*header组件*/
 header{
   position: fixed;
   top: 0;
@@ -152,7 +155,7 @@ header{
   }
 }
 
-/*main样式*/
+/*main组件*/
 main{
   margin-top: .8rem;
 }

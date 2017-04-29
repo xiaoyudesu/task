@@ -224,7 +224,7 @@ main p{
 .links a{
     color: #999;
     display: list-item;
-    list-style: disc;
+    /*list-style: disc;*/
 }
 
 @media (max-width: 992px) and (min-width: 768px) {

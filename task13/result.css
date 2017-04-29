@@ -61,9 +61,8 @@ a:focus {
 img {
   display: block; }
 
-/*common-var*/
-/*common样式*/
-/*小组件*/
+/*全局变量*/
+/*基础样式*/
 .flex {
   display: flex;
   align-items: center;
@@ -79,12 +78,14 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1;
   margin: auto; }
 
 .absol-v {
   position: absolute;
   top: 0;
   bottom: 0;
+  z-index: 1;
   margin: auto; }
 
 .text-a {
@@ -121,7 +122,6 @@ img {
 @media (max-width: 350px) {
   html {
     font-size: 350%; } }
-/*common模块*/
 /*限宽*/
 header,
 main,
@@ -130,7 +130,7 @@ footer {
   min-width: 300px;
   margin: auto; }
 
-/*header样式*/
+/*header组件*/
 header {
   position: fixed;
   top: 0;
@@ -166,7 +166,7 @@ header {
         width: .38rem;
         height: .38rem; }
 
-/*main样式*/
+/*main组件*/
 main {
   margin-top: .8rem; }
 
