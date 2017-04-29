@@ -1,0 +1,61 @@
+@charset "utf-8";
+@import "../base";
+@import "../gird";
+
+
+footer{
+  padding-top: 40px;
+  background-color: #29b078;
+  color: #fff;
+
+  a{
+    &:hover{
+      border-bottom: 1px solid #fff;
+      padding-bottom: .2em;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &:active{
+      color: #000;
+    }
+  }
+
+  p{
+    color: #fff;
+  }
+
+  li{
+    height: .4rem;
+
+
+    div{
+      display: inline;
+      height: 100%;
+      width: 40%;
+
+      &:first-child{
+        margin-right: 10%;
+      }
+    }
+  }
+
+  .copyright{
+    border-top: 1px solid #fff;
+    text-align: center;
+    line-height: 2;
+  }
+
+  .public-code{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    .qrcode{
+      margin: 10px;
+    }
+  }
+}
+

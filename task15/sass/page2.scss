@@ -1,0 +1,117 @@
+@import "components/header";
+@import "components/nav";
+@import "components/footer";
+
+body{
+  background-color: #fafafa;
+  main{
+    a{
+      color: $blue;
+      &.active,
+      &:hover{
+        color: #f9a372;
+
+        span{
+          background-color: #ff7527;
+        }
+      }
+    }
+    .nav-bread{
+      line-height: 3em;
+
+      .index{
+        color: #000;
+      }
+    }
+
+    .article{
+
+      .box-l{
+        margin:0 1em 1em 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        -webkit-box-shadow: 2px 2px 2px #ccc;
+        -moz-box-shadow: 2px 2px 2px #ccc;
+        box-shadow: 2px 2px 2px #ccc;
+        background-color: #fff;
+        @media (max-width: 768px){
+          margin-right: 0;
+        }
+
+
+        h4{
+          line-height: 6em;
+          text-align: center;
+        }
+
+        ul{
+          border-top: 1px solid #ccc;
+          font-size: .14rem;
+
+          li{
+            margin: 1.5em auto;
+            width: 6em;
+
+
+            span{
+              display: inline-block;
+              width: 10px;
+              height: 10px;
+              margin: 0 7px;
+              border: 1px solid #ff7527;
+              border-radius: 50%;
+            }
+
+
+          }
+        }
+
+      }
+
+      .box-r{
+        margin: 0 0 10em 1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        -webkit-box-shadow: 2px 2px 2px #ccc;
+        -moz-box-shadow: 2px 2px 2px #ccc;
+        box-shadow: 2px 2px 2px #ccc;
+        color: #999;
+        font-size: .14rem;
+        line-height: 2em;
+        background-color: #fff;
+        @media (max-width: 768px){
+          margin-left: 0;
+        }
+
+        .introduct{
+          border-bottom: 1px solid #ccc;
+          overflow: hidden;
+
+
+          P{
+            margin: 2em;
+
+          }
+
+          img{
+            float: left;
+            padding: 2em 2em 1em 2em;
+          }
+        }
+
+        .main-article{
+
+        p{
+          margin: 2em;
+          text-indent: 2em;
+
+        }
+
+        }
+
+
+      }
+    }
+
+  }
+}

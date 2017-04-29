@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="images" ImageName="task8-1" IsPhone="false" PhoneFigure="2" PhoneUnit="rem" SpriteImgFileType="Png" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="user.png" LocationX="0" LocationY="0" />
+    <Sprite Path="dot.png" LocationX="0" LocationY="13" />
+    <Sprite Path="wechat.png" LocationX="0" LocationY="29" />
+    <Sprite Path="weibo.png" LocationX="0" LocationY="53" />
+    <Sprite Path="qq.png" LocationX="0" LocationY="77" />
+    <Sprite Path="arrow.png" LocationX="0" LocationY="101" />
+    <Sprite Path="形状 7 拷贝 5.png" LocationX="0" LocationY="148" />
+    <Sprite Path="fast.png" LocationX="0" LocationY="178" />
+    <Sprite Path="contact.png" LocationX="0" LocationY="240" />
+    <Sprite Path="rule.png" LocationX="0" LocationY="295" />
+    <Sprite Path="qrcode.png" LocationX="0" LocationY="343" />
+    <Sprite Path="qiniu.png" LocationX="0" LocationY="435" />
+    <Sprite Path="person-four.png" LocationX="0" LocationY="559" />
+    <Sprite Path="huanxin.png" LocationX="0" LocationY="687" />
+    <Sprite Path="person-three.png" LocationX="0" LocationY="756" />
+    <Sprite Path="person-two.png" LocationX="0" LocationY="892" />
+    <Sprite Path="person-one.png" LocationX="0" LocationY="1008" />
+    <Sprite Path="alibaba.png" LocationX="0" LocationY="1169" />
+    <Sprite Path="yuntongxun.png" LocationX="0" LocationY="1353" />
+    <Sprite Path="kingsoftcloud.png" LocationX="0" LocationY="1544" />
+  </SpriteList>
+</SpriteFile>

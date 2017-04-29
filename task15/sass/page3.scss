@@ -1,0 +1,86 @@
+@import "components/header";
+@import "components/nav";
+@import "components/job";
+@import "components/footer";
+
+
+
+body{
+  background-color: #fafafa;
+
+  main{
+    &:after{
+      display: block;
+      height: 100px;
+      content: '';
+    }
+
+    a{
+      color: #000;
+    }
+
+    .nav-bread{
+      border-bottom: 1px solid #ccc;
+      a{
+        line-height: 5em;
+        color: $blue;
+        &.index{
+          color: #000;
+        }
+
+      }
+    }
+
+    .direction{
+      line-height: 5em;
+      font-size: .14rem;
+      border-bottom: 1px solid #edf1f2;
+
+      p{
+        display: inline-block;
+        color: #ccc;
+      }
+
+      ul{
+        display: inline-block;
+
+        li{
+          display: inline-block;
+          a{
+            padding: .2em;
+            margin: 0 1em;
+            color: #000;
+
+          }
+          &:hover,
+          &.active{
+            a{
+              background-color: $blue;
+              color: #fff;
+            }
+
+          }
+        }
+      }
+    }
+    h4{
+      line-height: 5em;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .row{
+      [class^="col-"]{
+        padding: 50px 5px 0 0;
+        overflow: hidden;
+
+
+        .big-box{
+          h4{
+            border: 0;
+          }
+
+        }
+      }
+    }
+  }
+}
