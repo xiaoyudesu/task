@@ -1,6 +1,6 @@
 @import "components/header";
 @import "components/nav";
-@import "components/carsousel";
+@import "components/carousel";
 @import "components/slogan";
 @import "components/study-path";
 @import "components/student-show";
@@ -47,6 +47,7 @@
             font-size: .14rem;
             color: $gray;
             display: list-item;
+
           }
         }
       }

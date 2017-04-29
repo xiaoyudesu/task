@@ -778,13 +778,6 @@ img {
   border-radius: 50%;
   border: 1px solid #fff; }
 
-.ab {
-  margin-top: 200px;
-  width: 100px;
-  height: 100px;
-  background-color: #000;
-  animation: run 5s infinite; }
-
 @keyframes run {
   0% {
     top: 0; }
