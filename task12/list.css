@@ -80,87 +80,6 @@ p {
 
 /*纯css的select框模拟，可修改各种样式*/
 /*开始*/
-.select-box {
-  position: relative;
-  width: 33.3%;
-  height: .8rem;
-  background-color: #fff;
-  border-bottom: .01rem solid #e1e5e7; }
-
-.select-head span[id]:target {
-  display: block;
-  z-index: 1; }
-
-span.checked {
-  display: block;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: .8rem;
-  font-size: .28rem;
-  color: #999;
-  background-color: #fff; }
-
-.select-head span[id] {
-  display: none;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  margin: auto;
-  line-height: .8rem;
-  text-align: center;
-  font-size: .28rem;
-  color: #999;
-  background-color: #fff; }
-
-.select-body {
-  position: absolute;
-  z-index: -1;
-  top: 100%;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: .02rem .02rem .02rem #ccc;
-  border-radius: .05rem;
-  border: .01rem solid #e1e5e7; }
-
-.select-body a {
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  font-size: .28rem;
-  color: #999; }
-
-.select-body a:hover {
-  background-color: #5fc0cd; }
-
-.select-box:hover .select-body {
-  z-index: 2; }
-
-/*结尾*/
-.line-gradients {
-  width: .01rem;
-  height: 100%;
-  background: -webkit-radial-gradient(#e3e7e8, #fff);
-  /* Safari 5.1 - 6.0 */
-  background: -o-radial-gradient(#e3e7e8, #fff);
-  /* Opera 11.6 - 12.0 */
-  background: -moz-radial-gradient(#e3e7e8, #fff);
-  /* Firefox 3.6 - 15 */
-  background: radial-gradient(#e3e7e8, #fff);
-  /*  */ }
-
-.caret {
-  height: .08rem;
-  width: .13rem;
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 4%;
-  z-index: 99; }
-
 html {
   font-size: 625%; }
   html body {
@@ -206,9 +125,71 @@ html {
       height: .8rem;
       margin-top: .9rem;
       border-bottom: .01rem solid #e1e5e7; }
+      html body nav .select {
+        width: 33.3%;
+        height: .8rem;
+        text-align: center;
+        border-bottom: .01rem solid #e1e5e7; }
+        html body nav .select .show {
+          position: relative;
+          height: .8rem;
+          background-color: #1d7ad9; }
+          html body nav .select .show .caret {
+            height: .08rem;
+            width: .13rem;
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 4%;
+            z-index: 20; }
+          html body nav .select .show input + span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: -1;
+            line-height: .8rem;
+            font-size: .28rem;
+            color: #999;
+            background-color: #fff; }
+          html body nav .select .show input {
+            display: none; }
+            html body nav .select .show input:checked + span {
+              z-index: 1;
+              height: .8rem;
+              font-size: .28rem;
+              color: #999;
+              background-color: #fff; }
+        html body nav .select .option {
+          background-color: #fff;
+          display: none;
+          position: relative;
+          z-index: 10;
+          box-shadow: 2px 2px 2px #ccc;
+          border-radius: 0 0 5px 5px; }
+          html body nav .select .option label {
+            display: block;
+            line-height: 2em;
+            border-top: 1px solid #ccc; }
+            html body nav .select .option label:hover {
+              background-color: #29b078;
+              color: #000; }
+        html body nav .select:hover .option {
+          display: block; }
+      html body nav .line-gradients {
+        width: .01rem;
+        height: 100%;
+        background: -webkit-radial-gradient(#e3e7e8, #fff);
+        /* Safari 5.1 - 6.0 */
+        background: -o-radial-gradient(#e3e7e8, #fff);
+        /* Opera 11.6 - 12.0 */
+        background: -moz-radial-gradient(#e3e7e8, #fff);
+        /* Firefox 3.6 - 15 */
+        background: radial-gradient(#e3e7e8, #fff);
+        /*  */ }
     html body main {
-      position: relative;
-      z-index: 1;
       margin-bottom: 1rem;
       background-color: #fff; }
       html body main li {
