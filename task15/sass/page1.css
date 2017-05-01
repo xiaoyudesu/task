@@ -32,7 +32,8 @@ button {
 html {
   font-size: 625%; }
   html body {
-    font: .14rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif; }
+    font: 14px/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font: .14rem/1.5; }
     html body h4 {
       font-size: .16rem; }
 
@@ -484,7 +485,8 @@ button {
 html {
   font-size: 625%; }
   html body {
-    font: .14rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif; }
+    font: 14px/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font: .14rem/1.5; }
     html body h4 {
       font-size: .16rem; }
 
@@ -917,6 +919,7 @@ nav {
           nav .container .navbar-header button .icon-bar {
             width: 20px;
             height: 2px;
+            margin: 2px;
             background-color: #000; }
           nav .container .navbar-header button label {
             display: inline-block;
@@ -939,7 +942,7 @@ nav {
       padding: 0 1em;
       color: #fff; }
       nav .container ul li.active, nav .container ul li:hover {
-        border-bottom: 4px solid #fff; }
+        border-bottom: .04rem solid #fff; }
       nav .container ul li a {
         line-height: .8rem;
         color: #fff; }
@@ -999,7 +1002,8 @@ button {
 html {
   font-size: 625%; }
   html body {
-    font: .14rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif; }
+    font: 14px/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font: .14rem/1.5; }
     html body h4 {
       font-size: .16rem; }
 
@@ -1226,7 +1230,8 @@ button {
 html {
   font-size: 625%; }
   html body {
-    font: .14rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif; }
+    font: 14px/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font: .14rem/1.5; }
     html body h4 {
       font-size: .16rem; }
 
@@ -1704,7 +1709,8 @@ button {
 html {
   font-size: 625%; }
   html body {
-    font: .14rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif; }
+    font: 14px/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font: .14rem/1.5; }
     html body h4 {
       font-size: .16rem; }
 
@@ -2171,7 +2177,8 @@ button {
 html {
   font-size: 625%; }
   html body {
-    font: .14rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif; }
+    font: 14px/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font: .14rem/1.5; }
     html body h4 {
       font-size: .16rem; }
 
@@ -2663,7 +2670,8 @@ button {
 html {
   font-size: 625%; }
   html body {
-    font: .14rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif; }
+    font: 14px/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font: .14rem/1.5; }
     html body h4 {
       font-size: .16rem; }
 
@@ -3125,7 +3133,8 @@ button {
 html {
   font-size: 625%; }
   html body {
-    font: .14rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif; }
+    font: 14px/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font: .14rem/1.5; }
     html body h4 {
       font-size: .16rem; }
 

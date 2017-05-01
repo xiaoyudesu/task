@@ -35,6 +35,7 @@ nav{
           .icon-bar{
             width: 20px;
             height: 2px;
+            margin: 2px;
             background-color: #000;
           }
 
@@ -81,7 +82,7 @@ nav{
 
         &.active,
         &:hover{
-          border-bottom: 4px solid #fff;
+          border-bottom: .04rem solid #fff;
         }
 
         a{
