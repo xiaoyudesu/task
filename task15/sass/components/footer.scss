@@ -3,10 +3,15 @@
 @import "../gird";
 
 
+
+
 footer{
   padding-top: 40px;
   background-color: #29b078;
   color: #fff;
+  h4{
+    font-weight: normal;
+  }
 
   a{
     &:hover{

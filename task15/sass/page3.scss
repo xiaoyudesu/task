@@ -7,7 +7,7 @@
 
 body{
   background-color: #fafafa;
-
+  
   main{
     &:after{
       display: block;
@@ -35,14 +35,15 @@ body{
       line-height: 5em;
       font-size: .14rem;
       border-bottom: 1px solid #edf1f2;
+      overflow: hidden;
 
       p{
-        display: inline-block;
+        float: left;
         color: #ccc;
       }
 
       ul{
-        display: inline-block;
+        float: left;
 
         li{
           display: inline-block;
@@ -62,18 +63,20 @@ body{
           }
         }
       }
+
+      @media (max-width: 768px){
+        line-height: 2.5em;
+      }
     }
+
     h4{
       line-height: 5em;
       border-bottom: 1px solid #ccc;
     }
 
     .row{
+      margin: 0 -20px;
       [class^="col-"]{
-        padding: 50px 5px 0 0;
-        overflow: hidden;
-
-
         .big-box{
           h4{
             border: 0;

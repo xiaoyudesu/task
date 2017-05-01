@@ -115,7 +115,19 @@ img {
 /*common-verb*/
 .carousel {
   position: relative;
-  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64); }
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+  overflow: hidden; }
+  .carousel:hover .auto-run {
+    opacity: 0;
+    transition: opacity .5s; }
+  .carousel .auto-run {
+    position: absolute;
+    z-index: 2;
+    width: 300%;
+    transition: opacity .5s;
+    animation: run infinite  10s; }
+    .carousel .auto-run img {
+      float: left; }
   .carousel .carousel-inner {
     position: relative;
     overflow: hidden;
@@ -162,7 +174,9 @@ img {
       left: 0;
       right: 0;
       text-align: center;
-      z-index: 10; }
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 1s; }
       .carousel .carousel-inner .carousel-indicators li {
         display: inline-block;
         margin: 0 5px; }
@@ -191,27 +205,24 @@ img {
   border-radius: 50%;
   border: 1px solid #fff; }
 
+.carousel:hover .carousel-indicators {
+  opacity: 1;
+  transition: opacity 1s; }
+
 @keyframes run {
   0% {
-    top: 0; }
+    margin-left: 0; }
   25% {
-    top: 25px; }
-  50% {
-    top: 50px; }
-  75% {
-    top: 75px; }
+    margin-left: 0; }
+  35% {
+    margin-left: -100%; }
+  60% {
+    margin-left: -100%; }
+  70% {
+    margin-left: -200%; }
+  95% {
+    margin-left: -200%; }
   100% {
-    top: 0px; } }
-@keyframes run {
-  0% {
-    left: 0; }
-  25% {
-    left: 25px; }
-  50% {
-    left: 50px; }
-  75% {
-    left: 75px; }
-  100% {
-    left: 100px; } }
+    margin-left: 0%; } }
 
 /*# sourceMappingURL=carousel.cssmap */

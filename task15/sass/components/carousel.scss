@@ -1,16 +1,37 @@
 @charset "utf-8";
 @import "../base";
 
+
 .carousel {
   position: relative;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+  overflow: hidden;
+
+
+  &:hover{
+    .auto-run{
+      opacity: 0;
+      transition: opacity .5s;
+    }
+  }
+
+
+  .auto-run{
+    position: absolute;
+    z-index: 2;
+    width: 300%;
+    transition: opacity .5s;
+    animation:  run infinite  10s;
+
+    img{
+      float: left;
+    }
+  }
 
   .carousel-inner {
     position: relative;
     overflow: hidden;
     width: 100%;
-
-
 
 
     .carousel-open:checked + .carousel-item {
@@ -23,15 +44,12 @@
       opacity: 0;
       -webkit-transition: opacity 0.6s ease-out;
       transition: opacity 0.6s ease-out;
-      //animation: run 5s infinite;
-
 
       img {
         display: block;
         height: auto;
       }
     }
-
 
     .carousel-control {
       border-radius: 50%;
@@ -74,13 +92,13 @@
       right: 0;
       text-align: center;
       z-index: 10;
+      opacity: 0;
+      transition: opacity 1s;
 
 
       li {
         display: inline-block;
         margin: 0 5px;
-
-
 
 
         .carousel-bullet {
@@ -99,17 +117,9 @@
           }
 
         }
-
-
       }
-
     }
-
-
-
   }
-
-
 }
 
 
@@ -127,19 +137,17 @@
   border: 1px solid #fff;
 }
 
-
-@keyframes run{
-  0% {top: 0;}
-  25%{top: 25px;}
-  50%{top: 50px;}
-  75%{top: 75px;}
-  100%{top: 0px;}
+.carousel:hover .carousel-indicators{
+  opacity: 1;
+  transition: opacity 1s;
 }
 
 @keyframes run {
-  0% {left: 0;}
-  25%{left: 25px;}
-  50%{left: 50px;}
-  75%{left: 75px;}
-  100%{left: 100px;}
+  0% {margin-left: 0;}
+  25% {margin-left: 0;}
+  35% {margin-left: -100%;}
+  60% {margin-left: -100%;}
+  70% {margin-left: -200%;}
+  95% {margin-left: -200%;}
+  100% {margin-left: 0%;}
 }

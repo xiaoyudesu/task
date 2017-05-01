@@ -3,8 +3,11 @@
 @import "../gird";
 
 .student-show {
+  h4{
+    font-weight: normal;
+  }
 
-  .container {
+  .row{
     .inner {
       display: flex;
       flex-direction: column;
@@ -23,6 +26,7 @@
         -moz-box-shadow:  5px 5px 10px #ccc;
         box-shadow:  5px 5px 10px  #ccc;
       }
+
 
 
       .img-box {

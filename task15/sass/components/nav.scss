@@ -2,26 +2,23 @@
 @import  "../base";
 @import  "../gird";
 
-
 nav{
   background-color: #29b078;
   overflow: hidden;
 
   .container{
-
-
     .navbar-header{
       float: left;
       height: .8rem;
-
 
       @media (max-width: 768px){
         float: none;
         height: .4rem;
 
+
         button{
-          float: right;
           display: flex;
+          float: right;
           flex-direction: column;
           align-items: center;
           justify-content: space-around;
@@ -29,18 +26,28 @@ nav{
           height: 30px;
           padding: 5px;
 
-
           &:hover{
             background-color: #fff;
             border-radius: 5px;
           }
+
 
           .icon-bar{
             width: 20px;
             height: 2px;
             background-color: #000;
           }
+
+
+          label{
+            display: inline-block;
+            position: absolute;
+            width: 40px;
+            height: 100%;
+          }
+
         }
+
 
         .navbar-brand{
           img{
@@ -51,39 +58,59 @@ nav{
 
     }
 
+    #ul{
+      display: none;
+
+      &:checked+ul{
+        height: 12em;
+        transition: height .5s;
+      }
+    }
+
+
     ul{
       float: right;
       display: flex;
-      height: .8rem;
       align-items: center;
 
-        li{
-          height: 100%;
-          padding:0 1em;
-          color: #fff;
 
-          &.active,
-          &:hover{
-            border-bottom: 4px solid #fff;
-          }
+      li{
+        height: .8rem;
+        padding:0 1em;
+        color: #fff;
 
-          a{
-            line-height: .8rem;
-            color: #fff;
-          }
+        &.active,
+        &:hover{
+          border-bottom: 4px solid #fff;
         }
 
+        a{
+          line-height: .8rem;
+          color: #fff;
+        }
+      }
+
       @media (max-width: 768px){
-        //display: none;
         display: block;
         float: none;
         width: 100%;
-        height: auto;
+        height: 0;
         text-align: center;
-        border-top: 1px solid #ccc;
+        -webkit-transition: height .5s;
+        -moz-transition: height .5s;
+        -ms-transition: height .5s;
+        -o-transition: height .5s;
+        transition: height .5s;
+
+
         li{
           float: none;
+          display: block;
           max-height: 3em;
+          &:first-child{
+            border-top: 1px solid #ccc;
+          }
+
 
           &.active,
           &:hover{
@@ -95,10 +122,7 @@ nav{
           }
         }
       }
-
     }
-    
   }
 }
-
 
