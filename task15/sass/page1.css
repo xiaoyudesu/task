@@ -3079,6 +3079,8 @@ img {
     .row .col-xs-100 {
       flex: 0 0 100%; } }
 
+.business .row {
+  padding: 0 15px; }
 .business li {
   position: relative;
   height: 120px;
@@ -3546,6 +3548,8 @@ footer {
   padding-top: 40px;
   background-color: #29b078;
   color: #fff; }
+  footer [class^="col-"] {
+    padding: 0 10px; }
   footer h4 {
     font-weight: normal; }
   footer a:hover {
@@ -3572,10 +3576,13 @@ footer {
   footer .public-code {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: column; }
+    @media (max-width: 768px) {
+      footer .public-code {
+        align-items: flex-start; } }
     footer .public-code .qrcode {
-      margin: 10px; }
+      margin: 10px 0; }
 
 body {
   background-color: #fafafa; }
@@ -3585,7 +3592,7 @@ body {
   body h4 {
     font-weight: normal; }
   body .slogan {
-    margin: 100px 0; }
+    margin: 100px auto; }
   @media (max-width: 768px) {
     body .study-path {
       width: 90%;

@@ -1,0 +1,52 @@
+body{
+    max-width: 400px;
+    margin: auto;
+}
+.box{
+    overflow: hidden;
+}
+
+.box div{
+    float: left;
+    width: 0;
+    height: 0;
+    padding: 15%;
+    background-color: #fea500;
+    margin: 1.65%;
+    border-radius: 10%;
+}
+
+.buttons{
+    overflow: hidden;
+}
+
+button{
+    display: block;
+    float: left;
+    width: 46%;
+    height: 3em;
+    margin: 2%;
+    border:0;
+    outline: none;
+    background-color: #1d7ad9;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+
+button:hover{
+    -webkit-box-shadow:  2px 2px 2px #ccc;
+    -moz-box-shadow:  2px 2px 2px #ccc;
+    box-shadow:  2px 2px 2px #ccc;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.start{
+    background-color: #29b078;
+}
+
+.stop{
+    background-color: #e15053;
+}
+
