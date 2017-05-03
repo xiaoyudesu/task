@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="images" ImageName="img" IsPhone="false" PhoneFigure="2" PhoneUnit="rem" SpriteImgFileType="Png" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="location-logo.png" LocationX="0" LocationY="0" />
+    <Sprite Path="back.png" LocationX="0" LocationY="23" />
+    <Sprite Path="star.png" LocationX="0" LocationY="60" />
+    <Sprite Path="user-logo.png" LocationX="0" LocationY="83" />
+    <Sprite Path="banner-bg.png" LocationX="0" LocationY="252" />
+  </SpriteList>
+</SpriteFile>

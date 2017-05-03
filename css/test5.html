@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="test-sass.css">
+    <style>
+        .select{
+            /*height: 100px;*/
+            /*background-color: #5fc0cd;*/
+            text-align: center;
+            margin: 20px;
+        }
+        
+        .select:hover .option{
+            display: block;
+        }
+
+        .show{
+            position: relative;
+            width: 200px;
+            height: 2em;
+            background-color: #1d7ad9;
+        }
+        .show input{
+            display: none;
+        }
+
+        .show input+span{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: -1;
+        }
+
+        input[type="radio"]:checked+span{
+            z-index: 1;
+        }
+
+        .option{
+            width:200px;
+            background-color: #29b078;
+            display: none;
+        }
+
+        .option label{
+            display: block;
+            height: 2em;
+        }
+
+        .option label:hover{
+            background-color: #e63b0e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="select">
+    <div class="show">
+        <input type="radio" id="one" name="only" checked="checked"><span>one</span>
+        <input type="radio" id="two" name="only"><span>two</span>
+        <input type="radio" id="three" name="only"><span>three</span>
+        <input type="radio" id="four" name="only"><span>fore</span>
+    </div>
+    <div class="option">
+        <label for="one"><span>1</span></label>
+        <label for="two"><span>2</span></label>
+        <label for="three"><span>3</span></label>
+        <label for="four"><span>4</span></label>
+    </div>
+</div>
+
+
+<div class="select">
+    <div class="show">
+        <input type="radio" id="one2" name="only1" checked="checked"><span>one</span>
+        <input type="radio" id="two2" name="only1"><span>two</span>
+        <input type="radio" id="three2" name="only1"><span>three</span>
+        <input type="radio" id="four2" name="only1"><span>fore</span>
+    </div>
+    <div class="option">
+        <label for="one2"><span>1</span></label>
+        <label for="two2"><span>2</span></label>
+        <label for="three2"><span>3</span></label>
+        <label for="four2"><span>4</span></label>
+    </div>
+</div>
+
+
+<div class="select">
+    <div class="show">
+        <input type="radio" id="one1" name="only2" checked="checked"><span>one</span>
+        <input type="radio" id="two1" name="only2"><span>two</span>
+        <input type="radio" id="three1" name="only2"><span>three</span>
+        <input type="radio" id="four1" name="only2"><span>fore</span>
+    </div>
+    <div class="option">
+        <label for="one1"><span>1</span></label>
+        <label for="two1"><span>2</span></label>
+        <label for="three1"><span>3</span></label>
+        <label for="four1"><span>4</span></label>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+@charset "utf-8";
+@import "../base";
+@import "../gird";
+
+.study-path{
+  [class^="col-"]{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    color: $gray;
+    font-size: .14rem;
+
+    .number{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3em;
+      min-width:3em;
+      height: 3em;
+      margin: 1em 1em;
+      background-color: #fff;
+      border-radius: 50%;
+      color: $blue;
+      -webkit-box-shadow:  2px 2px 4px #ccc;
+      -moz-box-shadow:  2px 2px 4px #ccc;
+      box-shadow:  2px 2px 4px #ccc;
+    }
+
+    p{
+      flex-grow: 1;
+    }
+
+    img{
+      margin: .5em;
+    }
+
+  }
+}

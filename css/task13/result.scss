@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+@import "reset";
+@import "commom";
+
+
+
+header{
+  border-bottom: .01rem solid #74d4eb;
+}
+
+main{
+  margin-bottom: 1.3rem;
+  letter-spacing: 0;
+
+  .result{
+    padding: 0 .77rem;
+    background-color: $blue;
+
+    .win-logo{
+      width: 3.51rem;
+      padding-top: 1em;
+      margin: auto;
+    }
+
+    .win-text{
+      padding-top: .5em;
+      //font-size: .28rem;
+      font-weight: 400;
+      line-height: 1.3;
+      color: #ffc865;
+    }
+
+    .win-detail{
+      padding-top: .6rem;
+      padding-bottom: .2rem;
+      font-size: .24rem;
+      color: #fff;
+
+      ul{
+        overflow: hidden;
+
+        li{
+          float: left;
+          width: 33.3%;
+        }
+      }
+    }
+  }
+
+  .game-detail{
+    .day{
+      padding: 0 .77rem;
+      padding-bottom: 1em;
+      border-bottom: .01rem solid #ccc;
+
+      .title{
+        padding-bottom: .1rem;
+        line-height: 1.5;
+
+        .the-day{
+          font-size: .28rem;
+          color: #000;
+        }
+
+        .time{
+          float: right;
+          font-size: .18rem;
+          color: #c7c7c7;
+          line-height: .48rem;
+        }
+      }
+
+      p{
+        font-size: .22rem;
+        color: #a6a6a6;
+      }
+    }
+  }
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: 1.3rem;
+  letter-spacing: 0;
+  background-color: rgba(153,223,240,0.5);
+
+  .container{
+    height: 100%;
+    justify-content: space-around;
+    button{
+      display: block;
+      width: 40%;
+      height: .88rem;
+      font-size: .4rem;
+      color: #fff;
+      border-radius: .1rem;
+    }
+
+    .btn-l{
+      background-color: #f66f6f;
+    }
+
+    .btn-r{
+      background-color: #fbb435;
+    }
+  }
+}

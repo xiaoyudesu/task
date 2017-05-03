@@ -1,0 +1,220 @@
+/*reset*/
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, img,
+ol, ul, li, footer, header,menu, nav, audio, video,button {
+    margin:0;
+    padding:0;
+}
+
+html{
+    font-size: 625%;
+}
+
+button{
+    background-color: transparent;
+    outline: none;
+    border: 0;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+
+a:hover{
+    text-decoration: none;
+    text-shadow: 2px 2px 4px #000;
+    color: #fff;
+}
+
+a:active{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+/*layout*/
+body{
+    background: #29bde0;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: .6rem;
+    padding: 0 2%;
+    background: #29bde0;
+    text-align: center;
+    font-size: .25rem;
+    line-height: .6rem;
+    vertical-align: middle;
+    color: #fff;
+}
+
+header button{
+    height: .6rem;
+}
+
+header img{
+    width: .3rem;
+}
+
+header .menu{
+    float: left;
+}
+
+header .closed{
+    float: right;
+}
+
+main{
+    height: auto;
+    padding-top: .6rem;
+    padding-bottom: .8rem;
+    background-color: #29bde0;
+    overflow:hidden;
+    zoom:1;
+}
+
+main .vote-please{
+    position: relative;
+    height: .6rem;
+    padding: 0 3%;
+    line-height: .6rem;
+    background-color: #b9e9f5;
+    font-size: .18rem;
+}
+
+main .vote-please a{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 3%;
+    margin: auto;
+}
+
+main a img{
+    width: .4rem;
+
+}
+
+main .tri{
+    position: relative;
+    left:10%;
+    width: 0;
+    height: 0;
+    border-top: solid .1rem #b9e9f5;
+    border-left: solid .1rem transparent;
+    border-right: solid .1rem transparent;
+}
+
+main .click{
+    color: #fff;
+    margin-left: 10%;
+    text-align: left;
+}
+
+main .net{
+    margin-top: .1rem;
+}
+main .net .box{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 33.3%;
+    height: 33.3vw;
+    padding: 0 4%;
+}
+
+.net .box .job-box{
+    height: 25vw;
+    border: .05rem solid #fff;
+}
+
+.box .job-box .job{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:70%;
+    background-color: #f5c97b;
+    font-size: .2rem;
+}
+
+.box .job-box .number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    color: #fff;
+    background-color: #83b09a;
+}
+
+.box .action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 8vw;
+    margin-top: -25vw;
+    padding-top: 25vw;
+    /*opacity: 0;*/
+}
+.box .action a{
+    width: 20%;
+}
+.box .action img{
+    width: 100%;
+}
+
+/*
+.box .action:hover{
+    opacity: 1;
+}
+*/
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: .8rem;
+    border-top: 1px solid #fff;
+    background-color: #29bde0;
+    font-size: .2rem;
+    color: #fff;
+}
+
+footer a{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 80%;
+    height: .4rem;
+    background-color: #fbb435;
+    text-align: center;
+    line-height: .4rem;
+    color: #fff;
+}
+
+.action{
+    /*visibility: hidden;*/
+    position: relative;
+    z-index: -1;
+}
+
+.box:hover .action{
+    /*visibility: visible;*/
+    z-index: 1;
+}

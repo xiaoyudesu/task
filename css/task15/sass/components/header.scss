@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@import "../base";
+@import "../gird";
+
+header{
+  height: .4rem;
+  color: #29b078;
+  line-height: .4rem;
+  background-color: #fff;
+  overflow: hidden;
+
+  .container{
+
+    .share{
+      height: .4rem;
+
+      a{
+        margin-left: .1rem;
+      }
+    }
+  }
+}

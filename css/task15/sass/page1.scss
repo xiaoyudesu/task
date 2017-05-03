@@ -1,0 +1,61 @@
+@import "components/header";
+@import "components/nav";
+@import "components/carousel";
+@import "components/slogan";
+@import "components/study-path";
+@import "components/student-show";
+@import "components/business";
+@import "components/footer";
+
+
+  body {
+    background-color: #fafafa;
+    > h4 {
+      margin: 100px 0 50px 0;
+      text-align: center;
+    }
+
+    h4{
+      font-weight: normal;
+    }
+
+    .slogan {
+      margin: 100px auto;
+    }
+
+
+    .study-path{
+      @media (max-width: 768px){
+        width: 90%;
+        margin: auto;
+      }
+    }
+
+    .links{
+      background-color: #fff;
+      margin-top: 100px;
+
+      h4{
+        padding-top: 20px;
+        text-align: center;
+      }
+
+      .container{
+        padding: 20px 0;
+
+        div{
+          line-height: 2em;
+
+          a{
+            margin-left: 40px;
+            font-size: .14rem;
+            color: $gray;
+            display: list-item;
+
+          }
+        }
+      }
+
+    }
+  }
+
