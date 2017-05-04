@@ -1,10 +1,9 @@
 /**
  * Created by xiaoyudesu on 5/1/2017.
  */
+var block=document.getElementsByClassName("a");
 
 function start(){
-    var block=document.getElementsByClassName("a");
-
 
     var color=[];
     for(var a=0;a<9;a++){
@@ -24,7 +23,6 @@ function start(){
         index[b]=parseInt(Math.random()*9);
         console.log(index[b]);
     }
-
     for(var c=0;c<block.length;c++){
         block[c].style.backgroundColor="#fea500";
     }
@@ -40,7 +38,11 @@ function start(){
 
 function stop(){
     clearTimeout(t);
+    for(var c=0;c<block.length;c++){
+        block[c].style.backgroundColor="#fea500";
+    }
 }
+
 
 
 var t;
@@ -80,3 +82,7 @@ for(var i=0;i<2;i++){
         this.style.backgroundColor="#e15053";
     }
 }
+
+
+
+
