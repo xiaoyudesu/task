@@ -31,13 +31,14 @@ function start(){
     block[index[1]].style.backgroundColor=c1;
     block[index[2]].style.backgroundColor=c2;
 
-    clearTimeout(t);
-    t=setTimeout("start()",1000);
+    // clearTimeout(t);
+    // t=setTimeout("start()",1000);
 }
 
 
 function stop(){
-    clearTimeout(t);
+    // clearTimeout(t);
+    clearInterval(v);
     for(var c=0;c<block.length;c++){
         block[c].style.backgroundColor="#fea500";
     }
@@ -45,16 +46,18 @@ function stop(){
 
 
 
+clearInterval(v);
+var v=setInterval("start()",1000);
+
+
 var t;
+
+
 
 var btn=document.getElementsByTagName("button");
 
-btn[0].onclick=function(){
-    start();
-}
-btn[1].onclick=function(){
-    stop();
-}
+btn[0].onclick=start;
+btn[1].onclick=stop;
 
 for(var i=0;i<2;i++){
     btn[i].onmouseover=function(){
