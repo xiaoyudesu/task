@@ -6,11 +6,12 @@ body{
     overflow: hidden;
 }
 
+
 .box div{
     float: left;
     width: 0;
     height: 0;
-    padding: 15%;
+    padding: 15%;   /*用内边距设置正方形*/
     background-color: #fea500;
     margin: 1.65%;
     border-radius: 10%;
