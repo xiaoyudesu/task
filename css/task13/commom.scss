@@ -100,13 +100,13 @@ $bg-gray: #f0f0f0;
 
 
 /*限宽*/
-header,
-main,
-footer{
+
+body,header,footer{
   max-width: 640px;
   min-width: 300px;
   margin: auto;
 }
+
 
 /*header组件*/
 header{
