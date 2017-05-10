@@ -1,0 +1,84 @@
+/*reset*/
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+button,
+label,
+select,
+input,
+option,
+button{
+  margin:0;
+  padding:0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+
+html {
+  font-size: 625%;
+
+  body {
+    font: .32rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    letter-spacing: .1em;
+  }
+}
+
+
+button{
+  border: 0;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover,
+a:focus{
+  text-decoration: none;
+  outline: none;
+}
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img{
+  display: block;
+}
+
+input{
+  appearance: button;
+  -moz-appearance:button; /* Firefox */
+  -webkit-appearance:none;
+  border-radius: 0;
+}
