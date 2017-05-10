@@ -29,6 +29,9 @@ button {
   margin: 0;
   padding: 0; }
 
+* {
+  box-sizing: border-box; }
+
 html {
   font-size: 625%; }
   html body {
@@ -123,9 +126,7 @@ img {
   html {
     font-size: 350%; } }
 /*限宽*/
-header,
-main,
-footer {
+body, header, footer {
   max-width: 640px;
   min-width: 300px;
   margin: auto; }
