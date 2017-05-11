@@ -115,23 +115,41 @@ function sliderColor(){
 
     //设置背景图片的尺寸
     range.style.backgroundSize=left+" 100%";
+    blur();
 }
 
 
+//number失去焦点时
 num.onblur=function(){
+    blur();
+}
+
+    //number失去焦点后的数值判断，封装一下以便后用。
+    function blur(){
     if(Number(num.value) - Math.floor(Number(num.value))==0){
 
         //做数值范围判断
-        if(!(Number(num.value)>5&&Number(num.value)<19)){
-
+        if(Number(num.value)<6){
+            alert("请输入6~18范围内的整数 ㄟ( ▔, ▔ )ㄏ ");
+            // num.value=6;
+            document.getElementById("number").value=range.value=6;
+            return;
+        }else if(Number(num.value)>18){
             alert("请输入6~18范围内的整数 (ｕ_ｕ＃)");
-            // return;
+            // num.value=18;
+            document.getElementById("number").value=range.value=18;
+            return;
         }
     }else{
 
         alert("请输入6~18范围内的整数 (￣ε(#￣)");
-        // return;
+        document.getElementById("number").value=range.value=6;
+
+        console.log(range.value);
+        console.log(document.getElementById("number"));
+        return;
     }
+
 }
 
 
@@ -149,6 +167,7 @@ range.onchange=range.oninput=range.onpropertychange=function(){
 
     sliderColor();
 
+    // blur();
 };
 
 
@@ -176,6 +195,7 @@ sub.onclick=function(){
 
 };
 
+
 //右按键
 add.onclick=function(){
     var a=range.value++;
@@ -192,4 +212,12 @@ add.onclick=function(){
 
 
 
+//添加一个键盘点击事件
+document.onkeypress=function(event){
+    var e = event || window.event || arguments.callee.caller.arguments[0];
+    if(e && e.keyCode==13){
+        blur();
+        return;
+    }
+};
 
