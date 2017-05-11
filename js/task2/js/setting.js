@@ -12,7 +12,9 @@ var sub=document.getElementById("sub");
 var add=document.getElementById("add");
 
 
+
 var killers=[];
+
 
 //先隐藏block子元素
 block.innerHTML="";
@@ -42,11 +44,11 @@ setting.onclick=function(){
             killers = Array(4);
         } else {
             //不符合条件，跳出function代码块
-            alert("请输入6~18范围内的整数");
+            alert("请输入6~18范围内的整数 _(:з」∠)_ ");
             return;
         }
     }else{
-        alert("请输入6~18范围内的整数");
+        alert("请输入6~18范围内的整数╮(╯▽╰)╭ ");
         return;
     }
 
@@ -65,16 +67,19 @@ setting.onclick=function(){
     //合并killers和doctors
     var persons=killers.concat(doctors);
 
+    console.log(persons);
 
     //洗牌算法，随机将项移到最后面，并删除数组项原始值执行多次。
     for(i=0;i<persons.length;i++){
-        var index=Math.floor(Math.random()*person.length);
-        // console.log(index);
+        var index=Math.floor(Math.random()*persons.length);
+        console.log(persons.length);
+        console.log(index);
         persons.push(persons[index]);
         persons.splice(index,1);
     }
-    // console.log(persons);
 
+
+    console.log(persons);
 
     //遍历persons数组项并连接成一个元素字符串
     var personsString="";
@@ -88,19 +93,44 @@ setting.onclick=function(){
 }
 
 
+
+function sliderColor(){
+    //取得当前刻度相对滑杆的百分比
+    var progress=(Number(range.value) - 6)/(18 - 6);
+    // console.log(range.value);
+
+    //取得range的style
+    var rangeStyle=getComputedStyle(range,null);
+    // console.log(range.value);
+    // console.log(progress);
+    // console.log(rangeStyle);
+
+    //取得range的width数值
+    var width=rangeStyle.width;
+    //console.log(width);
+
+    //取得当前刻度的width数值
+    var left=parseInt(width)*progress+"px";
+    //console.log(left);
+
+    //设置背景图片的尺寸
+    range.style.backgroundSize=left+" 100%";
+}
+
+
 num.onblur=function(){
     if(Number(num.value) - Math.floor(Number(num.value))==0){
 
         //做数值范围判断
         if(!(Number(num.value)>5&&Number(num.value)<19)){
 
-            alert("请输入6~18范围内的整数");
-            return;
+            alert("请输入6~18范围内的整数 (ｕ_ｕ＃)");
+            // return;
         }
     }else{
 
-        alert("请输入6~18范围内的整数");
-        return;
+        alert("请输入6~18范围内的整数 (￣ε(#￣)");
+        // return;
     }
 }
 
@@ -110,26 +140,56 @@ num.onblur=function(){
 //初始化range的值
 range.value=6;
 
-//滑块绑定number
+sliderColor();
+
+//滑块绑定number以及滑杆左右动态发生颜色变化
 range.onchange=range.oninput=range.onpropertychange=function(){
     document.getElementById("number").value=range.value;
     // console.log(range.value);
+
+    sliderColor();
+
 };
+
+
+
 
 //number绑定滑块
 num.onchange=function(){
     range.value=document.getElementById("number").value;
+
+    sliderColor();
+
 };
+
 
 //左按键
 sub.onclick=function(){
-    range.value--;
+    var a=range.value--;
     document.getElementById("number").value=range.value;
+
+    sliderColor();
+
+    if(range.value == 6&& a == 6){
+        alert("到底了●︿●");
+    };
+
 };
 
 //右按键
 add.onclick=function(){
-    range.value++;
+    var a=range.value++;
+    // console.log(c);
     document.getElementById("number").value=range.value;
+
+    sliderColor();
+    console.log(range.value);
+
+    if(range.value == 18&& a == 18){
+        alert("到头了●﹏●");
+    };
 };
+
+
+
 
