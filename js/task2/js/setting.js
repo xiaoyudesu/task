@@ -143,7 +143,7 @@ num.onblur=function(){
     }else{
 
         alert("请输入6~18范围内的整数 (￣ε(#￣)");
-        document.getElementById("number").value=range.value=6;
+        document.getElementById("number").value=range.value=12;
 
         console.log(range.value);
         console.log(document.getElementById("number"));

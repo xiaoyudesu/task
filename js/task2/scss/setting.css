@@ -69,7 +69,9 @@ input {
   -moz-appearance: button;
   /* Firefox */
   -webkit-appearance: none;
-  border-radius: 0; }
+  border-radius: 0;
+  border: none;
+  border: 0; }
 
 /*全局变量*/
 /*基础样式*/
@@ -328,6 +330,7 @@ main {
           outline: none;
           height: .04rem;
           width: 100%;
+          border: none;
           /*用渐变的纯色来代替背景图片，再设置一个背景颜色*/
           background: #ffe6be radial-gradient(#fcc671, #fcc671) left center no-repeat;
           margin: 0; }
@@ -336,7 +339,8 @@ main {
             background-image: url(../images/slider.png);
             background-size: .6rem .36rem;
             width: .6rem;
-            height: .36rem; }
+            height: .36rem;
+            border: 0; }
           main .main3 .row2 div input[type="range"]::-moz-range-thumb {
             -webkit-appearance: none;
             background-image: url(../images/slider.png);
