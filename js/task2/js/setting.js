@@ -1,7 +1,6 @@
 /**
  * Created by xiaoyudesu on 5/10/2017.
  */
-var person=document.getElementsByClassName("character");
 var killer=document.getElementsByClassName("killer")[0];
 var doctor=document.getElementsByClassName("doctor")[0];
 var block=document.getElementById("block");
@@ -10,16 +9,23 @@ var num=document.getElementById("number");
 var range=document.getElementById("range");
 var sub=document.getElementById("sub");
 var add=document.getElementById("add");
-
-
+var deal=document.getElementById("deal");
+var killerWord=document.getElementById("killerWord");
+var doctorWord=document.getElementById("doctorWord");
+var help=document.getElementsByClassName("help")[0];
 
 var killers=[];
-
+var persons;
 
 //先隐藏block子元素
 block.innerHTML="";
 
-//改变person
+//游戏提示
+help.onclick=function(){
+    alert("玩家人数为6~18，选择人数后，点击设置，系统自动分配角色。词组默认为西伯利亚~")
+}
+
+//点击配置人数和角色
 setting.onclick=function(){
     //先把获取的字符串转换为数字
     var number=Number(num.value);
@@ -65,7 +71,7 @@ setting.onclick=function(){
     }
 
     //合并killers和doctors
-    var persons=killers.concat(doctors);
+    persons=killers.concat(doctors);
 
     console.log(persons);
 
@@ -83,17 +89,22 @@ setting.onclick=function(){
 
     //遍历persons数组项并连接成一个元素字符串
     var personsString="";
+    data=[];
     for(i=0;i<persons.length;i++){
         personsString+=persons[i].outerHTML;
+        data[i]=persons[i].nodeValue;
     };
     // console.log(personsString);
 
     //将元素字符串添加到block中
     block.innerHTML=personsString;
+
 }
 
 
 
+
+//滑杆左右颜色设置
 function sliderColor(){
     //取得当前刻度相对滑杆的百分比
     var progress=(Number(range.value) - 6)/(18 - 6);
@@ -115,31 +126,31 @@ function sliderColor(){
 
     //设置背景图片的尺寸
     range.style.backgroundSize=left+" 100%";
-    blur();
+    blurs();
 }
 
 
 //number失去焦点时
 num.onblur=function(){
-    blur();
+    blurs();
 }
 
-    //number失去焦点后的数值判断，封装一下以便后用。
-    function blur(){
-    if(Number(num.value) - Math.floor(Number(num.value))==0){
+//number失去焦点后的数值判断，封装一下以便后用。
+function blurs(){
+if(Number(num.value) - Math.floor(Number(num.value))==0){
 
-        //做数值范围判断
-        if(Number(num.value)<6){
-            alert("请输入6~18范围内的整数 ㄟ( ▔, ▔ )ㄏ ");
-            // num.value=6;
-            document.getElementById("number").value=range.value=6;
-            return;
-        }else if(Number(num.value)>18){
-            alert("请输入6~18范围内的整数 (ｕ_ｕ＃)");
-            // num.value=18;
-            document.getElementById("number").value=range.value=18;
-            return;
-        }
+    //做数值范围判断
+    if(Number(num.value)<6){
+        alert("请输入6~18范围内的整数 ㄟ( ▔, ▔ )ㄏ ");
+        // num.value=6;
+        document.getElementById("number").value=range.value=6;
+        return;
+    }else if(Number(num.value)>18){
+        alert("请输入6~18范围内的整数 (ｕ_ｕ＃)");
+        // num.value=18;
+        document.getElementById("number").value=range.value=18;
+        return;
+    }
     }else{
 
         alert("请输入6~18范围内的整数 (￣ε(#￣)");
@@ -156,7 +167,7 @@ num.onblur=function(){
 
 
 //初始化range的值
-range.value=6;
+document.getElementById("number").value=range.value=6;
 
 sliderColor();
 
@@ -167,7 +178,7 @@ range.onchange=range.oninput=range.onpropertychange=function(){
 
     sliderColor();
 
-    // blur();
+    // blurs();
 };
 
 
@@ -211,13 +222,86 @@ add.onclick=function(){
 };
 
 
+//底部按键
+deal.onclick=function(){
+    if(persons){
 
-//添加一个键盘点击事件
+        if(persons.length!=range.value){
+            alert("要更新数据！(╯‵□′)╯︵┻━┻")
+            return;
+        }
+        console.log(persons);
+
+        var data=[];
+        for(var i=0;i<persons.length;i++){
+            data[i]=persons[i].innerText.toString().replace(/^\s+|\s+$/g,"").slice(0,2);
+        };
+
+        sessionStorage.setItem("character",JSON.stringify(data));
+
+
+        console.log(persons);
+
+        // var h=sessionStorage.getItem("character");
+        // alert(h);
+
+        location.href="../html/characters.html";
+    }else{
+
+        alert("先设置玩家啊！(ノ｀Д´)ノ");
+    }
+
+}
+
+
+
+//为number添加一个键盘点击事件
 document.onkeypress=function(event){
     var e = event || window.event || arguments.callee.caller.arguments[0];
     if(e && e.keyCode==13){
-        blur();
+        blurs();
         return;
     }
 };
+
+
+//清空数据
+sessionStorage.clear();
+
+//词组设置-killer
+killerWord.onblur=function(){
+    //清除chrome无限弹窗bug
+    onfocus=this.blur();
+
+
+    //存值
+    sessionStorage.setItem("word1",killerWord.value);
+
+    //判断下是否输入了东西
+    if(!(killerWord.value.replace(/\s/g,""))){
+        alert("少年哟，真的要隐藏词组吗（︶︿︶）");
+    }
+
+    // var aa=sessionStorage.getItem("word1");
+    // console.log(killerWord.value);
+    // console.log(aa);
+
+};
+
+//词组设置-doctor
+doctorWord.onblur=function(){
+    //清除chrome无限弹窗bug
+    onfocus=this.blur();
+
+    sessionStorage.setItem("word2",doctorWord.value);
+    if(!(doctorWord.value.replace(/\s/g,""))){
+        alert("少年哟，真的要隐藏词组吗（︶︿︶）");
+    }
+
+    // var aa=sessionStorage.getItem("word1");
+    // console.log(doctorWord.value);
+    // console.log(aa);
+
+};
+
 
