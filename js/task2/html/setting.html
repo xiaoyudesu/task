@@ -11,7 +11,7 @@
 <body>
 <header>
     <div class="container">
-        <button class="back pl" onclick="history.go(-1)"><img src="../images/back2.png" alt="" class=""></button>
+        <button class="back pl" onclick="location.href='index.html'"><img src="../images/back2.png" alt="" class=""></button>
         <button class="help pr"><img src="../images/circled-help.png" alt="" class=""></button>
         <p>参数设置</p>
     </div>
@@ -45,10 +45,10 @@
         </div>
         <div class="main2">
             <div class="row1">
-                <input type="text" placeholder="水民词组">
+                <input id="killerWord" type="text" placeholder="杀手词组">
             </div>
             <div class="row2">
-                <input type="text" placeholder="杀手词组">
+                <input id="doctorWord" type="text" placeholder="医生词组">
             </div>
         </div>
         <div class="main3">
@@ -64,10 +64,12 @@
             </div>
         </div>
         <div class="main4">
-            <button>去发牌</button>
+            <button id="deal">去发牌</button>
         </div>
     </div>
 </main>
+
 <script src="../js/setting.js"></script>
+
 </body>
 </html>
