@@ -12,9 +12,7 @@ $(document).ready(function(){
     console.log(characters);
     for(var i=0;i<characters.length;i++){
 
-        divs+='<div class="big-box">'+'<div class="character-box">'+'<div class="character flex">'+characters[i]+'</div>'+'<div class="number flex">'+'<span id="number">'+(i+1)+'</span>'+'号</div>'
-            +'<img class="cover" src="../images/cover.png" alt="">'+
-            '</div>'+'</div>';
+        divs+='<div class="big-box">'+'<div class="character-box">'+'<div class="character flex">'+characters[i]+'</div>'+'<div class="number flex">'+'<span id="number">'+(i+1)+'</span>'+'号</div>'+'<img class="cover" src="../images/cover.png" alt="">'+'</div>'+'</div>';
 
         $("main").html(divs);
 
