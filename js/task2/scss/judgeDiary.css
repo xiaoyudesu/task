@@ -179,7 +179,7 @@ header {
 
 /*main组件*/
 main {
-  padding-top: 0.8rem !important; }
+  padding-top: .8rem; }
   main .container {
     width: 93.7%;
     margin: auto; }

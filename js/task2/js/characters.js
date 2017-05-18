@@ -51,13 +51,13 @@ $(document).ready(function(){
                 if (killerWord) {
                     $("#word").text(killerWord);
                 } else {
-                    $("#word").text("西部利亚");
+                    $("#word").text("德玛西亚");
                 }
             } else if (characters[index - 1] == "平民") {
                 if (civilianWord) {
                     $("#word").text(civilianWord);
                 } else {
-                    $("#word").text("西部利亚");
+                    $("#word").text("成吉思汗");
                 }
             }
 

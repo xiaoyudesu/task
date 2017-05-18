@@ -179,7 +179,7 @@ header {
 
 /*main组件*/
 main {
-  padding-top: 0.8rem !important; }
+  padding-top: .8rem; }
   main .container {
     width: 93.7%;
     margin: auto; }
@@ -191,7 +191,7 @@ footer .container {
 main {
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: .01rem;
+  padding-top: .91rem;
   padding-bottom: .3rem;
   background-color: #f0f0f0;
   box-sizing: border-box; }
