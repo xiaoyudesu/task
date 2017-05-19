@@ -193,6 +193,7 @@ header {
 
 main {
   background-color: #29bde0;
+  padding-bottom: 1.5rem;
   overflow: hidden; }
   main .card {
     position: relative;
@@ -256,13 +257,22 @@ main {
         padding: 0 1em;
         color: #fca000;
         font-size: .26rem; }
-  main button {
-    display: block;
-    width: 4.9rem;
-    height: .9rem;
-    margin: 0 auto .6rem auto;
-    background-color: #fbb435;
-    font-size: .48rem;
-    color: #fff; }
+  main .foot {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    max-width: 640px;
+    min-width: 300px;
+    background-color: #29bde0;
+    border-top: 1px solid #b9e9f5; }
+    main .foot button {
+      display: block;
+      width: 4.9rem;
+      height: .9rem;
+      margin: .6rem auto .6rem auto;
+      background-color: #fbb435;
+      font-size: .48rem;
+      color: #fff; }
 
 /*# sourceMappingURL=characters.css.map */

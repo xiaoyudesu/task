@@ -88,15 +88,18 @@ $(document).ready(function(){
     $(".day-box").last().find(".text").css("background-color","#29bde0");
     $(".day-box").last().find(".tri").css("border-right-color","#29bde0");
 
-    //设置hover效果
-    $(".day-box").last().find(".word-box").hover(function(){
-        $(this).find(".text").css("background-color","#0d8ba1");
-        $(this).find(".tri").css("border-right-color","#0d8ba1");
-    },function () {
-        $(this).find(".text").css("background-color","#29bde0");
-        $(this).find(".tri").css("border-right-color","#29bde0");
-    });
 
+    //有些动画在手机上有bug，因此我们需要禁用
+    if(!(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent))){
+        //设置hover效果
+        $(".day-box").last().find(".word-box").hover(function(){
+            $(this).find(".text").css("background-color","#0d8ba1");
+            $(this).find(".tri").css("border-right-color","#0d8ba1");
+        },function () {
+            $(this).find(".text").css("background-color","#29bde0");
+            $(this).find(".tri").css("border-right-color","#29bde0");
+        });
+    }
 
 
     //已完成的步骤的点击效果

@@ -8,6 +8,7 @@ header{
 
 main{
   background-color: $blue;
+  padding-bottom: 1.5rem;
   overflow: hidden;
 
   .card{
@@ -92,14 +93,24 @@ main{
 
   }
 
-  button{
-    display: block;
-    width: 4.9rem;
-    height: .9rem;
-    margin: 0 auto .6rem auto;
-    background-color: $yellow;
-    font-size: .48rem;
-    color: #fff;
-  }
+  .foot{
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    max-width: 640px;
+    min-width: 300px;
+    background-color: $blue;
+    border-top: 1px solid #b9e9f5;
 
+    button{
+      display: block;
+      width: 4.9rem;
+      height: .9rem;
+      margin: .6rem auto .6rem auto;
+      background-color: $yellow;
+      font-size: .48rem;
+      color: #fff;
+    }
+  }
 }
