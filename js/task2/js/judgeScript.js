@@ -89,11 +89,10 @@ $(document).ready(function(){
     $(".day-box").last().find(".tri").css("border-right-color","#29bde0");
 
     //设置hover效果
-    $(".day-box").last().find(".word-box").mouseover(function(){
+    $(".day-box").last().find(".word-box").hover(function(){
         $(this).find(".text").css("background-color","#0d8ba1");
         $(this).find(".tri").css("border-right-color","#0d8ba1");
-    });
-    $(".day-box").last().find(".word-box").mouseout(function(){
+    },function () {
         $(this).find(".text").css("background-color","#29bde0");
         $(this).find(".tri").css("border-right-color","#29bde0");
     });
