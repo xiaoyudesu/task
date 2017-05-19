@@ -1,0 +1,64 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="range" id="input" value="10" max="30">
+<input type="text" id="data">
+&lt;!&ndash;
+<input id="range" type="range" min="0" max="50000" value="5"step="10" oninput="change()" onchange="change()">
+<span id="value">0</span>&ndash;&gt;
+<script type='text/javascript'>
+/*
+    var document.getElementById
+
+    function change() {
+        var value = document.getElementById('range').value ;
+        document.getElementById('value').innerHTML = value;
+    }
+*/
+input.onpropertychange = input.oninput = input.onchange = function(){
+    data.value = this.value;
+}
+
+
+/*    input.oninput = function(){
+        data.value = this.value;
+        this.value =data.value;
+
+    }*/
+</script>
+</script>
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<h1 >实时监测input中值的变化</h1>
+<input type="range" id="username" min="0" max="50000" step="10">
+<div id="result"></div>
+<script type='text/javascript'>
+    $(function(){
+
+        $('#username').bind('input propertychange', function() {
+            $('#result').html($(this).val());
+        });
+
+    })
+
+
+    input.onpropertychange = input.oninput = input.onchange = function(){
+        data.value = this.value;
+    }
+</script>
+</body>
+</html>
