@@ -1,0 +1,102 @@
+@import "reset";
+
+body{
+  height:100vh;
+  overflow: hidden;
+  background: url(../img/bg5.jpg) no-repeat center center;
+  background-size: cover;
+
+  .box{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 5.4rem;
+    height: 4rem;
+    margin: auto;
+    background-color: #d0d4d9;
+  }
+
+  .title{
+    font-size: .3rem;
+    color: #03a9f4;
+    line-height: .85rem;
+  }
+
+  .input-box{
+    display: flex;
+    align-items: center;
+    width: 4.4rem;
+    height: .65rem;
+    background-color: #fff;
+
+    img{
+      display: inline-block;
+      height: .18rem;
+      padding: 0 .5em;
+      margin-right: .5em;
+      border-right:  1px solid #e8e8e8;
+    }
+
+    input{
+      line-height: 2em;
+      flex: auto;
+      padding-right: 1em;
+      outline: none;
+      letter-spacing: .1em;
+
+      &::-webkit-input-placeholder{
+           color: #999999;
+           font-size: .18rem;
+       }
+    }
+  }
+
+  .tip{
+    height: .4rem;
+    line-height: .4rem;
+    width: 4.4rem;
+    color: red;
+    font-size: .7em;
+
+  }
+  button{
+    width: 4.4rem;
+    height: .6rem;
+    background-color: #03a9f4;
+    border-radius: .1rem;
+    font-size: .18rem;
+    color: #fff;
+  }
+}
+
+@media (max-width: 1700px) {
+  html{
+    font-size: 500%;
+  }
+}
+
+@media (max-width: 1500px) {
+  html{
+    font-size: 450%;
+  }
+}
+
+@media (max-width: 1300px) {
+  html{
+    font-size: 400%;
+  }
+}
+
+
+
+
+
+
+
+
