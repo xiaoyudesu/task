@@ -49,28 +49,14 @@
 
 
 //方法二，jquery的ajax
-
 function ajax() {
 
-    // console.log(b);
-    if (a[a.length - 1] == 1 && b[b.length - 1] == 1) {
-        $("button").css({
-            "cursor": "pointer",
-            "background-color": "#03a9f4"
-        });
+    //判断输入框是否正确，切是否已经循环。
+    if ((a[0] == 1 && b[0] == 1)) {
 
-        //最后一位做个标记
-        a[a.length - 2] = 2;
-        b[b.length - 2] = 2;
-
-        console.log(a);
-        console.log(b);
-        // console.log(a);
-        //查看上次是否已经循环过了
-        if ((a[a.length - 4] !== 2) && (b[b.length - 4] !== 2)) {
-
+        if (!(a[1] || b[1])) {
             $("button").on("click", function () {
-                $.post("http://localhost/daili/a/login", {
+                $.post("/daili/a/login", {
                     name: $(".name").val(),
                     pwd: $(".pwd").val(),
                 }, function (data) {
@@ -82,15 +68,29 @@ function ajax() {
                     }
                 });
             });
+        } else {
+
+            $("button").css({
+                "cursor": "pointer",
+                "background-color": "#03a9f4"
+            });
+            //启用按钮
+            $("button").attr("disabled", false);
+
         }
+
+        //循环时做个标记
+        a[1] = 2;
+        b[1] = 2;
 
     } else {
         $("button").css({
             "cursor": "not-allowed",
             "background-color": "#29bde0"
         });
+        //禁用按钮
+        $("button").attr("disabled", true);
     }
-
 }
 
 
@@ -99,7 +99,10 @@ var patt2 = /^\w{4,16}$/g;
 var a = [], b = [];
 
 $(".name").keyup(function () {
-    a[a.length] = 0;
+    // console.log("a"+a);
+    // console.log("b"+b);
+    // console.log(" ");
+    a[0] = 0;
 
     if ($(this).val().length < 4) {
         $(".p1").text("最少4个字符");
@@ -108,7 +111,7 @@ $(".name").keyup(function () {
             $(".p1").text("请输入字母数字或汉字、下划线");
         } else {
             $(".p1").text("");
-            a[a.length] = 1;
+            a[0] = 1;
         }
     }
 
@@ -116,7 +119,11 @@ $(".name").keyup(function () {
 });
 
 $(".pwd").keyup(function () {
-    b[b.length] = 0;
+
+    // console.log("a"+a);
+    // console.log("b"+b);
+    // console.log(" ");
+    b[0] = 0;
 
     if ($(this).val().length < 4) {
         $(".p2").text("最少4个字符");
@@ -125,10 +132,9 @@ $(".pwd").keyup(function () {
             $(".p2").text("请输入字母数字或汉字、下划线");
         } else {
             $(".p2").text("");
-            b[b.length] = 1;
+            b[0] = 1;
         }
     }
-
     ajax();
 });
 
