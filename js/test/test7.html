@@ -1,64 +1,342 @@
-<!--
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/icon?family=Material+Icons' type='text/css'>
+
+    <title>Document</title>
+    <style>
+
+
+        .sidenav {
+            background: #212121;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+            height: 100%;
+            left: 0;
+            position: fixed;
+            overflow: auto;
+            transform: translate(-262px, 0);
+            transition: transform .3s;
+            top: 0;
+            width: 256px;
+            z-index: 100;
+        }
+
+        .sidenav.show {
+            transform: translate(0, 0);
+        }
+
+        .sidenav-brand {
+            background: #FF5722;
+            border-bottom: 1px solid #FF7043;
+            color: #FAFAFA;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 32px;
+            padding: 20px 24px 19px;
+        }
+
+        .sidenav-header {
+            background: transparent;
+            border-bottom: 1px solid #424242;
+            color: #757575;
+            font-size: 19.2px;
+            line-height: 32px;
+            margin: 0;
+            padding: 16px 24px 15px;
+        }
+
+        .sidenav-header small {
+            display: block;
+            font-size: 14.4px;
+            line-height: 16px;
+        }
+
+        .sidenav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidenav-menu li {
+            display: block;
+            position: relative;
+        }
+
+        .sidenav-menu a {
+            background: transparent;
+            color: #BDBDBD;
+            display: block;
+            line-height: 24px;
+            padding: 16px 32px;
+            text-decoration: none;
+        }
+
+        .sidenav-menu a:hover {
+            background: #616161;
+        }
+
+        .sidenav-menu a.active {
+            color: #FAFAFA;
+        }
+
+        .sidenav-menu a.active .sidenav-link-icon,
+        .sidenav-menu a.active .sidenav-dropdown-icon {
+            color: #FAFAFA;
+        }
+
+        .sidenav-link-icon {
+            color: #757575;
+            display: block;
+            height: 24px;
+            left: 24px;
+            position: absolute;
+            text-align: center;
+            top: 16px;
+            width: 24px;
+        }
+
+        .sidenav-link-title {
+            display: block;
+            padding: 0 16px 0 40px;
+        }
+
+        .sidenav-dropdown {
+            border-bottom: 1px solid #424242;
+            display: none;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidenav-dropdown a {
+            background: #191919;
+            padding-left: 72px;
+        }
+
+        .sidenav-dropdown a:hover {
+            background: #616161;
+        }
+
+        .sidenav-dropdown li:first-child a {
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidenav-dropdown-icon {
+            color: #757575;
+            display: none;
+            height: 16px;
+            right: 16px;
+            position: absolute;
+            text-align: center;
+            top: 16px;
+            width: 16px;
+        }
+
+        .sidenav-dropdown-icon.show {
+            display: block;
+        }
+
+        .sidenav-overlay {
+            background: rgba(255, 255, 255, 0.8);
+            display: none;
+            height: 100%;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 99;
+        }
+
+        .sidenav-no-scroll {
+            overflow: hidden !important;
+        }
+
+        .toggle {
+            display: block;
+            height: 72px;
+            line-height: 72px;
+            text-align: center;
+            width: 72px;
+        }
+    </style>
 </head>
 <body>
-<input type="range" id="input" value="10" max="30">
-<input type="text" id="data">
-&lt;!&ndash;
-<input id="range" type="range" min="0" max="50000" value="5"step="10" oninput="change()" onchange="change()">
-<span id="value">0</span>&ndash;&gt;
-<script type='text/javascript'>
-/*
-    var document.getElementById
 
-    function change() {
-        var value = document.getElementById('range').value ;
-        document.getElementById('value').innerHTML = value;
-    }
-*/
-input.onpropertychange = input.oninput = input.onchange = function(){
-    data.value = this.value;
-}
+<nav class="sidenav" data-sidenav data-sidenav-toggle="#sidenav-toggle">
+
+    <ul class="sidenav-menu">
+        <li>
+            <a href="javascript:;" data-sidenav-dropdown-toggle class="active">
+	          <span class="sidenav-link-icon">
+	            <i class="material-icons">store</i>
+	          </span>
+                <span class="sidenav-link-title">Lorem ipsum</span>
+                <span class="sidenav-dropdown-icon show" data-sidenav-dropdown-icon>
+	            <i class="material-icons">arrow_drop_down</i>
+	          </span>
+                <span class="sidenav-dropdown-icon" data-sidenav-dropdown-icon>
+	            <i class="material-icons">arrow_drop_up</i>
+	          </span>
+            </a>
+
+            <ul class="sidenav-dropdown" data-sidenav-dropdown>
+                <li><a href="javascript:;">Dolor sit amet</a></li>
+                <li><a href="javascript:;">Consectetur adipisicing</a></li>
+                <li><a href="javascript:;">Elit</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;" data-sidenav-dropdown-toggle>
+	          <span class="sidenav-link-icon">
+	            <i class="material-icons">payment</i>
+	          </span>
+                <span class="sidenav-link-title">Sed do eiusmod</span>
+                <span class="sidenav-dropdown-icon show" data-sidenav-dropdown-icon>
+	            <i class="material-icons">arrow_drop_down</i>
+	          </span>
+                <span class="sidenav-dropdown-icon" data-sidenav-dropdown-icon>
+	            <i class="material-icons">arrow_drop_up</i>
+	          </span>
+            </a>
+
+            <ul class="sidenav-dropdown" data-sidenav-dropdown>
+                <li><a href="javascript:;">Tempor incididunt</a></li>
+                <li><a href="javascript:;">Labore</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;" data-sidenav-dropdown-toggle>
+	          <span class="sidenav-link-icon">
+	            <i class="material-icons">shopping_cart</i>
+	          </span>
+                <span class="sidenav-link-title">Dolore magna</span>
+                <span class="sidenav-dropdown-icon show" data-sidenav-dropdown-icon>
+	            <i class="material-icons">arrow_drop_down</i>
+	          </span>
+                <span class="sidenav-dropdown-icon" data-sidenav-dropdown-icon>
+	            <i class="material-icons">arrow_drop_up</i>
+	          </span>
+            </a>
+
+            <ul class="sidenav-dropdown" data-sidenav-dropdown>
+                <li><a href="javascript:;">Aliqua</a></li>
+                <li><a href="javascript:;">Exercitation</a></li>
+                <li><a href="javascript:;">Minim veniam</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">
+	          <span class="sidenav-link-icon">
+	            <i class="material-icons">assignment_ind</i>
+	          </span>
+                <span class="sidenav-link-title">Nostrud ullamco</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+	          <span class="sidenav-link-icon">
+	            <i class="material-icons">alarm</i>
+	          </span>
+                <span class="sidenav-link-title">Commodo</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="sidenav-header">
+        Another Section Header
+    </div>
+
+    <ul class="sidenav-menu">
+        <li>
+            <a href="javascript:;" data-sidenav-dropdown-toggle>
+	          <span class="sidenav-link-icon">
+	            <i class="material-icons">date_range</i>
+	          </span>
+                <span class="sidenav-link-title">Reprehenderit</span>
+                <span class="sidenav-dropdown-icon show" data-sidenav-dropdown-icon>
+	            <i class="material-icons">arrow_drop_down</i>
+	          </span>
+                <span class="sidenav-dropdown-icon" data-sidenav-dropdown-icon>
+	            <i class="material-icons">arrow_drop_up</i>
+	          </span>
+            </a>
+
+            <ul class="sidenav-dropdown" data-sidenav-dropdown>
+                <li><a href="javascript:;">Voluptate</a></li>
+                <li><a href="javascript:;">Excepteur</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">
+	          <span class="sidenav-link-icon">
+	            <i class="material-icons">backup</i>
+	          </span>
+                <span class="sidenav-link-title">Occaecat</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+	          <span class="sidenav-link-icon">
+	            <i class="material-icons">settings</i>
+	          </span>
+                <span class="sidenav-link-title">Deserunt</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<a href="javascript:;" class="toggle" id="sidenav-toggle">
+    <i class="material-icons">menu</i>
+</a>
 
 
-/*    input.oninput = function(){
-        data.value = this.value;
-        this.value =data.value;
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 
-    }*/
+<script>
+    !function (a) {
+        "use strict";
+        function b(b, d) {
+            this.$el = a(b), this.opt = a.extend(!0, {}, c, d), this.init(this)
+        }
+
+        var c = {};
+        b.prototype = {
+            init: function (a) {
+                a.initToggle(a), a.initDropdown(a)
+            }, initToggle: function (b) {
+                a(document).on("click", function (c) {
+                    var d = a(c.target);
+                    d.closest(b.$el.data("sidenav-toggle"))[0] ? (b.$el.toggleClass("show"), a("body").toggleClass("sidenav-no-scroll"), b.toggleOverlay()) : d.closest(b.$el)[0] || (b.$el.removeClass("show"), a("body").removeClass("sidenav-no-scroll"), b.hideOverlay())
+                })
+            }, initDropdown: function (b) {
+                b.$el.on("click", "[data-sidenav-dropdown-toggle]", function (b) {
+                    var c = a(this);
+                    c.next("[data-sidenav-dropdown]").slideToggle("fast"), c.find("[data-sidenav-dropdown-icon]").toggleClass("show"), b.preventDefault()
+                })
+            }, toggleOverlay: function () {
+                var b = a("[data-sidenav-overlay]");
+                b[0] || (b = a('<div data-sidenav-overlay class="sidenav-overlay"/>'), a("body").append(b)), b.fadeToggle("fast")
+            }, hideOverlay: function () {
+                a("[data-sidenav-overlay]").fadeOut("fast")
+            }
+        }, a.fn.sidenav = function (c) {
+            return this.each(function () {
+                a.data(this, "sidenav") || a.data(this, "sidenav", new b(this, c))
+            })
+        }
+    }(window.jQuery);
+
+
+    $('[data-sidenav]').sidenav();
 </script>
-</script>
-
-</body>
-</html>-->
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
-</head>
-<body>
-<h1 >实时监测input中值的变化</h1>
-<input type="range" id="username" min="0" max="50000" step="10">
-<div id="result"></div>
-<script type='text/javascript'>
-    $(function(){
-
-        $('#username').bind('input propertychange', function() {
-            $('#result').html($(this).val());
-        });
-
-    })
 
 
-    input.onpropertychange = input.oninput = input.onchange = function(){
-        data.value = this.value;
-    }
-</script>
 </body>
 </html>

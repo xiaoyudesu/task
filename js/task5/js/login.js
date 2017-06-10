@@ -5,38 +5,41 @@
 
 /*
 
-// 方法一:原生ajax
-var btn=document.getElementsByTagName("button")[0];
-btn.addEventListener("click",function(){
-    var text=document.getElementsByClassName("text")[0].value;
-    var pwd=document.getElementsByClassName("pwd")[0].value;
-    var tip=document.getElementsByClassName("tip")[0];
-    var  ajax;
+ // 方法一:原生ajax
+ var btn=document.getElementsByTagName("button")[0];
+ btn.addEventListener("click",function(){
+ var text=document.getElementsByClassName("text")[0].value;
+ var pwd=document.getElementsByClassName("pwd")[0].value;
+ var tip=document.getElementsByClassName("tip")[0];
+ var  ajax;
 
-    if(window.XMLHttpRequest){
-        ajax=new XMLHttpRequest();
-    }else{
-        ajax=new ActiveXObject();
-    }
+ if(window.XMLHttpRequest){
+ ajax=new XMLHttpRequest();
+ }else{
+ ajax=new ActiveXObject();
+ }
 
-    ajax.onreadystatechange=function(){
-        if((ajax.readyState == 4)&&(ajax.status = 200)){
-            // tip.innerHTML=JSON.parse(ajax.responseText).message;
-            alert(JSON.parse(ajax.responseText).message);
+ ajax.onreadystatechange=function(){
+ if((ajax.readyState == 4)&&(ajax.status = 200)){
+ // tip.innerHTML=JSON.parse(ajax.responseText).message;
+ alert(JSON.parse(ajax.responseText).message);
 
-            if(JSON.parse(ajax.responseText).message=="success"){
-                location.href="http://dev.admin.carrots.ptteng.com/";
-            }
-        }
-    }
+ if(JSON.parse(ajax.responseText).message=="success"){
+ location.href="http://dev.admin.carrots.ptteng.com/";
+ }
+ }
+ }
 
-    ajax.open("POST", "/carrots-admin-ajax//a/login", true);
-    ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    ajax.send("name="+text+"&pwd="+pwd);
-});
+ ajax.open("POST", "/daili/a/login", true);
+ ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+ ajax.send("name="+text+"&pwd="+pwd);
+ });
 
 
-*/
+ */
+
+
+
 
 
 
@@ -46,50 +49,86 @@ btn.addEventListener("click",function(){
 
 
 //方法二，jquery的ajax
-$("button").on("click",function(){
-    $.post("/carrots-admin-ajax/a/login",{
-        name: $(".text").val(),
-        pwd: $(".pwd").val(),
 
-    },function(data){
-        alert(JSON.parse(data).message);
-        if(JSON.parse(data).message=="success"){
-            location.href="http://dev.admin.carrots.ptteng.com/";
+function ajax() {
+
+    // console.log(b);
+    if (a[a.length - 1] == 1 && b[b.length - 1] == 1) {
+        $("button").css({
+            "cursor": "pointer",
+            "background-color": "#03a9f4"
+        });
+
+        //最后一位做个标记
+        a[a.length - 2] = 2;
+        b[b.length - 2] = 2;
+
+        console.log(a);
+        console.log(b);
+        // console.log(a);
+        //查看上次是否已经循环过了
+        if ((a[a.length - 4] !== 2) && (b[b.length - 4] !== 2)) {
+
+            $("button").on("click", function () {
+                $.post("http://localhost/daili/a/login", {
+                    name: $(".name").val(),
+                    pwd: $(".pwd").val(),
+                }, function (data) {
+                    alert(JSON.parse(data).message);
+                    console.log($(".name").val());
+                    console.log($(".pwd").val());
+                    if (JSON.parse(data).message == "success") {
+                        location.href = "http://dev.admin.carrots.ptteng.com/";
+                    }
+                });
+            });
         }
-    });
-});
 
-
-
-var patt1=/[^\w\d_\s\u4e00-\u9fa5]/g;
-var patt2=/[^\w\d_\s]/g;
-
-
-
-$(".text").keydown(function(){
-    if(patt1.test($(".text").val())){
-        $(".p1").text("请输入字母数字或汉字、下划线");
-    }else{
-        $(".p1").text("");
+    } else {
+        $("button").css({
+            "cursor": "not-allowed",
+            "background-color": "#29bde0"
+        });
     }
 
-    if($(".text").val().length < 4){
+}
+
+
+var patt1 = /^[0-9a-zA-Z\u4e00-\u9fa5_]{4,16}$/g;
+var patt2 = /^\w{4,16}$/g;
+var a = [], b = [];
+
+$(".name").keyup(function () {
+    a[a.length] = 0;
+
+    if ($(this).val().length < 4) {
         $(".p1").text("最少4个字符");
+    } else {
+        if (!($(".name").val().match(patt1))) {
+            $(".p1").text("请输入字母数字或汉字、下划线");
+        } else {
+            $(".p1").text("");
+            a[a.length] = 1;
+        }
     }
+
+    ajax();
 });
 
-$(".pwd").keydown(function(){
-    if(patt2.test($(".pwd").val())){
-        $(".p2").text("请输入字母数字或下划线");
-    }else{
-        $(".p2").text("");
-    }
+$(".pwd").keyup(function () {
+    b[b.length] = 0;
 
-    if($(".pwd").val().length < 4){
+    if ($(this).val().length < 4) {
         $(".p2").text("最少4个字符");
+    } else {
+        if (!($(".pwd").val().match(patt2))) {
+            $(".p2").text("请输入字母数字或汉字、下划线");
+        } else {
+            $(".p2").text("");
+            b[b.length] = 1;
+        }
     }
-    //checkpassword
-    //confug.pwd.tips=
-});
 
+    ajax();
+});
 
