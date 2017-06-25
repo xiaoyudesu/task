@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "mappings": "AAIG,oCAAM;EACP,eAAe,EAAE,OAAO;EACxB,oBAAoB,EAAE,OAAO;EAC7B,mBAAmB,EAAE,OAAO",
+  "sources": [
+    "articleAdd.scss"
+  ],
+  "names": [],
+  "file": "articleAdd.css"
+}

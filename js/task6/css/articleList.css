@@ -1,0 +1,85 @@
+.bold {
+	font-weight: bold;
+}
+
+.articleList .forms .form-group label {
+	font-size: 14px;
+	text-align-last: justify;
+	-moz-text-align-last: justify;
+	-ms-text-align-last: justify;
+}
+
+.articleList .forms .form-group .date-and {
+	text-align-last: center;
+	-moz-text-align-last: center;
+	-ms-text-align-last: center;
+}
+
+.articleList .forms .search-btns {
+	text-align: right;
+}
+
+.articleList .lists .panel-heading {
+	position: relative;
+	overflow: hidden;
+}
+
+.articleList .lists .panel-heading .title {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 1em;
+	line-height: 1em;
+	font-weight: bold;
+}
+
+.articleList .lists .panel-heading .edit-btns button {
+	margin: 0 .5em;
+}
+
+.articleList .lists .panel-body table {
+	font-size: 14px;
+	border: 1px solid #eeeeee;
+}
+
+.articleList .lists .panel-body table th, .articleList .lists .panel-body table td {
+	text-align: center;
+	vertical-align: middle;
+	min-width: 3em;
+}
+
+.articleList .lists .panel-body table .operate {
+	min-width: 160px;
+}
+
+.articleList .pageNav {
+	float: right;
+}
+
+.articleList .pageNav .pageForm {
+	display: inline-block;
+}
+
+.articleList .pageNav .pageForm span {
+	line-height: 0;
+	vertical-align: middle;
+}
+
+.articleList .pageNav .pageForm .size,
+.articleList .pageNav .pageForm .page {
+	width: 3em;
+	text-align: center;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.articleList .pageNav .pageIndexes {
+	display: inline-block;
+}
+
+.articleList .pageNav .pageIndexes .pageIndex {
+	margin: 0 .2em;
+}
+
+/*# sourceMappingURL=articleList.css.map */
