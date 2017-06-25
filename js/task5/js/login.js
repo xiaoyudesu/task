@@ -56,7 +56,7 @@ function ajax() {
 
         if (!(a[1] || b[1])) {
             $("button").on("click", function () {
-                $.post("/daili/a/login", {
+                $.post("/proxy/a/login", {
                     name: $(".name").val(),
                     pwd: $(".pwd").val(),
                 }, function (data) {

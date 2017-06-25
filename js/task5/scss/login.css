@@ -1,0 +1,181 @@
+/*reset*/
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+button,
+label,
+select,
+input,
+option,
+button {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 625%;
+}
+
+html body {
+	font: .32rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+	letter-spacing: .1em;
+}
+
+button {
+	border: 0;
+	outline: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+img {
+	display: block;
+}
+
+input {
+	appearance: button;
+	-moz-appearance: button;
+	/* Firefox */
+	-webkit-appearance: none;
+	border-radius: 0;
+	border: none;
+	border: 0;
+}
+
+body {
+	height: 100vh;
+	overflow: hidden;
+	background: url(../img/bg5.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+body .box {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 5.4rem;
+	height: 4rem;
+	margin: auto;
+	background-color: #d0d4d9;
+}
+
+body .title {
+	font-size: .3rem;
+	color: #03a9f4;
+	line-height: .85rem;
+}
+
+body .input-box {
+	display: flex;
+	align-items: center;
+	width: 4.4rem;
+	height: .65rem;
+	background-color: #fff;
+}
+
+body .input-box img {
+	display: inline-block;
+	height: .18rem;
+	padding: 0 .5em;
+	margin-right: .5em;
+	border-right: 1px solid #e8e8e8;
+}
+
+body .input-box input {
+	line-height: 2em;
+	flex: auto;
+	padding-right: 1em;
+	outline: none;
+	letter-spacing: .1em;
+}
+
+body .input-box input::-webkit-input-placeholder {
+	color: #999999;
+	font-size: .18rem;
+}
+
+body .tip {
+	height: .4rem;
+	line-height: .4rem;
+	width: 4.4rem;
+	color: red;
+	font-size: .7em;
+}
+
+body button {
+	width: 4.4rem;
+	height: .6rem;
+	background-color: #29bde0;
+	border-radius: .1rem;
+	font-size: .18rem;
+	cursor: not-allowed;
+	color: #fff;
+}
+
+@media (max-width: 1700px) {
+	html {
+		font-size: 500%;
+	}
+}
+
+@media (max-width: 1500px) {
+	html {
+		font-size: 450%;
+	}
+}
+
+@media (max-width: 1300px) {
+	html {
+		font-size: 400%;
+	}
+}
+
+/*# sourceMappingURL=login.css.map */

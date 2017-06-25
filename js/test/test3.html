@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS之下拉框（方式二）</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+    <script>
+        var app = angular.module("secondApp", []);
+        app.controller("secondCon", function ($scope) {
+            $scope.trees = ["松树", "樟树", "枫树", "枣树", "桃树"];
+        });
+    </script>
+</head>
+<body>
+<div ng-app="secondApp" ng-controller="secondCon">
+    <select style="width: 200px;">
+        <option ng-repeat="tree in trees">{{tree}}</option>
+    </select>
+</div>
+</body>
+</html>

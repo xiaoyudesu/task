@@ -1,106 +1,121 @@
-【js-6】域名，cookie是什么？有什么用处？cookie session的区别?cookie的失效期？
+【js-task10】如何进行网站性能优化？
+小课堂【武汉第145期】
+分享人:肖浩宇
 
-小课堂【武汉小课堂】
-分享人：肖浩宇
 1.背景介绍
 
-1.什么是IP地址
-互联网协议地址（英语：Internet Protocol Address，又译为网际协议地址），缩写为IP地址（英语：IP Address），是分配给网络上使用网际协议（英语：Internet Protocol, IP）的设备的数字标签。IP地址是唯一的。常见的IP地址分为IPv4与IPv6两大类。可以把IP地址类比为一个电话号码，180.149.132.47即是一个IP地址。
 
-2.什么是域名
-网域名称（英语：Domain Name），简称域名、网域，是由一串用点分隔的名字组成的Internet上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置）。可以理解为联系人名称，如www.baidu.com就是一个域名。
+网站性能优化主要是针对两个方面：
 
+从用户角度而言，优化就是让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。
+从服务器角度而言，优化是减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。
 
-3.什么是DNS
-网域名称系统（DNS，Domain Name System）是因特网的一项核心服务，它作为可以将域名和IP地址相互映射的一个
-布式数据库，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP地址数串。DNS将域名转换为IP地址的过程叫解析，
-域名必须对应一个IP地址，而IP地址不一定只对应一个域名。可以把DNS理解为一个通讯录。
-
-4.什么是cookie
-Cookie 是一小段文本信息，以键值对的形式存储在客户端，伴随着用户请求和页面在 Web 服务器和浏览器之间传递。用户每次访问站点时，Web 应用程序都可以读取 Cookie 包含的信息。
-5.什么是session
-Session指的是服务器端为客户端所开辟的存储空间，在其中保存的信息就是用于保持状态。
-用户打开浏览器访问一起网站，浏览器的COOKIE中会生成sessionID，在每次请求时都会自动带上sessionID，然后服务器端根据sessionID找到对应的session值。
-sessionID就相当于是一个钥匙，服务器上存session的地方相当于一个柜子，只能拿自己的钥匙开自己的柜子取自己的东西。
-session一般存储用户相关的的信息，如用户登录状态、权限控制等，其他的信息也可存。另外就是无论你站点上的用户是否登录都会生成sessionID。
 
 2.知识剖析
 
-1.域名的用处
 
-比IP地址更容易记忆
-有利于SEO(搜索引擎优化)
-
-2.Cookie的用处
-Web应用程序是使用HTTP协议传输数据的。HTTP协议是无状态的协议。一旦数据交换完毕，客户端与服务器端的连接就会关闭，再次交换数据需要建立新的连接。这就意味着服务器无法从连接上跟踪会话。即用户A购买了一件商品放入购物车内，当再次购买商品时服务器已经无法判断该购买行为是属于用户A的会话还是用户B的会话了。cookie可以解决此问题。
+优化网站性能需要先了解网站的运行步骤：
 
 
-cookie可以跟踪会话，确认访问者的身份。
-cookie可以将用户登录凭据保存在本地，cookie到期之前再访问该服务器就不必再登录了。
+1.网络请求
+
+在浏览器中输入url地址，客户端检查url中的域名是否存在于本地host文件中
+未在host中找到ip地址，则访问本地DNS服务器中查询域名。
+未在本地DNS中找到域名，则访问DNS根服务器，然后向下级DNS服务器一级一级查找域名。
+DNS服务器找到域名后，返回ip地址，浏览器收到ip地址
+浏览器通过ip地址向服务器发起TCP连接，进行3次握手。
+
+
+握手完成后，浏览器生成http请求，发送给服务器
+服务器收到http请求，根据请求处理所需文件，然后生成http响应报头
+http响应报头与所需文件合并成http响应数据包，发送给客户端，若文件太大，可能会有分包过程
+客户端收到http响应数据包，提取出文件，进行加载。一次http请求完成。
+
+
+2.文件加载
+
+客户端浏览器加载了html文件后，由上到下解析html为DOM树（DOM Tree）
+遇到css文件，css中的url发起http请求。
+这是第二次http请求，由于http1.1协议增加了Connection: keep-alive声明，故tcp连接不会关闭，可以服用。
+http连接是无状态连接，客户端与服务器端需要重新发起请求--响应
+在请求css的过程中，解析器继续解析html，然后到了script标签。
+由于script可能会改变DOM结构，故解析器停止生成DOM树，解析器被js阻塞，等待js文件发起http请求，然后加载。这是第三次http请求。js执行完成后解析器继续解析。
+
+
+由于css文件可能会影响js文件的执行结果，因此需等css文件加载完成后再执行。
+浏览器收到css文件后，开始解析css文件为CSSOM树（CSS Rule Tree）。
+CSSOM树生成后，DOM Tree与CSS Rule Tree结合生成渲染树（Render Tree），
+Render Tree会被css文件阻塞，渲染树生成后，先布局然后渲染，页面就会呈现信息。
+继续边解析边渲染，遇到了另一个js文件，js文件执行后改变了DOM树，渲染树重新渲染此部分。
+继续向下渲染，碰到一个img标签，浏览器发起http请求，不会等待img加载完成，继续向下渲染，之后再重新渲染此部分。
+DOM树遇到html结束标签，停止解析，进而渲染结束
+
 
 3.常见问题
 
-1.cookie和session的的区别
 
-cookie数据存放在客户的浏览器上，session数据放在服务器上。
-cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗考虑到安全应当使用session
-session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用COOKIE。
-单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。
+网站性能如何优化
 
-所以个人建议：将登陆信息等重要信息存放为SESSION其他信息如果需要保留，可以放在COOKIE中
-
-2.cookie的有效期
-分为会话cookie和持久cookie
-
-如果不设置过期时间，则表示这个cookie生命周期为浏览器会话期间，只要关闭浏览器窗口，cookie就消失了。这种生命期为浏览会话期的cookie被称为会话cookie。会话cookie一般不保存在硬盘上而是保存在内存里。
-如果设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再次打开浏览器，这些cookie依然有效直到超过设定的过期时间。
-存储在硬盘上的cookie可以在不同的浏览器进程间共享，比如两个IE窗口。而对于保存在内存的cookie，不同的浏览器有不同的处理方式。
 
 4.解决方案
 
+
+减少DNS查询:将服务器域名的ip信息加入本地host文件，这也是常见的翻墙方法
+减少DNS查询:使用优质的本地DNS服务器，在系统中设置
+减少tcp连接，开启KeepAlive声明
+减少http请求数量，可减少多余的请求头与响应头：
+
+对于图片使用雪碧图
+对于html文件和css文件，js文件分别进行合并操作。
+
+
+减少下载时间：为文件减负，压缩图片，使用压缩应用压缩文档中的空格，删除文件多余的语句和注释，创造自己的js精简库和精简框架
+
+
+减少下载时间：html中引用各种框架和库时，使用CDN链接，CDN会自动寻找网络响应的最优解
+减少下载时间：使用本地浏览器缓存。
+减轻html文件解析阻塞与渲染阻塞：使用浏览器预加载功能
+提前渲染开始时间：将css链接放在html头部
+减轻解析器的阻塞：将js链接放在body尾部
+按需加载：如在angular路由中使用懒加载，减轻首页负担。
+异步加载：减轻网页阻塞
+减少网页刷新：部分加载页面，如使用ajax或angular路由
+
+
 5.编码实战
 
-在使用JavaScript存取 cookie 时，必须要使用Document对象的 cookie 属性；一行代码介绍如何创建和修改一个 cookie ：
-
-　　document.cookie  = 'username=Darren'
-
-以上代码中'username'表示 cookie 名称，'Darren'表示这个名称对应的值。假设 cookie 名称并不存在，那么就是创建一个新的 cookie；如果存在就是修改了这个 cookie 名称对应的值。如果要多次创建 cookie ，重复使用这个方法即可。
 
 6.扩展思考
 
 
-cookie与本地存储之间的区别
+如何快速优化代码
 
-1. cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。
-
-
-2. cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。
-
-
-3. 数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。
+可使用chrome开发者选项audits功能。
 
 
 7.参考文献
 
 
-参考一：http://bbs.csdn.net/topics/392015942">session到底是什么？
-参考二：http://blog.csdn.net/fangaoxin/article/details/6952954/">Cookie/Session机制详解
-参考三：https://zh.wikipedia.org/wiki/Cookie">wiki-Cookie
-参考四：http://www.cnblogs.com/shiyangxt/archive/2008/10/07/1305506.html">cookie 和session 的区别详解
+参考一： href="https://www.zhihu.com/question/40505685" 知乎-常见的前端性能优化手段都有哪些？都有多大收益？
+
+参考二： href="http://www.cnblogs.com/dojo-lzz/p/3983335.html"
+HTML渲染过程详解
+参考三： href="http://www.jianshu.com/p/57c35067c8dd" 浏览器加载和渲染html的顺序-结论篇
+参考四： href="http://ued.ctrip.com/blog/how-browsers-work-rendering-engine-html-parsing-series-ii.html"
+浏览器是怎样工作的：渲染引擎，HTML解析（连载二）
+参考五： href="http://www.cnblogs.com/yuezk/archive/2013/01/11/2855698.html" 了解html页面的渲染过程
+参考六： href="https://segmentfault.com/a/1190000002611809" 从输入 URL 到页面加载完成发生了什么事
 
 
-8.更多讨论
-
-
-IPv4和IPv6的区别
-IPv4，由四组数字组合而成，由句点隔开（如207.44.214.87）；IPv6，由8组4位16进制数表示，用冒号隔开（如2001:0db8:0000:0042:0000:8a2e:0370:7334）。
-
-
-IPv6的优点：
-
-更大的地址空间。IPv4中规定IP地址长度为32，即有2^32-1个地址；而IPv6中IP地址的长度为128，即有2^128-1个地址。
-更小的路由表。IPv6能使得路由器能在路由表中用一条记录(Entry)表示一片子网，提高了路由器转发数据包的速度。
-增强的组播(Multicast)支持以及对流的支持(Flow-control)。这使得网络上的多媒体应用有了长足发展的机会。
-加入了对自动配置(Auto-configuration)的支持。使得网络(尤其是局域网)的管理更加方便和快捷.
-更高的安全性.在使用IPv6网络中用户可以对网络层的数据进行加密并对IP报文进行校验。
+参考七： href="https://segmentfault.com/a/1190000006921322" 探网络系列（1）-TCP三次握手&Render
+Tree页面渲染=>从输入URL到页面显示的过程？
+参考八： href="http://www.cnblogs.com/it-cen/p/4899692.html" IP、TCP和DNS与HTTP的密切关系
+参考九： href="http://www.ruanyifeng.com/blog/2017/06/tcp-protocol.html" TCP
+协议简介
+参考十： href="http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html"
+互联网协议入门（一）
+参考十一： href="http://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html"
+互联网协议入门（二）
+参考十二： href="http://blog.csdn.net/hguisu/article/details/8680808"
+HTTP详解(1)-工作原理
 

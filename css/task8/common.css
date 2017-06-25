@@ -239,7 +239,7 @@ footer a:active{
         outline: none;
     }
 
-    .navbar-default .navbar-nav li a:focus,{
+	.navbar-default .navbar-nav li a:focus {
         color: #fff;
         outline: none;
     }
@@ -274,6 +274,10 @@ footer a:active{
     .public-code{
         align-items: flex-start;
     }
+
+	.qrcode {
+		margin: 10px 0;
+	}
 }
 
 .lte-9 .container{

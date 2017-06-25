@@ -1,0 +1,302 @@
+@charset "UTF-8";
+/*reset*/
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+button,
+label,
+select,
+input,
+option,
+button {
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 625%; }
+  html body {
+    font: .32rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    letter-spacing: .1em; }
+
+button {
+  border: 0;
+  outline: none;
+  background: transparent;
+  cursor: pointer; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+img {
+  display: block; }
+
+input {
+  appearance: button;
+  -moz-appearance: button;
+  /* Firefox */
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: none;
+  border: 0; }
+
+/*全局变量*/
+/*基础样式*/
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.flex-v {
+  display: flex;
+  align-items: center; }
+
+.absol {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: auto; }
+
+.absol-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  margin: auto; }
+
+.text-a {
+  text-align: center; }
+
+.rel {
+  position: relative; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+/*@media自适应查询*/
+@media (max-width: 600px) {
+  html {
+    font-size: 600%; } }
+@media (max-width: 500px) {
+  html {
+    font-size: 500%; } }
+@media (max-width: 550px) {
+  html {
+    font-size: 550%; } }
+@media (max-width: 500px) {
+  html {
+    font-size: 500%; } }
+@media (max-width: 450px) {
+  html {
+    font-size: 450%; } }
+@media (max-width: 400px) {
+  html {
+    font-size: 400%; } }
+@media (max-width: 350px) {
+  html {
+    font-size: 350%; } }
+/*限宽*/
+body, header, footer {
+  max-width: 640px;
+  margin: auto;
+  min-width: 300px; }
+
+/*header组件*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: .8rem;
+  text-align: center;
+  line-height: .8rem;
+  font-size: .34rem;
+  color: #fff;
+  background-color: #29bde0; }
+  header .container {
+    position: relative;
+    width: 93.7%;
+    height: 100%;
+    margin: auto; }
+    header .container .pl {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto; }
+      header .container .pl img {
+        max-width: .38rem;
+        max-height: .38rem; }
+    header .container .pr {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto; }
+      header .container .pr img {
+        width: .38rem;
+        height: .38rem; }
+
+/*main组件*/
+main {
+  padding-top: .8rem; }
+  main .container {
+    width: 93.7%;
+    margin: auto; }
+
+footer .container {
+  width: 93.7%;
+  margin: auto; }
+
+main {
+  background-color: #f0f0f0;
+  overflow: hidden;
+  min-height: 100vh; }
+  main .container {
+    margin: .2rem .1rem;
+    width: auto;
+    border: .01rem solid #c9c9c9;
+    background-color: #f7f7f7; }
+    main .container .main1 {
+      position: relative;
+      height: .9rem;
+      line-height: .9rem;
+      text-align: center;
+      color: #29bde0;
+      font-size: .3rem;
+      border-bottom: .01rem solid #c9c9c9; }
+      main .container .main1 img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: .2rem;
+        width: .3rem;
+        height: .17rem;
+        margin: auto;
+        cursor: pointer; }
+    main .container .main2 {
+      overflow: hidden; }
+      main .container .main2 .container2 {
+        position: relative;
+        margin: 0 .4rem;
+        border-left: .02rem solid #c9c9c9; }
+        main .container .main2 .container2 .little-dot {
+          position: absolute;
+          margin-left: -.06rem;
+          margin-top: -.06rem;
+          width: .1rem;
+          height: .1rem;
+          background-color: #c9c9c9;
+          border-radius: 50%; }
+        main .container .main2 .container2 .night {
+          padding-top: .5rem; }
+          main .container .main2 .container2 .night .moon {
+            position: absolute;
+            z-index: 1;
+            width: .6rem;
+            height: .6rem;
+            margin-left: -.31rem;
+            margin-top: .08rem;
+            background-color: #f7f7f7;
+            cursor: pointer; }
+          main .container .main2 .container2 .night .text-box {
+            margin-left: .4rem; }
+            main .container .main2 .container2 .night .text-box .word-box {
+              display: flex;
+              align-items: center;
+              margin-bottom: .2rem;
+              cursor: pointer; }
+              main .container .main2 .container2 .night .text-box .word-box .tri {
+                width: 0;
+                height: 0;
+                border-right: 0.15rem solid #29bde0;
+                border-top: .13rem solid transparent;
+                border-bottom: .13rem solid transparent; }
+              main .container .main2 .container2 .night .text-box .word-box .text {
+                width: 100%;
+                height: .75rem;
+                line-height: .75rem;
+                text-align: center;
+                background-color: #29bde0;
+                font-size: .3rem;
+                color: #fff; }
+        main .container .main2 .container2 .daytime {
+          padding-top: .5rem; }
+          main .container .main2 .container2 .daytime .sun {
+            position: absolute;
+            z-index: 1;
+            width: .6rem;
+            height: .6rem;
+            margin-left: -.31rem;
+            margin-top: .08rem;
+            background-color: #f7f7f7;
+            cursor: pointer; }
+          main .container .main2 .container2 .daytime .text-box {
+            margin-left: .4rem;
+            padding-bottom: .5rem; }
+            main .container .main2 .container2 .daytime .text-box .word-box {
+              display: flex;
+              align-items: center;
+              margin-bottom: .2rem;
+              cursor: pointer; }
+              main .container .main2 .container2 .daytime .text-box .word-box .tri {
+                width: 0;
+                height: 0;
+                border-right: 0.15rem solid #29bde0;
+                border-top: .13rem solid transparent;
+                border-bottom: .13rem solid transparent; }
+              main .container .main2 .container2 .daytime .text-box .word-box .text {
+                width: 100%;
+                height: .75rem;
+                line-height: .75rem;
+                text-align: center;
+                background-color: #29bde0;
+                font-size: .3rem;
+                color: #fff; }
+
+.add {
+  padding-left: .5em;
+  color: #ccc;
+  font-size: .7em; }
+
+/*# sourceMappingURL=judgeScript.css.map */

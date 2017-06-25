@@ -1,0 +1,278 @@
+@charset "UTF-8";
+/*reset*/
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+button,
+label,
+select,
+input,
+option,
+button {
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 625%; }
+  html body {
+    font: .32rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    letter-spacing: .1em; }
+
+button {
+  border: 0;
+  outline: none;
+  background: transparent;
+  cursor: pointer; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  cursor: pointer; }
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+img {
+  display: block; }
+
+input {
+  appearance: button;
+  -moz-appearance: button;
+  /* Firefox */
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: none;
+  border: 0; }
+
+/*全局变量*/
+/*基础样式*/
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.flex-v {
+  display: flex;
+  align-items: center; }
+
+.absol {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: auto; }
+
+.absol-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  margin: auto; }
+
+.text-a {
+  text-align: center; }
+
+.rel {
+  position: relative; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+/*@media自适应查询*/
+@media (max-width: 600px) {
+  html {
+    font-size: 600%; } }
+@media (max-width: 500px) {
+  html {
+    font-size: 500%; } }
+@media (max-width: 550px) {
+  html {
+    font-size: 550%; } }
+@media (max-width: 500px) {
+  html {
+    font-size: 500%; } }
+@media (max-width: 450px) {
+  html {
+    font-size: 450%; } }
+@media (max-width: 400px) {
+  html {
+    font-size: 400%; } }
+@media (max-width: 350px) {
+  html {
+    font-size: 350%; } }
+/*限宽*/
+body, header, footer {
+  max-width: 640px;
+  margin: auto;
+  min-width: 300px; }
+
+/*header组件*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: .8rem;
+  text-align: center;
+  line-height: .8rem;
+  font-size: .34rem;
+  color: #fff;
+  background-color: #29bde0; }
+  header .container {
+    position: relative;
+    width: 93.7%;
+    height: 100%;
+    margin: auto; }
+    header .container .pl {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto; }
+      header .container .pl img {
+        max-width: .38rem;
+        max-height: .38rem; }
+    header .container .pr {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto; }
+      header .container .pr img {
+        width: .38rem;
+        height: .38rem; }
+
+/*main组件*/
+main {
+  padding-top: .8rem; }
+  main .container {
+    width: 93.7%;
+    margin: auto; }
+
+footer .container {
+  width: 93.7%;
+  margin: auto; }
+
+header {
+  border-bottom: .01rem solid #74d4eb; }
+
+main {
+  background-color: #29bde0;
+  padding-bottom: 1.5rem;
+  overflow: hidden; }
+  main .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 4.6rem;
+    height: 6.5rem;
+    margin: .85rem auto 1.2rem auto;
+    border: .07rem solid #fff;
+    background-color: #ffedc5;
+    font-size: .4rem; }
+    main .card .number1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      width: .75rem;
+      height: .75rem;
+      margin: auto;
+      margin-top: -.37rem;
+      border: .04rem solid #ffedc5;
+      background-color: #fff;
+      border-radius: 50%;
+      color: #f56b81; }
+    main .card #page1 {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      width: 3rem;
+      height: 3rem; }
+    main .card #page2 {
+      display: none;
+      width: 100%;
+      height: 100%; }
+      main .card #page2 img {
+        width: 2.22rem;
+        height: 2.22rem;
+        margin: 1.5em auto 0.5em auto; }
+      main .card #page2 .p1 {
+        color: #29bde0;
+        text-align: center; }
+      main .card #page2 .p2 {
+        color: #f56b81;
+        text-align: center; }
+      main .card #page2 .line {
+        display: block;
+        width: 100%;
+        height: .03rem;
+        background-color: #fff;
+        margin: .5em 0; }
+      main .card #page2 .p3 {
+        padding: 0 1em;
+        color: #fca000;
+        font-size: .26rem; }
+  main .foot {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    max-width: 640px;
+    min-width: 300px;
+    background-color: #29bde0;
+    border-top: 1px solid #b9e9f5; }
+    main .foot button {
+      display: block;
+      width: 4.9rem;
+      height: .9rem;
+      margin: .6rem auto .6rem auto;
+      background-color: #fbb435;
+      font-size: .48rem;
+      color: #fff; }
+
+/*# sourceMappingURL=characters.css.map */

@@ -181,7 +181,9 @@ html{
 
       .banner{
         position: relative;
-        overflow: hidden;
+		//overflow: hidden;
+		height: 100px;
+        
 
         .banner-bg{
           width: 100%;
