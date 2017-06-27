@@ -1,0 +1,121 @@
+【js-task10】如何进行网站性能优化？
+小课堂【武汉第145期】
+分享人:肖浩宇
+
+1.背景介绍
+
+
+网站性能优化主要是针对两个方面：
+
+从用户角度而言，优化就是让页面加载得更快、对用户的操作响应得更及时，能够给用户提供更为友好的体验。
+从服务器角度而言，优化是减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。
+
+
+2.知识剖析
+
+
+优化网站性能需要先了解网站的运行步骤：
+
+
+1.网络请求
+
+在浏览器中输入url地址，客户端检查url中的域名是否存在于本地host文件中
+未在host中找到ip地址，则访问本地DNS服务器中查询域名。
+未在本地DNS中找到域名，则访问DNS根服务器，然后向下级DNS服务器一级一级查找域名。
+DNS服务器找到域名后，返回ip地址，浏览器收到ip地址
+浏览器通过ip地址向服务器发起TCP连接，进行3次握手。
+
+
+握手完成后，浏览器生成http请求，发送给服务器
+服务器收到http请求，根据请求处理所需文件，然后生成http响应报头
+http响应报头与所需文件合并成http响应数据包，发送给客户端，若文件太大，可能会有分包过程
+客户端收到http响应数据包，提取出文件，进行加载。一次http请求完成。
+
+
+2.文件加载
+
+客户端浏览器加载了html文件后，由上到下解析html为DOM树（DOM Tree）
+遇到css文件，css中的url发起http请求。
+这是第二次http请求，由于http1.1协议增加了Connection: keep-alive声明，故tcp连接不会关闭，可以服用。
+http连接是无状态连接，客户端与服务器端需要重新发起请求--响应
+在请求css的过程中，解析器继续解析html，然后到了script标签。
+由于script可能会改变DOM结构，故解析器停止生成DOM树，解析器被js阻塞，等待js文件发起http请求，然后加载。这是第三次http请求。js执行完成后解析器继续解析。
+
+
+由于css文件可能会影响js文件的执行结果，因此需等css文件加载完成后再执行。
+浏览器收到css文件后，开始解析css文件为CSSOM树（CSS Rule Tree）。
+CSSOM树生成后，DOM Tree与CSS Rule Tree结合生成渲染树（Render Tree），
+Render Tree会被css文件阻塞，渲染树生成后，先布局然后渲染，页面就会呈现信息。
+继续边解析边渲染，遇到了另一个js文件，js文件执行后改变了DOM树，渲染树重新渲染此部分。
+继续向下渲染，碰到一个img标签，浏览器发起http请求，不会等待img加载完成，继续向下渲染，之后再重新渲染此部分。
+DOM树遇到html结束标签，停止解析，进而渲染结束
+
+
+3.常见问题
+
+
+网站性能如何优化
+
+
+4.解决方案
+
+
+减少DNS查询:将服务器域名的ip信息加入本地host文件，这也是常见的翻墙方法
+减少DNS查询:使用优质的本地DNS服务器，在系统中设置
+减少tcp连接，开启KeepAlive声明
+减少http请求数量，可减少多余的请求头与响应头：
+
+对于图片使用雪碧图
+对于html文件和css文件，js文件分别进行合并操作。
+
+
+减少下载时间：为文件减负，压缩图片，使用压缩应用压缩文档中的空格，删除文件多余的语句和注释，创造自己的js精简库和精简框架
+
+
+减少下载时间：html中引用各种框架和库时，使用CDN链接，CDN会自动寻找网络响应的最优解
+减少下载时间：使用本地浏览器缓存。
+减轻html文件解析阻塞与渲染阻塞：使用浏览器预加载功能
+提前渲染开始时间：将css链接放在html头部
+减轻解析器的阻塞：将js链接放在body尾部
+按需加载：如在angular路由中使用懒加载，减轻首页负担。
+异步加载：减轻网页阻塞
+减少网页刷新：部分加载页面，如使用ajax或angular路由
+
+
+5.编码实战
+
+
+6.扩展思考
+
+
+如何快速优化代码
+
+可使用chrome开发者选项audits功能。
+
+
+7.参考文献
+
+
+参考一： href="https://www.zhihu.com/question/40505685" 知乎-常见的前端性能优化手段都有哪些？都有多大收益？
+
+参考二： href="http://www.cnblogs.com/dojo-lzz/p/3983335.html"
+HTML渲染过程详解
+参考三： href="http://www.jianshu.com/p/57c35067c8dd" 浏览器加载和渲染html的顺序-结论篇
+参考四： href="http://ued.ctrip.com/blog/how-browsers-work-rendering-engine-html-parsing-series-ii.html"
+浏览器是怎样工作的：渲染引擎，HTML解析（连载二）
+参考五： href="http://www.cnblogs.com/yuezk/archive/2013/01/11/2855698.html" 了解html页面的渲染过程
+参考六： href="https://segmentfault.com/a/1190000002611809" 从输入 URL 到页面加载完成发生了什么事
+
+
+参考七： href="https://segmentfault.com/a/1190000006921322" 探网络系列（1）-TCP三次握手&Render
+Tree页面渲染=>从输入URL到页面显示的过程？
+参考八： href="http://www.cnblogs.com/it-cen/p/4899692.html" IP、TCP和DNS与HTTP的密切关系
+参考九： href="http://www.ruanyifeng.com/blog/2017/06/tcp-protocol.html" TCP
+协议简介
+参考十： href="http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html"
+互联网协议入门（一）
+参考十一： href="http://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html"
+互联网协议入门（二）
+参考十二： href="http://blog.csdn.net/hguisu/article/details/8680808"
+HTTP详解(1)-工作原理
+

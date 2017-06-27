@@ -126,7 +126,8 @@ html {
       margin-bottom: 6em; }
       html body main .banner {
         position: relative;
-        overflow: hidden; }
+	      height: 100px;
+      }
         html body main .banner .banner-bg {
           width: 100%;
           float: left; }

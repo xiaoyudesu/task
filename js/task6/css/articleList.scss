@@ -1,0 +1,96 @@
+@import "unit";
+
+.articleList {
+
+  .forms {
+	.form-group {
+
+	  label {
+		font-size: 14px;
+		text-align-last: justify;
+		-moz-text-align-last: justify;
+		-ms-text-align-last: justify;
+	  }
+
+	  .date-and {
+		text-align-last: center;
+		-moz-text-align-last: center;
+		-ms-text-align-last: center;
+	  }
+	}
+	.search-btns {
+	  text-align: right;
+	}
+  }
+
+  .lists {
+
+	.panel-heading {
+	  position: relative;
+	  overflow: hidden;
+
+	  .title {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		height: 1em;
+		line-height: 1em;
+		font-weight: bold;
+	  }
+
+	  .edit-btns {
+		button {
+		  margin: 0 .5em;
+		}
+	  }
+	}
+
+	.panel-body {
+	  table {
+		font-size: 14px;
+		border: 1px solid #eeeeee;
+
+		th, td {
+		  text-align: center;
+		  vertical-align: middle;
+		  min-width: 3em
+		}
+
+		.operate {
+		  min-width: 160px;
+		}
+	  }
+	}
+  }
+
+  .pageNav {
+	float: right;
+
+	.pageForm {
+	  display: inline-block;
+
+	  span {
+		line-height: 0;
+		vertical-align: middle;
+	  }
+	  .size,
+	  .page {
+		width: 3em;
+		text-align: center;
+		padding-left: 2px;
+		padding-right: 2px;
+	  }
+
+	}
+	.pageIndexes {
+	  display: inline-block;
+
+	  .pageIndex {
+		margin: 0 .2em;
+	  }
+	}
+  }
+
+}
+

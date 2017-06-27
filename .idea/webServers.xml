@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="137113de-40e9-4129-a280-885c2b10ca85" name="My web" url="http://59.110.174.154">
+        <fileTransfer host="59.110.174.154" port="22" rootFolder="/home/wwwroot/default/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="0a67e761-d916-475c-a662-9dc324ce4a73" name="localhost" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="D:\documents\WebstormProjects" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

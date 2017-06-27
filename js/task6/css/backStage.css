@@ -1,0 +1,207 @@
+/*reset*/
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+footer,
+header,
+menu,
+nav,
+audio,
+video,
+button,
+label,
+select,
+input,
+option,
+button {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 625% !important;
+}
+
+html body {
+	font: .16rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+	letter-spacing: .1em;
+}
+
+button {
+	border: 0;
+	outline: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+img {
+	display: block;
+}
+
+input {
+	appearance: button;
+	-moz-appearance: button;
+	/* Firefox */
+	-webkit-appearance: none;
+	border-radius: 0;
+	border: none;
+	border: 0;
+}
+
+body {
+	background-color: #eee;
+}
+
+body .backStageView {
+	margin-left: 250px;
+	padding: 20px;
+	overflow: hidden;
+}
+
+body aside {
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	overflow: auto;
+	float: left;
+	width: 250px;
+	min-height: 100vh;
+	background-color: #2e394c;
+	text-align: center;
+	color: #fff;
+	box-shadow: #242d3c 2px 4px 2px;
+}
+
+body aside::-webkit-scrollbar {
+	display: none;
+}
+
+body aside .title {
+	padding: 1em;
+	line-height: 1.5;
+}
+
+body aside .lists {
+	margin: auto;
+}
+
+body aside .lists .downMenu {
+	text-align: left;
+	border-top: 1px solid #242d3c;
+}
+
+body aside .lists .downMenu .head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: .5em 3em;
+	font-size: 16px;
+	line-height: 2em;
+}
+
+body aside .lists .downMenu .head:hover {
+	padding-left: calc(3em - 5px);
+	border-left: 5px solid #1a53a1;
+	background-color: #242d3c;
+}
+
+body aside .lists .downMenu .head .turn {
+	transition: all .3s;
+}
+
+body aside .lists .downMenu .body {
+	display: none;
+	overflow: hidden;
+	background-color: #08090c;
+	font-size: 14px;
+}
+
+body aside .lists .downMenu .body a {
+	display: block;
+	padding-left: 1em;
+	line-height: 3em;
+	text-align: center;
+	color: #5fc0cd;
+}
+
+body aside .lists .downMenu .body a:hover {
+	background-color: #54698c;
+}
+
+body nav {
+	display: block;
+	padding: 0 .5em;
+	line-height: 3em;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+body nav ul {
+	float: right;
+	display: flex;
+	align-items: center;
+	over-flow: hidden;
+}
+
+body nav ul li {
+	display: inline-block;
+	float: left;
+}
+
+body nav ul li:hover {
+	background-color: #ccc;
+}
+
+body nav ul li a {
+	height: 100%;
+	width: 100%;
+	padding: 0 1em;
+	font-size: 20px;
+}
+
+body nav ul .line {
+	border-left: 1px solid #ccc;
+	height: 1em;
+	display: flex;
+	align-items: center;
+}
+
+body nav ul .fa-power-off {
+	color: #000;
+}
+
+/*# sourceMappingURL=backStage.css.map */

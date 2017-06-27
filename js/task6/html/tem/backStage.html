@@ -1,0 +1,61 @@
+<div ng-controller="backCtrl">
+    <aside>
+        <h3 class="title">萝卜多后台管理系统</h3>
+        <ul class="lists">
+
+            <li class="downMenu">
+                <div class="head"><i class="fa fa-home" aria-hidden="true"></i> 欢迎页
+                    <div></div>
+                </div>
+            </li>
+
+            <li class="downMenu">
+                <div class="head"><i class="fa fa-wrench" aria-hidden="true"></i>
+                    信息管理 <i class="fa fa-caret-right turn" aria-hidden="true "></i></div>
+                <div class="body">
+                    <ul>
+                        <li><a href="">公司信息</a></li>
+                        <li><a href="">职位信息</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="downMenu">
+                <div class="head"><i class="fa fa-wrench" aria-hidden="true"></i>
+                    内容管理 <i class="fa fa-caret-right turn" aria-hidden="true "></i></div>
+                <div class="body">
+                    <ul>
+                        <li><a ui-sref="backStage.articleList">Aticle列表</a></li>
+                        <li><a ui-sref="backStage.articleInfo">Aticle详情</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="downMenu">
+                <div class="head"><i class="fa fa-wrench" aria-hidden="true"></i>
+                    后台管理 <i class="fa fa-caret-right turn"
+                            aria-hidden="true "></i></div>
+                <div class="body">
+                    <ul>
+                        <li><a href="">账号管理</a></li>
+                        <li><a href="">角色管理</a></li>
+                        <li><a href="">修改密码</a></li>
+                        <li><a href="">模块管理</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </aside>
+
+    <nav>
+        <ul>
+            <li><a href="">猎头</a></li>
+            <li class="line"></li>
+            <li><a href="">user</a></li>
+            <li class="line"></li>
+            <li><a ui-sref="login"><i class="fa fa-power-off " aria-hidden="true"></i></a></li>
+        </ul>
+    </nav>
+    <div ui-view class="backStageView"></div>
+</div>
+

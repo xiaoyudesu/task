@@ -1,0 +1,52 @@
+<div class="bg" ng-controller="loginCtrl">
+    <form class="box" name="form" novalidate>
+        <p class="title">萝卜多后台登录</p>
+        <div class="input-box">
+            <img src="../img/user.png" alt="">
+            <input class="text"
+                   type="text"
+                   placeholder="姓名"
+                   name="text"
+                   ng-minlength='3'
+                   ng-maxlength='16'
+                   ng-model="name"
+                   ng-pattern="/^[0-9a-zA-Z\u4e00-\u9fa5_]{3,16}$/"
+                   required
+            >
+        </div>
+
+        <div class="tip" ng-messages="form.text.$error">
+            <p ng-message="required" ng-if="form.text.$touched">请输入姓名</p>
+            <p ng-message="minlength">最少输入3位</p>
+            <p ng-message="maxlength">最多输入16位</p>
+            <p ng-message="pattern">请输入字母数字或汉字、下划线</p>
+        </div>
+
+
+        <div class="input-box">
+            <img src="../img/lock.png" alt="">
+            <input class="pwd"
+                   type="password"
+                   placeholder="密码"
+                   name="pwd"
+                   ng-model="pwd"
+                   ng-minlength='3'
+                   ng-maxlength='16'
+                   ng-pattern="/^\w{6,16}$/"
+                   required
+            >
+        </div>
+
+        <div class="tip" ng-messages="form.pwd.$error">
+            <p ng-message="required" ng-if="form.pwd.$touched">请输入密码</p>
+            <p ng-message="minlength">最少输入6位</p>
+            <p ng-message="maxlength">最多输入16位</p>
+            <p ng-message="pattern">请输入字母数字或下划线</p>
+        </div>
+
+        <button type="submit" ng-disabled="form.$invalid" class="btn" ng-click="login()">登录</button>
+    </form>
+
+    {{name}}<br>
+    {{pwd}}
+</div>
