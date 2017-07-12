@@ -1,7 +1,46 @@
-.articleAdd .forms .form-group label {
-	text-align-last: justify;
-	-moz-text-align-last: justify;
-	-ms-text-align-last: justify;
+.articleAdd label {
+	display: flex;
+	align-items: center;
+}
+
+.articleAdd label .fa {
+	color: red;
+	font-size: .5em;
+}
+
+.articleAdd .imgSel {
+	display: inline-block;
+}
+
+.articleAdd #content .w-e-toolbar, .articleAdd #content .w-e-droplist {
+	z-index: 1;
+}
+
+.articleAdd #content .w-e-text-container {
+	z-index: 0 !important;
+}
+
+.articleAdd #content img {
+	resize: both;
+}
+
+.articleAdd input[type='file'] {
+	display: none;
+}
+
+.articleAdd .imgPre {
+	margin: .1rem 0;
+	padding: .1rem;
+	display: block;
+	outline: #ccc dashed .01rem;
+	outline-offset: -0.01rem;
+	text-align: center;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.articleAdd th, .articleAdd td {
+	text-align: center;
 }
 
 /*# sourceMappingURL=articleAdd.css.map */

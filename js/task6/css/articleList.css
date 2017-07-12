@@ -3,22 +3,20 @@
 }
 
 .articleList .forms .form-group label {
-	font-size: 14px;
+	height: 1em;
+	font-size: .14rem;
 	text-align-last: justify;
 	-moz-text-align-last: justify;
 	-ms-text-align-last: justify;
 }
-
 .articleList .forms .form-group .date-and {
 	text-align-last: center;
 	-moz-text-align-last: center;
 	-ms-text-align-last: center;
 }
-
 .articleList .forms .search-btns {
 	text-align: right;
 }
-
 .articleList .lists .panel-heading {
 	position: relative;
 	overflow: hidden;
@@ -38,8 +36,12 @@
 	margin: 0 .5em;
 }
 
+.articleList .lists .panel-body {
+	overflow: auto;
+}
+
 .articleList .lists .panel-body table {
-	font-size: 14px;
+	font-size: .14rem;
 	border: 1px solid #eeeeee;
 }
 
@@ -50,9 +52,8 @@
 }
 
 .articleList .lists .panel-body table .operate {
-	min-width: 160px;
+	min-width: 1.6rem;
 }
-
 .articleList .pageNav {
 	float: right;
 }
@@ -68,10 +69,11 @@
 
 .articleList .pageNav .pageForm .size,
 .articleList .pageNav .pageForm .page {
+	display: inline-block;
 	width: 3em;
 	text-align: center;
-	padding-left: 2px;
-	padding-right: 2px;
+	padding-left: .02rem;
+	padding-right: .02rem;
 }
 
 .articleList .pageNav .pageIndexes {

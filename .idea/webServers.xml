@@ -11,7 +11,7 @@
         </fileTransfer>
       </webServer>
       <webServer id="0a67e761-d916-475c-a662-9dc324ce4a73" name="localhost" url="http://localhost">
-        <fileTransfer port="0" mountedRoot="D:\documents\WebstormProjects" accessType="MOUNT" />
+        <fileTransfer port="0" mountedRoot="D:\Lenovo\Documents\WebstormProjects" accessType="MOUNT" />
       </webServer>
     </option>
   </component>

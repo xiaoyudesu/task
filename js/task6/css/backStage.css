@@ -30,7 +30,7 @@ button {
 }
 
 html {
-	font-size: 625% !important;
+	font-size: 550% !important;
 }
 
 html body {
@@ -85,71 +85,93 @@ body {
 }
 
 body .backStageView {
-	margin-left: 250px;
-	padding: 20px;
+	margin-left: 2.5rem;
+	padding: .2rem;
 	overflow: hidden;
 }
 
-body aside {
-	position: fixed !important;
+@media (max-width: 700px) {
+	body .backStageView {
+		margin-left: 0;
+	}
+}
+
+body nav.side {
+	position: fixed;
 	top: 0;
 	left: 0;
 	bottom: 0;
+	z-index: 2;
 	overflow: auto;
 	float: left;
-	width: 250px;
-	min-height: 100vh;
+	width: 2.5rem;
 	background-color: #2e394c;
 	text-align: center;
 	color: #fff;
-	box-shadow: #242d3c 2px 4px 2px;
+	box-shadow: #242d3c 0.02rem 0.04rem 0.02rem;
 }
 
-body aside::-webkit-scrollbar {
+@media (max-width: 700px) {
+	body nav.side {
+		position: relative;
+		width: 100%;
+		bottom: auto;
+		text-align: left;
+	}
+}
+
+body nav.side::-webkit-scrollbar {
 	display: none;
 }
 
-body aside .title {
-	padding: 1em;
+body nav.side .title {
+	padding: .5em;
 	line-height: 1.5;
+	font-size: .24rem;
 }
 
-body aside .lists {
-	margin: auto;
+body nav.side .title .bars {
+	float: right;
+	cursor: pointer;
 }
 
-body aside .lists .downMenu {
-	text-align: left;
+@media (min-width: 700px) {
+	body nav.side .title .bars {
+		display: none;
+	}
+}
+
+body nav.side ul.menus .downMenu {
 	border-top: 1px solid #242d3c;
 }
 
-body aside .lists .downMenu .head {
+body nav.side ul.menus .downMenu .head {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: .5em 3em;
-	font-size: 16px;
+	font-size: .16rem;
 	line-height: 2em;
 }
 
-body aside .lists .downMenu .head:hover {
-	padding-left: calc(3em - 5px);
-	border-left: 5px solid #1a53a1;
+body nav.side ul.menus .downMenu .head:hover {
+	padding-left: calc(3em - .05rem);
+	border-left: .05rem solid #1a53a1;
 	background-color: #242d3c;
 }
 
-body aside .lists .downMenu .head .turn {
+body nav.side ul.menus .downMenu .head .turn {
 	transition: all .3s;
 }
 
-body aside .lists .downMenu .body {
+body nav.side ul.menus .downMenu .body {
 	display: none;
 	overflow: hidden;
 	background-color: #08090c;
-	font-size: 14px;
+	font-size: .14rem;
 }
 
-body aside .lists .downMenu .body a {
+body nav.side ul.menus .downMenu .body a {
 	display: block;
 	padding-left: 1em;
 	line-height: 3em;
@@ -157,50 +179,50 @@ body aside .lists .downMenu .body a {
 	color: #5fc0cd;
 }
 
-body aside .lists .downMenu .body a:hover {
+body nav.side ul.menus .downMenu .body a:hover {
 	background-color: #54698c;
 }
 
-body nav {
+body nav.loginBar {
 	display: block;
 	padding: 0 .5em;
 	line-height: 3em;
-	border-bottom: 1px solid #ccc;
+	border-bottom: .01rem solid #ccc;
 	overflow: hidden;
 	background-color: #fff;
 }
 
-body nav ul {
+body nav.loginBar ul {
 	float: right;
 	display: flex;
 	align-items: center;
-	over-flow: hidden;
+	overflow: hidden;
 }
 
-body nav ul li {
+body nav.loginBar ul .loginout {
+	cursor: pointer;
+}
+
+body nav.loginBar ul li {
 	display: inline-block;
 	float: left;
+	padding: 0 1em;
+	font-size: .2rem;
 }
 
-body nav ul li:hover {
+body nav.loginBar ul li:hover {
 	background-color: #ccc;
 }
 
-body nav ul li a {
-	height: 100%;
-	width: 100%;
-	padding: 0 1em;
-	font-size: 20px;
-}
-
-body nav ul .line {
-	border-left: 1px solid #ccc;
-	height: 1em;
+body nav.loginBar ul .line {
 	display: flex;
 	align-items: center;
+	border-left: .01rem solid #ccc;
+	height: 1em;
+	padding: 0;
 }
 
-body nav ul .fa-power-off {
+body nav.loginBar ul .fa-power-off {
 	color: #000;
 }
 

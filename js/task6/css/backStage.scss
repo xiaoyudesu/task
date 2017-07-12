@@ -4,54 +4,68 @@ body {
   background-color: #eee;
 
   .backStageView {
-	margin-left: 250px;
-	padding: 20px;
+	margin-left: 2.5rem;
+	padding: .2rem;
 	overflow: hidden;
+	@media(max-width: 700px) {
+	  margin-left: 0;
+	}
   }
 
-  aside {
-	position: fixed !important;
+  nav.side {
+	position: fixed;
 	top: 0;
 	left: 0;
 	bottom: 0;
+	z-index: 2;
 	overflow: auto;
+	float: left;
+	width: 2.5rem;
+	background-color: #2e394c;
+	text-align: center;
+	color: #fff;
+	box-shadow: darken(#2e394c, 5%) .02rem .04rem .02rem;
+	@media (max-width: 700px) {
+	  position: relative;
+	  width: 100%;
+	  bottom: auto;
+	  text-align: left;
+	}
 
 	&::-webkit-scrollbar {
 	  display: none;
 	}
 
-	float: left;
-	width: 250px;
-
-	min-height: 100vh;
-	background-color: #2e394c;
-	text-align: center;
-	color: #fff;
-	box-shadow: darken(#2e394c, 5%) 2px 4px 2px;
-
 	.title {
-	  padding: 1em;
+	  padding: .5em;
 	  line-height: 1.5;
+	  font-size: .24rem;
+
+	  .bars {
+		float: right;
+		//padding-right: 2em;
+		cursor: pointer;
+		@media (min-width: 700px) {
+		  display: none;
+		}
+	  }
 	}
 
-	.lists {
-	  margin: auto;
+	ul.menus {
 
 	  .downMenu {
-		text-align: left;
 		border-top: 1px solid darken(#2e394c, 5%);
-
 		.head {
 		  display: flex;
 		  align-items: center;
 		  justify-content: space-between;
 		  padding: .5em 3em;
-		  font-size: 16px;
+		  font-size: .16rem;
 		  line-height: 2em;
 
 		  &:hover {
-			padding-left: calc(3em - 5px);
-			border-left: 5px solid #1a53a1;
+			padding-left: calc(3em - .05rem);
+			border-left: .05rem solid #1a53a1;
 			background-color: darken(#2e394c, 5%);
 
 		  }
@@ -65,7 +79,7 @@ body {
 		  display: none;
 		  overflow: hidden;
 		  background-color: darken(#2e394c, 20%);
-		  font-size: 14px;
+		  font-size: .14rem;
 
 		  a {
 			display: block;
@@ -85,42 +99,44 @@ body {
 	}
   }
 
-  nav {
+  nav.loginBar {
 	display: block;
 	padding: 0 .5em;
 	line-height: 3em;
-	border-bottom: 1px solid #ccc;
+	border-bottom: .01rem solid #ccc;
 	overflow: hidden;
 	background-color: #fff;
+	@media (max-width: 700px) {
+	  //margin-top: 60px;
+	}
 
 	ul {
 	  float: right;
 	  display: flex;
 	  align-items: center;
-	  over-flow: hidden;
+	  overflow: hidden;
+	  .loginout {
+		cursor: pointer;
+	  }
 
 	  li {
 		display: inline-block;
 		float: left;
+		padding: 0 1em;
+		font-size: .2rem;
+
 		&:hover {
 		  background-color: #ccc;
-		}
-
-		a {
-		  height: 100%;
-		  width: 100%;
-		  padding: 0 1em;
-		  font-size: 20px;
 		}
 	  }
 
 	  .line {
-		border-left: 1px solid #ccc;
-		height: 1em;
 		display: flex;
 		align-items: center;
+		border-left: .01rem solid #ccc;
+		height: 1em;
+		padding: 0;
 	  }
-
 	  .fa-power-off {
 		color: #000;
 	  }

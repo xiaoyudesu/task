@@ -1,12 +1,11 @@
 @import "unit";
 
 .articleList {
-
   .forms {
 	.form-group {
-
 	  label {
-		font-size: 14px;
+		height: 1em;
+		font-size: .14rem;
 		text-align-last: justify;
 		-moz-text-align-last: justify;
 		-ms-text-align-last: justify;
@@ -47,8 +46,10 @@
 	}
 
 	.panel-body {
+	  overflow: auto;
+
 	  table {
-		font-size: 14px;
+		font-size: .14rem;
 		border: 1px solid #eeeeee;
 
 		th, td {
@@ -58,7 +59,7 @@
 		}
 
 		.operate {
-		  min-width: 160px;
+		  min-width: 1.6rem;
 		}
 	  }
 	}
@@ -76,13 +77,14 @@
 	  }
 	  .size,
 	  .page {
+		display: inline-block;
 		width: 3em;
 		text-align: center;
-		padding-left: 2px;
-		padding-right: 2px;
+		padding-left: .02rem;
+		padding-right: .02rem;
 	  }
-
 	}
+
 	.pageIndexes {
 	  display: inline-block;
 

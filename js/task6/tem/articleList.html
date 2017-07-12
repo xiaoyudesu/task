@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="title" class="col-sm-3 control-label">标题</label>
-                            <div class="col-sm-9 input">
-                                <input type="text" class="form-control" id="title" placeholder="请输入标题"
+                            <label for="title" class="col-xs-3 control-label">标题</label>
+                            <div class="col-xs-9 input">
+                                <input type="text" class="form-control input-sm" id="title" placeholder="请输入标题"
                                        ng-model="title">
                             </div>
                         </div>
@@ -15,9 +15,9 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group ">
-                            <label for="builder" class="col-sm-3 control-label">创建者</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="builder" placeholder="请输入名字"
+                            <label for="builder" class="col-xs-3 control-label">创建者</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control input-sm" id="builder" placeholder="请输入名字"
                                        ng-model="author">
                             </div>
                         </div>
@@ -25,31 +25,30 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group ">
-                            <label for="startAt" class="col-sm-3 control-label">创建时间</label>
-                            <div class="col-sm-9">
+                            <label for="startAt" class="col-xs-3 control-label">创建时间</label>
+                            <div class="col-xs-9">
                                 <input type="text"
                                        id="startAt"
-                                       class="form-control"
+                                       class="form-control input-sm"
                                        ng-value="startTime"
                                        ng-model="startAt"
-                                       data-max-date="{{endDate}}"
+                                       data-max-date="{{endAt}}"
                                        data-autoclose="1"
                                        data-date-type="number"
                                        data-date-format="yyyy-MM-dd"
                                        bs-datepicker>
                             </div>
-                            {{ startAt }}
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group ">
-                            <label for="endAt" class="col-sm-3 control-label date-and">——</label>
-                            <div class="col-sm-9">
+                            <label for="endAt" class="col-xs-3 control-label date-and">——</label>
+                            <div class="col-xs-9">
                                 <input type="text"
                                        id="endAt"
                                        ng-value="endTime"
                                        ng-model="endAt"
-                                       class="form-control"
+                                       class="form-control input-sm"
                                        data-min-date="{{startAt}}"
                                        data-max-date="today"
                                        data-autoclose="1"
@@ -62,24 +61,21 @@
 
                     <div class="col-md-6">
                         <div class=" form-group">
-                            <label class="col-sm-3 control-label" for="status">状态</label>
-                            <div class="col-sm-9">
-                                <select class="form-control" id="status" ng-model="status">
+                            <label class="col-xs-3 control-label" for="status">状态</label>
+                            <div class="col-xs-9">
+                                <select class="form-control input-sm" id="status" ng-model="status">
                                     <option value="">全部</option>
                                     <option ng-repeat="(x,y) in statuses" ng-value="x">{{ y }}</option>
                                 </select>
                             </div>
-
-
-                            x as y for (x,y) in statuses
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class=" form-group">
-                            <label class="col-sm-3 control-label" for="type">类型</label>
-                            <div class="col-sm-9">
-                                <select class="form-control" id="type" ng-model="type">
+                            <label class="col-xs-3 control-label" for="type">类型</label>
+                            <div class="col-xs-9">
+                                <select class="form-control input-sm" id="type" ng-model="type">
                                     <option value="">全部</option>
                                     <option ng-repeat="(x,y) in types" ng-value="x">{{ y }}</option>
                                 </select>
@@ -88,8 +84,8 @@
 
                     </div>
                     <div class="col-md-6 pull-right search-btns">
-                        <button class="btn btn-danger btn-sm" ng-click="clear()">清空</button>
-                        <button class="btn btn-info btn-sm" ng-click="search()">搜索</button>
+                        <button class="btn btn-danger btn-xs" ng-click="clear()">清空</button>
+                        <button class="btn btn-info btn-xs" type="submit" ng-click="search()">搜索</button>
                     </div>
 
                 </div>
@@ -102,7 +98,7 @@
             <span class="title">Article管理</span>
             <div class="edit-btns pull-right">
                 <button class="btn btn-info btn-xs">保存排序</button>
-                <button class="btn btn-success btn-xs" ng-click="articleAdd()" ui-sref="backStage.articleAdd">+新增
+                <button class="btn btn-success btn-xs" ui-sref="backStage.articleAdd">+新增
                 </button>
             </div>
         </div>
@@ -124,7 +120,8 @@
                 <tbody>
                 <tr ng-repeat="x in articleList">
                     <td>{{ $index + 1 }}</td>
-                    <td><img ng-src="{{ x.img }}" alt="图片挂掉了" style="max-width: 80px; height: auto; margin: auto"></td>
+                    <td><img ng-src="{{ x.img| imgLoad }}" alt="图片挂掉了" title="{{ x.img| imgLoad }}"
+                             style="max-width: 80px; height: auto; margin: auto"></td>
                     <td>{{ x.title }}</td>
                     <td>{{ x.type|typeFil }}</td>
                     <td>{{ x.author }}</td>
@@ -132,48 +129,18 @@
                     <td>{{ x.updateAt| date:"yyyy-MM-dd HH:mm:ss" }}</td>
                     <td>{{ x.status |statusFil }}</td>
                     <td class="operate">
-                        <button class="btn btn-xs" ng-class="{true: 'btn-success', false: 'btn-warning'}[x.status==1]">
+                        <button class="btn btn-xs"
+                                ng-class="{true: 'btn-success', false: 'btn-warning'}[x.status==1]"
+                                ng-click="upOrDownItem(x.id,x.status)">
                             {{ x.status==1?"上线":"下线" }}
                         </button>
-                        <button class="btn btn-primary btn-xs">编辑</button>
-                        <button class="btn btn-danger btn-xs">删除</button>
+                        <button class="btn btn-primary btn-xs" ng-click="edit(x)">编辑</button>
+                        <button class="btn btn-danger btn-xs" ng-click="deleteItem(x.id)">删除</button>
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
-    <div class="pageNav">
-        <form class="pageForm form-inline">
-            <span>每页显示</span>
-            <input type="text" class="form size form-control input-sm" ng-model="size" ng-change="sizeCheak()">
-            <span>条</span>
-        </form>
-        <div class="pageIndexes">
-            <button class="btn btn-default btn-sm pageFirst" ng-click="pageFirst()">首页</button>
-            <button class="btn btn-info btn-sm bold pagePrev" ng-click="pagePrev()" ng-if="isHavePagePrve()">
-                <
-            </button>
-            <button class="btn btn-default btn-sm" ng-if="dotL" ng-disabled="1">•••</button>
-            <button class="btn btn-default btn-sm pageIndex" ng-repeat="index in pageIndexes"
-                    ng-click="pageIndex(index)"
-                    ng-class="{true:'btn-success'}[index==page]">{{index}}
-            </button>
-            <button class="btn btn-default btn-sm" ng-if="dotR" ng-disabled="1">•••</button>
-            <button class="btn btn-info btn-sm bold pageNext" ng-click="pageNext()" ng-if="isHavePageNext()">
-                >
-            </button>
-            <button class="btn btn-default btn-sm pageLast" ng-click="pageLast()">末页</button>
-        </div>
-        <form class="pageForm form-inline">
-            <span>去第</span>
-            <input type="text" class="form form-control input-sm page" ng-model="pageChosen" ng-change="pageCheak()">
-            <span>页</span>
-        </form>
-        <button class="btn btn-default btn-sm ensure" ng-click="ensure()">确定</button>
-    </div>
+    <div paging apg="apg"></div>
 </div>
-
-
-

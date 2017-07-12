@@ -1,0 +1,50 @@
+.articleAdd {
+  label {
+	display: flex;
+	//text-align-last: center;
+	align-items: center;
+
+	.fa {
+	  color: red;
+	  font-size: .5em;
+	}
+  }
+
+  .imgSel {
+	display: inline-block;
+  }
+
+  #content {
+	.w-e-toolbar, .w-e-droplist {
+	  z-index: 1;
+	}
+
+	.w-e-text-container {
+	  z-index: 0 !important;
+	}
+
+	img {
+	  resize: both;
+	}
+  }
+
+  input[type='file'] {
+	display: none;
+  }
+
+  .imgPre {
+	margin: .1rem 0;
+	padding: .1rem;
+	display: block;
+	outline: #ccc dashed .01rem;
+	outline-offset: -0.01rem;
+	text-align: center;
+	box-sizing: border-box;
+	width: 100%;
+  }
+
+  th, td {
+	text-align: center;
+  }
+
+}
