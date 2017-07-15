@@ -89,14 +89,13 @@ $bold: 500;
 ul li{
   display: flex;
   align-items: center;
-  padding: .3rem 0;
-  padding-left: .3rem;
+  padding: .3rem 0 .3rem .3rem;
   line-height: .4rem;
   box-sizing: border-box;
   border-top: .01rem solid #e1e5e7;
 
   &:first-child{
-    border-top: none;
+	border-top: none;
   }
 }
 
@@ -137,8 +136,8 @@ button{
 
   &:hover,
   &:active{
-    background-color: #5fc0cd;
-    color: #fff;
+	background-color: #5fc0cd;
+	color: #fff;
   }
 }
 
@@ -147,139 +146,137 @@ html{
   font-size: 625%;
 
   body{
-    font:0.32rem/1.5 "Heiti SC","Helvetica Neue","Microsoft Yahei",Helvetica,Arial,"Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
-    letter-spacing: .1em;
+	font: 0.32rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+	letter-spacing: .1em;
 
-    header{
-      line-height: .8rem;
-      background-color: $blue;
-      color: #fff;
+	header {
+	  line-height: .8rem;
+	  background-color: $blue;
+	  color: #fff;
 
-      .container{
-        position: relative;
+	  .container {
+		position: relative;
 
-        .back{
-          position: absolute;
-          top:0;
-          bottom:0;
-          left: 0;
-          margin: auto;
-          @include back;
-        }
+		.back {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  margin: auto;
+		  @include back;
+		}
 
-        p{
-          width: 100%;
-          text-align: center;
-          font-size: .36rem;
-        }
-      }
-    }
+		p {
+		  width: 100%;
+		  text-align: center;
+		  font-size: .36rem;
+		}
+	  }
+	}
 
-    main{
+	main {
 
-      margin-bottom: 6em;
+	  margin-bottom: 6em;
 
-      .banner{
-        position: relative;
-		//overflow: hidden;
-		height: 100px;
-        
+	  .banner {
+		position: relative;
+		overflow: hidden;
 
-        .banner-bg{
-          width: 100%;
-          float: left;
-        }
+		.banner-bg {
+		  width: 100%;
+		  float: left;
+		}
 
-        .container{
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          display: flex;
-          align-items: center;
-          height: 100%;
-          .user{
-            display: flex;
-            align-items: center;
+		.container {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  display: flex;
+		  align-items: center;
+		  height: 100%;
+		  .user {
+			display: flex;
+			align-items: center;
 
-            .user-logo {
-              display: inline-block;
-              @include user-logo;
-            }
+			.user-logo {
+			  display: inline-block;
+			  @include user-logo;
+			}
 
-            .user-info{
-              padding-left: 2em;
-              font-size: .24rem;
-              color: #fff;
+			.user-info {
+			  padding-left: 2em;
+			  font-size: .24rem;
+			  color: #fff;
 
-              p{
+			  p {
 
-                .user-name {
-                  font-size: .36rem;
-                  font-weight: $bold;
-                }
+				.user-name {
+				  font-size: .36rem;
+				  font-weight: $bold;
+				}
 
-                .age{
-                  font-size:.28rem;
-                  padding-left:1em;
-                }
-              }
+				.age {
+				  font-size: .28rem;
+				  padding-left: 1em;
+				}
+			  }
 
-              p{
-                display: flex;
-                align-items: center;
-                .location-logo{
-                  padding-right: .5em;
-                  display: inline-block;
-                  @include location-logo;
-                }
-              }
-            }
-          }
+			  p {
+				display: flex;
+				align-items: center;
+				.location-logo {
+				  padding-right: .5em;
+				  display: inline-block;
+				  @include location-logo;
+				}
+			  }
+			}
+		  }
 
-        }
-      }
-      .user-resume{
-        background-color: #fff;
+		}
+	  }
+	  .user-resume {
+		background-color: #fff;
 
-        .title{
-          height: 1rem;
-          font-weight: $bold;
-          box-sizing: border-box;
+		.title {
+		  height: 1rem;
+		  font-weight: $bold;
+		  box-sizing: border-box;
 
-          .line-blue{
-            display: inline-block;
-            width: .01rem;
-            height: 1em;
-            margin-right: .29rem;
-            background-color: #5fc0cd;
-            border-right: .02rem solid #5fc0cd;
-          }
+		  .line-blue {
+			display: inline-block;
+			width: .01rem;
+			height: 1em;
+			margin-right: .29rem;
+			background-color: #5fc0cd;
+			border-right: .02rem solid #5fc0cd;
+		  }
 
-        }
+		}
 
-        ul{
-          padding-left: 5%;
-          border-top: .01rem solid #e1e5e7;
-          border-bottom: .01rem solid #e1e5e7;
+		ul {
+		  padding-left: 5%;
+		  border-top: .01rem solid #e1e5e7;
+		  border-bottom: .01rem solid #e1e5e7;
 
-          .last-text{
-            font-size: .28rem;
-            line-height: 1.5em;
-          }
-        }
-      }
-    }
+		  .last-text {
+			font-size: .28rem;
+			line-height: 1.5em;
+		  }
+		}
+	  }
+	}
 
-    footer{
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      justify-content: space-around;
-      height: 6em;
-      background-color: #fff;
-    }
+	footer {
+	  position: fixed;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  justify-content: space-around;
+	  height: 6em;
+	  background-color: #fff;
+	}
   }
 }
 
@@ -294,49 +291,49 @@ footer{
 
 @media (max-width: 700px) {
   html{
-    font-size: 600%;
+	font-size: 600%;
   }
 }
 
 @media (max-width: 650px) {
   html{
-    font-size: 550%;
+	font-size: 550%;
   }
 }
 @media (max-width: 600px) {
   html{
-    font-size: 500%;
+	font-size: 500%;
   }
 }
 
 @media (max-width: 550px) {
   html{
-    font-size: 450%;
+	font-size: 450%;
   }
 }
 
 @media (max-width: 500px) {
   html{
-    font-size: 400%;
+	font-size: 400%;
   }
 }
 
 @media (max-width: 450px) {
   html{
-    font-size: 350%;
+	font-size: 350%;
   }
 }
 
 @media (max-width: 400px) {
   html{
-    font-size: 300%;
+	font-size: 300%;
   }
 }
 
 
 @media (max-width: 350px) {
   html {
-    font-size: 250%;
+	font-size: 250%;
   }
 }
 /*

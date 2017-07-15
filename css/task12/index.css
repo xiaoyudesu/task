@@ -56,8 +56,7 @@ a:focus {
 ul li {
   display: flex;
   align-items: center;
-  padding: .3rem 0;
-  padding-left: .3rem;
+	padding: .3rem 0 .3rem .3rem;
   line-height: .4rem;
   box-sizing: border-box;
   border-top: .01rem solid #e1e5e7; }
@@ -102,7 +101,7 @@ button {
 html {
   font-size: 625%; }
   html body {
-    font: 0.32rem/1.5 "Heiti SC","Helvetica Neue","Microsoft Yahei",Helvetica,Arial,"Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+	  font: 0.32rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
     letter-spacing: .1em; }
     html body header {
       line-height: .8rem;
@@ -126,7 +125,7 @@ html {
       margin-bottom: 6em; }
       html body main .banner {
         position: relative;
-	      height: 100px;
+	      overflow: hidden;
       }
         html body main .banner .banner-bg {
           width: 100%;
