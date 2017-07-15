@@ -1,7 +1,7 @@
 console.log('加载app.js');
-var indexApp = angular.module('indexApp', ['ui.router', 'oc.lazyLoad', 'ngMessages', 'mgcrea.ngStrap']);
+var indexApp = angular.module('indexApp', ['ui.router', 'oc.lazyLoad', 'ngMessages', 'ngSanitize', 'angularFileUpload', 'mgcrea.ngStrap']);
 
-indexApp.config(function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+indexApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/login');
 
     $stateProvider
@@ -11,28 +11,28 @@ indexApp.config(function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvide
             resolve: {
                 load: function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
-                        "../css/login.css",
-                        "../js/login.js"
+                        "css/login.css",
+                        "js/login.js"
                     ]);
                 }
             }
         })
 
         .state('backStage', {
-            url: '/backStage',
+            url: '/backState/:name',
             views: {
                 '': {
-                    templateUrl: 'tem/backStage.html',
+                    templateUrl: 'tem/backStage.html'
                 },
                 '@backStage': {
-                    template: '<h1>ようこそ～</h1>',
+                    template: '<h1>ようこそ(●’◡’●)ﾉ～</h1>'
                 }
             },
             resolve: {
                 load: function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
-                        '../css/backStage.css',
-                        '../js/backStage.js'
+                        'css/backStage.css',
+                        'js/backStage.js'
                     ]);
                 }
             }
@@ -40,13 +40,12 @@ indexApp.config(function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvide
 
         .state('backStage.articleList', {
             //再地址栏中显示参数
-            url: '/articleList/{page:[1-9][0-9]*}/{size:[1-9][0-9]*}/{title:[0-9a-zA-Z]*}/:author/{startAt:[0-9]*}/:endAt/:type/:status',
+            url: '/articleList/{page:[1-9][0-9]*}/{size:[1-9][0-9]*}/:title/:author/{startAt:[0-9]*}/:endAt/:type/:status',
             templateUrl: 'tem/articleList.html',
-            //实际控制。
+            // 实际控制。
             params: {
                 'page': '1',
                 'size': '10',
-
                 'title': '',
                 'author': '',
                 'startAt': '',
@@ -54,39 +53,29 @@ indexApp.config(function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvide
                 'type': '',
                 'status': ''
             },
-            // cache:false,
+
             resolve: {
                 load: function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
-                        "../css/articleList.css",
-                        "../js/articleList.js"
+                        "css/articleList.css",
+                        "js/articleList.js"
                     ]);
                 }
             }
         })
 
-
         .state('backStage.articleAdd', {
-            url: '/articleAdd',
+            url: '/articleAdd?id',
             templateUrl: 'tem/articleAdd.html',
             resolve: {
                 load: function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
-                        "../css/articleAdd.css",
-                        "../js/articleAdd.js"
+                        "css/articleAdd.css",
+                        "js/articleAdd.js"
                     ]);
                 }
             }
         })
 
-
-        .state('backStage.articleInfo', {
-            url: '/articleInfo',
-            template: '<h1>这里是articleInfo</h1>'
-        })
-
 });
-
-
-
 

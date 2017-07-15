@@ -1,29 +1,45 @@
-@import "unit";
 
 .articleList {
-
   .forms {
+	.form-group.select {
+	  button {
+		position: relative;
+		text-align: left;
+		padding: 0 1em;
+		.caret {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  right: 1em;
+		  margin: auto;
+		}
+	  }
+	}
+
 	.form-group {
 
 	  label {
-		font-size: 14px;
+		height: 1em;
+		font-size: .14rem;
 		text-align-last: justify;
 		-moz-text-align-last: justify;
 		-ms-text-align-last: justify;
 	  }
+	}
 
-	  .date-and {
-		text-align-last: center;
-		-moz-text-align-last: center;
-		-ms-text-align-last: center;
-	  }
+	.date-and {
+	  text-align-last: auto !important;
+	  -moz-text-align-last: auto;
+	  -ms-text-align-last: auto;
+	  text-align: center;
 	}
-	.search-btns {
-	  text-align: right;
-	}
+
+  }
+  .search-btns {
+	text-align: right;
   }
 
-  .lists {
+  .dataLists {
 
 	.panel-heading {
 	  position: relative;
@@ -47,8 +63,13 @@
 	}
 
 	.panel-body {
+	  .noData {
+		text-align: center !important;
+		font-size: 2em;
+	  }
+
 	  table {
-		font-size: 14px;
+		font-size: .14rem;
 		border: 1px solid #eeeeee;
 
 		th, td {
@@ -58,7 +79,7 @@
 		}
 
 		.operate {
-		  min-width: 160px;
+		  min-width: 1.6rem;
 		}
 	  }
 	}
@@ -76,13 +97,14 @@
 	  }
 	  .size,
 	  .page {
+		display: inline-block;
 		width: 3em;
 		text-align: center;
-		padding-left: 2px;
-		padding-right: 2px;
+		padding-left: .01rem;
+		padding-right: .01rem;
 	  }
-
 	}
+
 	.pageIndexes {
 	  display: inline-block;
 
@@ -91,6 +113,6 @@
 	  }
 	}
   }
-
 }
+
 

@@ -1,3 +1,5 @@
+@import "unit";
+
 /*reset*/
 html,
 body,
@@ -34,7 +36,7 @@ button {
 }
 
 html {
-  font-size: 625% !important;
+  font-size: 550% !important;
 
   body {
 	font: .16rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
@@ -75,11 +77,16 @@ img {
 }
 
 input {
-  appearance: button;
-  -moz-appearance: button; /* Firefox */
+  appearance: none;
+  -moz-appearance: none; /* Firefox */
   -webkit-appearance: none;
   border-radius: 0;
   border: none;
   border: 0;
 }
 
+select,
+textarea {
+  -moz-appearance: none;
+  //-webkit-appearance: none;
+}

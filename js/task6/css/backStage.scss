@@ -1,132 +1,151 @@
-@import "reset";
 
 body {
   background-color: #eee;
 
-  .backStageView {
-	margin-left: 250px;
-	padding: 20px;
-	overflow: hidden;
-  }
-
-  aside {
-	position: fixed !important;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	overflow: auto;
-
-	&::-webkit-scrollbar {
-	  display: none;
+  .backStage {
+	.backStageView {
+	  margin-left: 2.5rem;
+	  padding: .2rem;
+	  overflow: hidden;
+	  @media(max-width: 700px) {
+		margin-left: 0;
+	  }
 	}
 
-	float: left;
-	width: 250px;
+	nav.side {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  bottom: 0;
+	  z-index: 2;
+	  overflow: auto;
+	  float: left;
+	  width: 2.5rem;
+	  background-color: #2e394c;
+	  text-align: center;
+	  color: #fff;
+	  box-shadow: darken(#2e394c, 5%) .02rem .04rem .02rem;
 
-	min-height: 100vh;
-	background-color: #2e394c;
-	text-align: center;
-	color: #fff;
-	box-shadow: darken(#2e394c, 5%) 2px 4px 2px;
-
-	.title {
-	  padding: 1em;
-	  line-height: 1.5;
-	}
-
-	.lists {
-	  margin: auto;
-
-	  .downMenu {
+	  @media (max-width: 700px) {
+		position: relative;
+		width: 100%;
+		bottom: auto;
 		text-align: left;
-		border-top: 1px solid darken(#2e394c, 5%);
+	  }
 
-		.head {
-		  display: flex;
-		  align-items: center;
-		  justify-content: space-between;
-		  padding: .5em 3em;
-		  font-size: 16px;
-		  line-height: 2em;
+	  &::-webkit-scrollbar {
+		display: none;
+	  }
 
-		  &:hover {
-			padding-left: calc(3em - 5px);
-			border-left: 5px solid #1a53a1;
-			background-color: darken(#2e394c, 5%);
+	  .title {
+		padding: .5em;
+		line-height: 1.5;
+		font-size: .24rem;
 
-		  }
-
-		  .turn {
-			transition: all .3s;
+		.bars {
+		  float: right;
+		  //padding-right: 2em;
+		  cursor: pointer;
+		  @media (min-width: 700px) {
+			display: none;
 		  }
 		}
+	  }
 
-		.body {
+	  ul.menus {
+		@media(max-width: 700px) {
 		  display: none;
-		  overflow: hidden;
-		  background-color: darken(#2e394c, 20%);
-		  font-size: 14px;
-
-		  a {
-			display: block;
-			padding-left: 1em;
-			line-height: 3em;
-			text-align: center;
-			color: #5fc0cd;
+		}
+		.downMenu {
+		  border-top: 1px solid darken(#2e394c, 5%);
+		  .head {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: .5em 3em;
+			font-size: .16rem;
+			line-height: 2em;
 
 			&:hover {
-			  background-color: lighten(#2e394c, 20%);
+			  padding-left: calc(3em - .05rem);
+			  border-left: .05rem solid #1a53a1;
+			  background-color: darken(#2e394c, 5%);
+
 			}
+
+			.turn {
+			  transition: all .3s;
+			}
+		  }
+
+		  .body {
+			display: none;
+			overflow: hidden;
+			background-color: darken(#2e394c, 20%);
+			font-size: .14rem;
+
+			a {
+			  display: block;
+			  padding-left: 1em;
+			  line-height: 3em;
+			  text-align: center;
+			  color: #5fc0cd;
+
+			  &:hover {
+				background-color: lighten(#2e394c, 20%);
+			  }
+			}
+		  }
+
+		}
+
+	  }
+	}
+
+	nav.loginBar {
+	  display: block;
+	  padding: 0 .5em;
+	  line-height: 3em;
+	  border-bottom: .01rem solid #ccc;
+	  overflow: hidden;
+	  background-color: #fff;
+	  @media (max-width: 700px) {
+		//margin-top: 60px;
+	  }
+
+	  ul {
+		float: right;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		.loginout {
+		  cursor: pointer;
+		}
+
+		li {
+		  display: inline-block;
+		  float: left;
+		  padding: 0 1em;
+		  font-size: .2rem;
+
+		  &:hover {
+			background-color: #ccc;
 		  }
 		}
 
-	  }
-
-	}
-  }
-
-  nav {
-	display: block;
-	padding: 0 .5em;
-	line-height: 3em;
-	border-bottom: 1px solid #ccc;
-	overflow: hidden;
-	background-color: #fff;
-
-	ul {
-	  float: right;
-	  display: flex;
-	  align-items: center;
-	  over-flow: hidden;
-
-	  li {
-		display: inline-block;
-		float: left;
-		&:hover {
-		  background-color: #ccc;
+		.line {
+		  display: flex;
+		  align-items: center;
+		  border-left: .01rem solid #ccc;
+		  height: 1em;
+		  padding: 0;
 		}
-
-		a {
-		  height: 100%;
-		  width: 100%;
-		  padding: 0 1em;
-		  font-size: 20px;
+		.fa-power-off {
+		  color: #000;
 		}
-	  }
-
-	  .line {
-		border-left: 1px solid #ccc;
-		height: 1em;
-		display: flex;
-		align-items: center;
-	  }
-
-	  .fa-power-off {
-		color: #000;
 	  }
 	}
   }
 }
-
 
 

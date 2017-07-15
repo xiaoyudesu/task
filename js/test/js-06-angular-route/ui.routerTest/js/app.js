@@ -3,8 +3,18 @@
  */
 //注入ui.router模块
 
-mainApp = angular.module('mainApp', ['ui.router'])
-
+angular.module('mainApp', ['ui.router'])
+    .controller('a', function ($scope, $state) {
+        $scope.toPage2 = function () {
+            /*            $state.go('tem1.tem2', {
+             id: '',
+             name: 'we'
+             })*/
+        }
+    })
+    .controller('b', function ($scope, $state, $stateParams) {
+        $scope.abc = $stateParams.id
+    })
     .config(function ($urlRouterProvider, $stateProvider) {
 
         //默认视图是main.html
@@ -19,23 +29,25 @@ mainApp = angular.module('mainApp', ['ui.router'])
             .state('tem1', {
                 //url值标记地址栏中的后缀，使用户知道现在在什么状态，可以省略不写。
                 url: '/a',
-
 //若父模板中有多个ui-view视图，可进一步使用views对象来配置。
                 views: {
                     //''之间的值表示对应ui-view的名称，若未命名，则如此设置为空。
                     '': {
-
                         //此模板会被加载到父模板中。
                         //因为父模板只有一个视图，所以此模板会被加载如这个未命名的视图中。
                         templateUrl: 'tem/tem1.html',
                     }
-                }
+                },
             })
             //这是状态2
             //用.链接符表明了状态间的父子关系，tem2使tem1的子状态。
             .state('tem1.tem2', {
                 //在url地址栏中将显示为 / a / b
-                url: '/b',
+                url: '/b/:id/:name',
+                parames: {
+                    id: 'wewe',
+                    name: '1234'
+                },
                 views: {
 
                     //viewname@statename
@@ -52,3 +64,5 @@ mainApp = angular.module('mainApp', ['ui.router'])
                 }
             });
     });
+
+

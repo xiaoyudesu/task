@@ -1,8 +1,8 @@
-<div class="bg" ng-controller="loginCtrl">
+<div class="bg loginPage" ng-controller="loginCtrl">
     <form class="box" name="form" novalidate>
         <p class="title">萝卜多后台登录</p>
         <div class="input-box">
-            <img src="../img/user.png" alt="">
+            <img src="img/user.png" alt="">
             <input class="text"
                    type="text"
                    placeholder="姓名"
@@ -24,7 +24,7 @@
 
 
         <div class="input-box">
-            <img src="../img/lock.png" alt="">
+            <img src="img/lock.png" alt="">
             <input class="pwd"
                    type="password"
                    placeholder="密码"
@@ -32,7 +32,7 @@
                    ng-model="pwd"
                    ng-minlength='3'
                    ng-maxlength='16'
-                   ng-pattern="/^\w{6,16}$/"
+                   ng-pattern="/^\w{3,16}$/"
                    required
             >
         </div>
@@ -46,7 +46,6 @@
 
         <button type="submit" ng-disabled="form.$invalid" class="btn" ng-click="login()">登录</button>
     </form>
-
-    {{name}}<br>
-    {{pwd}}
+    <!--{{name}}<br>-->
+    <!--{{pwd}}-->
 </div>
