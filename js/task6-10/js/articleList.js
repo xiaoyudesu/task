@@ -218,8 +218,8 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
     $scope.statuses = [
         {value: '', label: '全部'},
         {value: 1, label: '草稿'},
-        {value: 2, label: '上线'},
-    ]
+        {value: 2, label: '上线'}
+    ];
 
     $scope.startAt = $stateParams.startAt === '' ? '' : $scope.date($stateParams.startAt);
     $scope.endAt = $stateParams.endAt === '' ? '' : $scope.date($stateParams.endAt);

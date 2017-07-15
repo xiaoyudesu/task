@@ -28,14 +28,14 @@ indexApp.controller('backCtrl', function ($state, $scope, $http, $stateParams) {
     };
 
 
-    for (var i = 0; i < 4; i++) {
-        if ((localStorage.getItem("fold" + i)) == 1) {
-            $(".head").eq(i).parents(".downMenu").find(".body").css("display", "block")
+    for (i = 0; i < 4; i++) {
+        if (localStorage.getItem("fold" + i) == 1) {
+            $(".head").eq(i).parents(".downMenu").find(".body").css("display", "block");
             $(".head").eq(i).children(".turn").css({
                 "transform": "rotate(90deg)"
             });
         } else {
-            $(".head").eq(i).parents(".downMenu").find(".body").css("display", "none")
+            $(".head").eq(i).parents(".downMenu").find(".body").css("display", "none");
             $(".head").eq(i).children(".turn").css({
                 "transform": "rotate(0deg)"
             });
@@ -47,8 +47,6 @@ indexApp.controller('backCtrl', function ($state, $scope, $http, $stateParams) {
             "index": i
         });
     }
-    ;
-
     var fold = [];
     $(".head").click(function () {
         i = $(this).attr("index");
@@ -64,7 +62,6 @@ indexApp.controller('backCtrl', function ($state, $scope, $http, $stateParams) {
                 "transform": "rotate(0deg)"
             });
         }
-        ;
         localStorage.setItem("fold" + i, fold[i]);
 
         $(this).parents(".downMenu").find(".body").slideToggle(200);
@@ -85,7 +82,7 @@ indexApp.controller('backCtrl', function ($state, $scope, $http, $stateParams) {
 
     $(".bars").click(function () {
         $("ul.menus").slideToggle(200);
-    })
+    });
 
     $(window).resize(function () {
         if (window.matchMedia('(min-width: 700px)').matches) {

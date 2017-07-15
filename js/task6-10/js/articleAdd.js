@@ -7,7 +7,7 @@ var indexApp = angular.module('indexApp');
 indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, FileUploader, $window) {
     $scope.goBack = function () {
         $window.history.back();
-    }
+    };
 
     var E = window.wangEditor;
     var editor = new E('#content');
@@ -27,7 +27,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
         params: {
             file: $scope.imgLoad
         },
-        header: {'Content-Type': "Application/json"},
+        header: {'Content-Type': "Application/json"}
     });
 
     // fitters
