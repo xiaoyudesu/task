@@ -1,0 +1,141 @@
+<script>
+    //分页数据
+    //如果按钮总数大于5
+    scope.pageIndexes = [];
+    // console.log(scope.apg);
+
+    if (scope.apg > 5) {
+        if ((scope.page > 2) && (scope.apg - scope.page > 2)) {
+            for (var i = 0; i < scope.apg; i++) {
+                scope.pageIndexes[i] = i + 1;
+            }
+
+            //scope.page是字符串，必须用Nuber()转化。
+            //注意slice()左右取值为数组下标，从零开始。
+            scope.pageIndexes = scope.pageIndexes.slice(Number(scope.page) - 3, Number(scope.page) + 2);
+        } else if (scope.page > 2) {
+            if (scope.apg - scope.page <= 2) {
+                for (i = 0; i < Math.ceil(scope.apg); i++) {
+                    scope.pageIndexes[i] = i + 1;
+                }
+                scope.pageIndexes = scope.pageIndexes.slice(-5);
+            }
+        } else {
+            for (i = 0; i < scope.apg; i++) {
+                scope.pageIndexes[i] = i + 1;
+            }
+
+            scope.pageIndexes = scope.pageIndexes.slice(0, 5);
+        }
+    } else {
+
+        for (i = 0; i < scope.apg; i++) {
+            scope.pageIndexes[i] = i + 1;
+        }
+    }
+
+    scope.dotL = Number(scope.page) > 3;
+    scope.dotR = Number(scope.page) < Number(scope.apg) - 3;
+
+    scope.pageIndex = function (num) {
+        $state.go($state.current, {
+            page: num,
+            size: scope.size
+        });
+        // console.log(scope.pageIndex(num));
+    };
+
+    var pattern = /^[1-9][0-9]*$/;
+    scope.sizeCheck = function () {
+        if (!(scope.size.match(pattern))) {
+            scope.size = '';
+        }
+        // console.log(scope.size);
+    };
+
+    scope.pageCheck = function () {
+        if (!(scope.pageChosen.match(pattern))) {
+            scope.pageChosen = '';
+        } else if (scope.pageChosen > scope.apg) {
+            scope.pageChosen = scope.apg;
+        }
+    };
+
+
+    scope.pageFirst = function () {
+        $state.go($state.current, {
+            page: 1,
+            size: scope.size
+        });
+    };
+
+    scope.pageLast = function () {
+        $state.go($state.current, {
+            page: scope.apg
+        });
+    };
+
+    scope.isHavePagePrve = function () {
+        return !(Number(scope.page) === 1);
+    };
+
+    scope.isHavePageNext = function () {
+        return !(Number(scope.page) === Number(scope.apg));
+    };
+
+    scope.pagePrev = function () {
+        if (scope.page > 1) {
+            scope.page = Number(scope.page) - 1;
+            $state.go($state.current, {
+                page: scope.page,
+                size: scope.size
+            });
+        } else {
+            // alert('已是最小页数');
+        }
+    };
+
+    scope.pageNext = function () {
+        if (scope.page < Math.ceil(scope.apg)) {
+            scope.page = Number(scope.page) + 1;
+            $state.go($state.current, {
+                page: scope.page,
+                size: scope.size
+            });
+        } else {
+            // alert("已是最大页数")
+        }
+    };
+
+
+    scope.ensure = function () {
+
+        if (scope.pageChosen) {
+            if (scope.pageChosen <= scope.apg) {
+                $state.go($state.current, {
+                    page: scope.pageChosen,
+                    size: scope.size
+                });
+            } else {
+                $state.go($state.current, {
+                    page: scope.apg,
+                    size: scope.size
+                });
+            }
+        } else {
+            if (scope.page <= scope.apg) {
+                $state.go($state.current, {
+                    page: scope.page,
+                    size: scope.size
+                });
+            } else {
+                $state.go($state.current, {
+                    page: 1,
+                    size: scope.size
+                })
+            }
+        }
+    }
+
+
+</script>

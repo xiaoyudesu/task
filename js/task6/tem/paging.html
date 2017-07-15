@@ -1,0 +1,34 @@
+<div class="pageNav">
+    {{ apg }}
+    <form class="pageForm form-inline">
+        <span>每页显示</span>
+        <input type="text" class="form size form-control input-sm" ng-model="size" ng-change="sizeCheck()">
+        <span>条</span>
+    </form>
+    <div class="pageIndexes">
+        <button class="btn btn-default btn-sm pageFirst" ng-click="pageFirst()" ng-disabled="!isHavePagePrve()">首页
+        </button>
+        <!--<div class="btn-group">-->
+        <button class="btn btn-info btn-sm bold pagePrev" ng-click="pagePrev()" ng-if="isHavePagePrve()">
+            <
+        </button>
+        <button class="btn btn-default btn-sm" ng-if="dotL" ng-disabled>•••</button>
+        <button class="btn btn-default btn-sm pageIndex" ng-repeat="index in pageIndexes"
+                ng-click="pageIndex(index)"
+                ng-class="{true:'btn-success'}[index==page]">{{index}}
+        </button>
+        <button class="btn btn-default btn-sm" ng-if="dotR" ng-disabled="1">•••</button>
+        <button class="btn btn-info btn-sm bold pageNext" ng-click="pageNext()" ng-if="isHavePageNext()">
+            >
+        </button>
+        <!--</div>-->
+        <button class="btn btn-default btn-sm pageLast" ng-click="pageLast()" ng-disabled="!isHavePageNext()">末页
+        </button>
+    </div>
+    <form class="pageForm form-inline">
+        <span>去第</span>
+        <input type="text" class="form form-control input-sm page" ng-model="pageChosen" ng-change="pageCheck()">
+        <span>页</span>
+    </form>
+    <button class="btn btn-default btn-sm ensure" ng-click="ensure()">确定</button>
+</div>

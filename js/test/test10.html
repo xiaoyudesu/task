@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+
+</head>
+<body ng-controller="appCtrl">
+
+<select ng-options="x as y for (x,y) in statuses" ng-model="status"></select>
+
+{{ status }}
+
+
+<script>
+    var app = angular.module('app', []);
+    app.controller('appCtrl', function ($scope) {
+        $scope.status = '';
+        $scope.statuses = {
+            "": '全部',
+            1: '草稿',
+            2: '上线'
+        };
+
+        $scope.sites = {
+            site01: "Google",
+            site02: "Runoob",
+            site03: "Taobao"
+        };
+    });
+
+</script>
+</body>
+</html>

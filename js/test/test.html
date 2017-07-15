@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+
+<script>
+    var abc = [1, 2, 3];
+    var bcd = ['a', 'b'];
+    var fn = function () {
+        this.a = "b";
+    }
+
+    function fn2() {
+        this.c = "d";
+    }
+
+
+    var ad = new fn2();
+    console.log(ad.c);
+
+
+    //    console.log(abc.toLocaleString());
+    //    console.log(abc);
+    //    console.log(abc.__proto__);
+    //    console.log(Array.prototype);
+    //    console.log(Array.__proto__);
+    //    console.log(fn.prototype);
+    //    console.log(fn.prototype.__proto__);
+</script>
+</body>
+</html>

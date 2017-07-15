@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <p>选择的网站是:</p>
+
+    <select ng-model="selectedSite" ng-options="x as y for (x, y) in sites">
+    </select>
+
+    <h1>你选择的值是: {{selectedSite}}</h1>
+
+</div>
+
+<p>该实例演示了使用对象作为创建下拉列表。</p>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope) {
+        $scope.selectedSite = 'site01'
+        $scope.sites = {
+            site01: "Google",
+            site02: "Runoob",
+            site03: "Taobao"
+        };
+    });
+
+
+    angular.module('app', [])
+        .controller('appCtrl', function ($scope) {
+            $scope.statuses = {
+                "": '全部',
+                1: '草稿',
+                2: '上线'
+            };
+
+        });
+
+
+</script>
+
+</body>
+</html>
