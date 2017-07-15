@@ -1,8 +1,23 @@
-@import "unit";
 
 .articleList {
   .forms {
+	.form-group.select {
+	  button {
+		position: relative;
+		text-align: left;
+		padding: 0 1em;
+		.caret {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  right: 1em;
+		  margin: auto;
+		}
+	  }
+	}
+
 	.form-group {
+
 	  label {
 		height: 1em;
 		font-size: .14rem;
@@ -10,19 +25,19 @@
 		-moz-text-align-last: justify;
 		-ms-text-align-last: justify;
 	  }
-
-	  .date-and {
-		text-align-last: center;
-		-moz-text-align-last: center;
-		-ms-text-align-last: center;
-	  }
 	}
-	.search-btns {
-	  text-align: right;
+
+	.date-and {
+	  text-align-last: center;
+	  -moz-text-align-last: center;
+	  -ms-text-align-last: center;
 	}
   }
+  .search-btns {
+	text-align: right;
+  }
 
-  .lists {
+  .dataLists {
 
 	.panel-heading {
 	  position: relative;
@@ -46,7 +61,10 @@
 	}
 
 	.panel-body {
-	  overflow: auto;
+	  .noData {
+		text-align: center !important;
+		font-size: 2em;
+	  }
 
 	  table {
 		font-size: .14rem;
@@ -80,8 +98,8 @@
 		display: inline-block;
 		width: 3em;
 		text-align: center;
-		padding-left: .02rem;
-		padding-right: .02rem;
+		padding-left: .01rem;
+		padding-right: .01rem;
 	  }
 	}
 
@@ -93,6 +111,6 @@
 	  }
 	}
   }
-
 }
+
 

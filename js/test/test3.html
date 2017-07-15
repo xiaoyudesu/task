@@ -1,22 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title>AngularJS之下拉框（方式二）</title>
     <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
-
-    <script>
-        var app = angular.module("secondApp", []);
-        app.controller("secondCon", function ($scope) {
-            $scope.trees = ["松树", "樟树", "枫树", "枣树", "桃树"];
-        });
+    <script type="text/ng-template" id="tem.html">
+        <div>nihaoa<span ng-transclude></span></div>
     </script>
 </head>
-<body>
-<div ng-app="secondApp" ng-controller="secondCon">
-    <select style="width: 200px;">
-        <option ng-repeat="tree in trees">{{tree}}</option>
-    </select>
+<body ng-controller="appCtrl">
+<div>
+    <!--<input type="file" id="files" multiple>-->
+
 </div>
+
+<input type="text" ng-model="color">
+<file class="a" style="background-color:{{ color }}">12345</file>
+
+<script>
+    angular.module('app', [])
+        .controller('appCtrl', function () {
+        })
+        .directive('file', function () {
+            return {
+                restrict: 'EAC',
+                replace: true,
+                scope: true,
+                transclude: 'element',
+                templateUrl: 'tem.html',
+                link: function (scope, ele, att, ctrl, linker) {
+                    ele.bind("click", function () {
+                        scope.$apply(function () {
+                            scope.color = 'blue'
+                        });
+                    });
+                }
+            };
+        });
+
+
+</script>
 </body>
 </html>

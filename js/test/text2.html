@@ -1,162 +1,54 @@
-【js-task6】angular路由
-小课堂【武汉第135期】
-分享人：肖浩宇
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+        }
 
-1.背景介绍
+        p {
+            /*display: block;*/
+            /*display: inline-block;*/
 
+            /*width: 100px;*/
+        }
 
-angular路由
+        .a {
+            display: inline-block;
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
 
-angular路由可以实现多视图的单页Web应用。
-当请求一个url时，根据路由配置匹配这个url，然后请求模板片段，并插入到ng-view中去。这种做法使网页局部刷新，减少了切换网页时带来的突兀感，
-也减少了项目的代码量。
-
-
-2.知识剖析
-
-
-ngRoute实现原理
-
-
-我们知道，设置
-<pre><code> href="#a">锚点a</code></pre>
-
-这样的锚点，a链接会在同一页面中跳转。ngRoute利用了这一特性将锚点出的文件设置为模板，在锚点被链接时，监听到url的变化，加载相应的模板文件。
-
-<img src="http://files.jb51.net/file_images/article/201612/20161213100816370.png?2016111310930" alt="">
-
-
-3.常见问题
-
-
-ngRoute的使用方法
-ngRoute的组成
-
-
-4.解决方案
-
-
-ngRoute的使用
-
-a.引入两个文件，angular和angular-route：
-
-<pre>
-                    <code>
-                        <script src="angular.min.js"></script>
-                        <script src="angular-route.min.js"></script>
-                    </code>
-            </pre>
-b.主页面中设置容器ng-view
+        img {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="a"></div>-->
 
 
-c.然后在ng-app中注入ngRoute
+<img src="http://upload-images.jianshu.io/upload_images/3801316-d0a66ecbe9898123.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+     alt="">
 
-d.最后配置路由表
+<!--<span>wew rwe rwerwe rweee eeeee eeeeeee weeeee eeeeeeeeeeeeee  eeeeeeeeeeeeeeee eeeeeeeeeee eeeeeeeeeeeeeeee eeeeeeeeeeeeee eeeeeeeeee  eeeeeeeeeeee eeeeeeee eeeeeeeeeeeeeeeee</span>-->
+<p>sadsadssdfsdfcontent="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
+    minimum-scale=1.0"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
+    minimum-scale=1.0"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
+    minimum-scale=1.0"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
+    minimum-scale=1.0"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
+    minimum-scale=1.0"</p>
 
-
-一个简单的ngRoute结构示例
-<pre>
-                    <code>
-        <script>
-            angular.module('indexApp', [ngRoute])
-                .config(function ($routeProvider) {
-                    $routeProvider
-                        .when('/a', {
-                            template: '你好',
-                            controller: 'aCtrl'
-                        })
-
-                        .when('/b', {
-                            templateUrl: 'tem/b.html',
-                            controller: 'bCtrl'
-                        })
-
-                        .otherwise({
-                            redirectTo: '/a'
-                        });
-
-                });
-
-        </script>
-
-                    </code>
-                </pre>
+<span>1234235346546345content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>
 
 
-ngRoute包含以下部分：
-
-服务$routeProvider用来定义一个路由表，即地址栏与视图模板的映射
-服务$routeParams保存了地址栏中的参数
-服务$location用来实现用于获取当前url以及改变当前的url,并且存入历史记录
-服务$route完成路由匹配，并且提供路由相关的属性访问及事件，如访问当前路由对应的controller
-指令ngView用来在主视图中指定加载子视图的区域
-
-$routeProvider提供了定义路由表的服务，它有两个核心方法，when(path,route)和otherwise(params)。
-
-
-5.编码实战
-
-
-demo:&emsp; href="../demo/js-06-angular-route/ngRouteTest/index.html">ngRouteTest
-
-
-6.扩展思考
-
-
-ngRoute的缺点？
-<ul class="a">
-    页面中只能有一个ng-view视图
-    不支持嵌套，子模板中不能设置ng-view
-
-
-    其它实现angular路由的方式？
-    一般我们都用ui-router，作为angular的第三方插件，弥补了ngRoute上述的两个缺陷，其结构和ngRoute相识，但也有很多细节上的不同：
-
-    $when—>$state 路由状态配置的时候
-    $routeParams —> $stateParams 带参数的时候的配置
-    $routeProvider —> $stateProvider 依赖注入的模块
-    'ng-view' —> 'ui-view' 页面中绑定的指令
-    href="#/a" —> ui-sref="a"
-
-    ui-router根据状态(state)配置模板，逻辑更清晰。
-    demo:&nbsp; href="../demo/js-06-angular-route/ui.routerTest/main.html">ui.routerTest
-
-
-    7.参考文献
-
-
-    参考一：
-    href="http://blog.csdn.net/hao134838/article/details/51244347"
-    target="_blank">angularJS学习小结——ngRoute（路由机制）
-    参考二： href="http://www.runoob.com/angularjs/angularjs-routing.html">菜鸟教程-AngularJS 路由
-
-    参考三： href="http://blog.csdn.net/xiaozhi_2016/article/details/62887989"
-    target="_blank">Angular 1.6版本路由中/#!/的解决方法
-    参考四： href="http://blog.gejiawen.com/2015/12/15/routes-solution-on-angular-ng-route/"
-    target="_blank">AngularJS路由二三事（一）：ngRoute
-    参考五： href="http://bubkoo.com/2014/01/01/angular/ui-router/guide/state-manager/"
-    target="_blank">系列文章--学习 ui-router - 管理状态
-
-
-    8.更多讨论
-
-
-    <script>
-        angular.module('indexApp', [ngRoute])
-            .config(function ($routeProvider) {
-                $routeProvider
-                    .when('/a', {
-                        template: '你好',
-                        controller: 'aCtrl'
-                    })
-                    .when('/b', {
-                        templateUrl: 'tem/b.html',
-                        controller: 'bCtrl'
-                    })
-                    .otherwise({
-                        redirectTo: '/a'
-                    });
-            });
-    </script>
-
-
+<span>content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>
+</body>
+</html>

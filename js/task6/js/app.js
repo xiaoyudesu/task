@@ -1,5 +1,5 @@
 console.log('加载app.js');
-var indexApp = angular.module('indexApp', ['ui.router', 'oc.lazyLoad', 'ngMessages', 'mgcrea.ngStrap', 'angularFileUpload']);
+var indexApp = angular.module('indexApp', ['ui.router', 'oc.lazyLoad', 'ngMessages', 'ngSanitize', 'angularFileUpload', 'mgcrea.ngStrap']);
 
 indexApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/login');
@@ -19,13 +19,13 @@ indexApp.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         .state('backStage', {
-            url: '/backState',
+            url: '/backState/:name',
             views: {
                 '': {
                     templateUrl: 'tem/backStage.html'
                 },
                 '@backStage': {
-                    template: '<h1>ようこそ～</h1>'
+                    template: '<h1>ようこそ(●’◡’●)ﾉ～</h1>'
                 }
             },
             resolve: {
@@ -40,7 +40,7 @@ indexApp.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('backStage.articleList', {
             //再地址栏中显示参数
-            url: '/articleList/{page:[1-9][0-9]*}/{size:[1-9][0-9]*}/{title:[0-9a-zA-Z]*}/:author/{startAt:[0-9]*}/:endAt/:type/:status',
+            url: '/articleList/{page:[1-9][0-9]*}/{size:[1-9][0-9]*}/:title/:author/{startAt:[0-9]*}/:endAt/:type/:status',
             templateUrl: 'tem/articleList.html',
             // 实际控制。
             params: {
@@ -78,7 +78,4 @@ indexApp.config(function ($stateProvider, $urlRouterProvider) {
         })
 
 });
-
-
-
 

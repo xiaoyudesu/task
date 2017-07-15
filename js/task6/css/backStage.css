@@ -1,102 +1,20 @@
-/*reset*/
-html,
-body,
-div,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-img,
-ol,
-ul,
-li,
-footer,
-header,
-menu,
-nav,
-audio,
-video,
-button,
-label,
-select,
-input,
-option,
-button {
-	margin: 0;
-	padding: 0;
-}
-
-html {
-	font-size: 550% !important;
-}
-
-html body {
-	font: .16rem/1.5 "Heiti SC", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
-	letter-spacing: .1em;
-}
-
-button {
-	border: 0;
-	outline: none;
-	background: transparent;
-	cursor: pointer;
-}
-
-ul {
-	list-style: none;
-}
-
-a {
-	text-decoration: none;
-	cursor: pointer;
-}
-
-a:hover,
-a:focus {
-	text-decoration: none;
-	outline: none;
-}
-
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-img {
-	display: block;
-}
-
-input {
-	appearance: button;
-	-moz-appearance: button;
-	/* Firefox */
-	-webkit-appearance: none;
-	border-radius: 0;
-	border: none;
-	border: 0;
-}
-
 body {
 	background-color: #eee;
 }
 
-body .backStageView {
+body .backStage .backStageView {
 	margin-left: 2.5rem;
 	padding: .2rem;
 	overflow: hidden;
 }
 
 @media (max-width: 700px) {
-	body .backStageView {
+	body .backStage .backStageView {
 		margin-left: 0;
 	}
 }
 
-body nav.side {
+body .backStage nav.side {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -112,7 +30,7 @@ body nav.side {
 }
 
 @media (max-width: 700px) {
-	body nav.side {
+	body .backStage nav.side {
 		position: relative;
 		width: 100%;
 		bottom: auto;
@@ -120,32 +38,38 @@ body nav.side {
 	}
 }
 
-body nav.side::-webkit-scrollbar {
+body .backStage nav.side::-webkit-scrollbar {
 	display: none;
 }
 
-body nav.side .title {
+body .backStage nav.side .title {
 	padding: .5em;
 	line-height: 1.5;
 	font-size: .24rem;
 }
 
-body nav.side .title .bars {
+body .backStage nav.side .title .bars {
 	float: right;
 	cursor: pointer;
 }
 
 @media (min-width: 700px) {
-	body nav.side .title .bars {
+	body .backStage nav.side .title .bars {
 		display: none;
 	}
 }
 
-body nav.side ul.menus .downMenu {
+@media (max-width: 700px) {
+	body .backStage nav.side ul.menus {
+		display: none;
+	}
+}
+
+body .backStage nav.side ul.menus .downMenu {
 	border-top: 1px solid #242d3c;
 }
 
-body nav.side ul.menus .downMenu .head {
+body .backStage nav.side ul.menus .downMenu .head {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -154,24 +78,24 @@ body nav.side ul.menus .downMenu .head {
 	line-height: 2em;
 }
 
-body nav.side ul.menus .downMenu .head:hover {
+body .backStage nav.side ul.menus .downMenu .head:hover {
 	padding-left: calc(3em - .05rem);
 	border-left: .05rem solid #1a53a1;
 	background-color: #242d3c;
 }
 
-body nav.side ul.menus .downMenu .head .turn {
+body .backStage nav.side ul.menus .downMenu .head .turn {
 	transition: all .3s;
 }
 
-body nav.side ul.menus .downMenu .body {
+body .backStage nav.side ul.menus .downMenu .body {
 	display: none;
 	overflow: hidden;
 	background-color: #08090c;
 	font-size: .14rem;
 }
 
-body nav.side ul.menus .downMenu .body a {
+body .backStage nav.side ul.menus .downMenu .body a {
 	display: block;
 	padding-left: 1em;
 	line-height: 3em;
@@ -179,11 +103,11 @@ body nav.side ul.menus .downMenu .body a {
 	color: #5fc0cd;
 }
 
-body nav.side ul.menus .downMenu .body a:hover {
+body .backStage nav.side ul.menus .downMenu .body a:hover {
 	background-color: #54698c;
 }
 
-body nav.loginBar {
+body .backStage nav.loginBar {
 	display: block;
 	padding: 0 .5em;
 	line-height: 3em;
@@ -192,29 +116,29 @@ body nav.loginBar {
 	background-color: #fff;
 }
 
-body nav.loginBar ul {
+body .backStage nav.loginBar ul {
 	float: right;
 	display: flex;
 	align-items: center;
 	overflow: hidden;
 }
 
-body nav.loginBar ul .loginout {
+body .backStage nav.loginBar ul .loginout {
 	cursor: pointer;
 }
 
-body nav.loginBar ul li {
+body .backStage nav.loginBar ul li {
 	display: inline-block;
 	float: left;
 	padding: 0 1em;
 	font-size: .2rem;
 }
 
-body nav.loginBar ul li:hover {
+body .backStage nav.loginBar ul li:hover {
 	background-color: #ccc;
 }
 
-body nav.loginBar ul .line {
+body .backStage nav.loginBar ul .line {
 	display: flex;
 	align-items: center;
 	border-left: .01rem solid #ccc;
@@ -222,7 +146,7 @@ body nav.loginBar ul .line {
 	padding: 0;
 }
 
-body nav.loginBar ul .fa-power-off {
+body .backStage nav.loginBar ul .fa-power-off {
 	color: #000;
 }
 

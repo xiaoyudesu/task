@@ -1,4 +1,4 @@
-<div ng-controller="backCtrl">
+<div ng-controller="backCtrl" class="backStage">
     <nav class="side">
         <h3 class="title">萝卜多后台管理系统
             <button data-toggle="button" class="bars btn btn-primary btn-sm"><i class="fa fa-bars"
@@ -10,7 +10,6 @@
                     <div></div>
                 </div>
             </li>
-
             <li class="downMenu">
                 <div class="head"><i class="fa fa-wrench" aria-hidden="true"></i>
                     信息管理 <i class="fa fa-caret-right turn" aria-hidden="true "></i>
@@ -56,12 +55,12 @@
         <ul>
             <li>猎头</li>
             <li class="line"></li>
-            <li>user</li>
+            <li>{{ user }}</li>
             <li class="line"></li>
             <li ng-click="loginout()" class="loginout"><i class="fa fa-power-off " aria-hidden="true"></i></li>
         </ul>
     </nav>
-    <div ui-view class="backStageView"></div>
+    <div ui-view class="backStageView"><h1>ようこそ(●’◡’●)ﾉ～</h1></div>
 </div>
 
 

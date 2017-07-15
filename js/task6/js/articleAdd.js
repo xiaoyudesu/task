@@ -14,44 +14,39 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
     editor.create();
 
     $scope.types = [
-        {id: 0, name: "首页banner"},
-        {id: 1, name: "找职位banner"},
-        {id: 2, name: "找精英banner"},
-        {id: 3, name: "行业大图"}
+        {value: 0, label: '首页banner'},
+        {value: 1, label: '找职位banner'},
+        {value: 2, label: '找精英banner'},
+        {value: 3, label: '行业大图'}
     ];
-
-    $scope.statuses = {
-        1: '草稿',
-        2: '上线'
-    };
 
     var uploader = $scope.uploader = new FileUploader({
         method: 'post',
-        url: '/proxy/a/u/img/3',
-        header: {'Content-Type': "application/x-www-form-urlencoded"},
+        url: '/proxy/a/u/img/task',
+        queueLimit: 1,
         params: {
             file: $scope.imgLoad
-        }
+        },
+        header: {'Content-Type': "Application/json"},
     });
 
-    // FILTERS
+    // fitters
     uploader.filters.push({
         name: 'imageFilter',
         fn: function (item, options) {
             var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
-            console.log('type' + "=" + type);
+            // console.log('type' + "=" + type);
             return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
         }
     });
 
-    // CALLBACKS
-    uploader.onProgressAll = function (progress) {
-        console.info('onProgressAll', progress);
+    uploader.onSuccessItem = function (fileItem, response, status, headers) {
+        $scope.imgLoad = response.data.url;
     };
 
 
     //编辑功能
-    if ($stateParams.id != null) {
+    if ($stateParams.id) {
         // $scope.name="编辑";
         $http({
             method: 'get',
@@ -68,6 +63,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
         }, function errorCallback() {
             console.log("错误");
         });
+
 
         //编辑上线
         $scope.onLineNow = function () {
@@ -99,12 +95,11 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                                 url: $scope.url,
                                 industry: $scope.industry,
                                 createAt: $scope.createAt
-
-
                             },
-                            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                            headers: {'Content-Type': 'Application/json'}
                         }).then(function successCallback() {
-                            $state.reload();
+                            // $state.reload();
+                            $window.history.back();
                         });
                     }
                 }
@@ -132,7 +127,6 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                         $http({
                             method: 'put',
                             url: '/proxy/a/u/article/' + $stateParams.id,
-
                             params: {
                                 title: $scope.title,
                                 type: $scope.type,
@@ -143,10 +137,11 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                                 industry: $scope.industry,
                                 createAt: $scope.createAt
                             },
-                            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                            headers: {'Content-Type': 'Application/json'}
                         }).then(function successCallback(res) {
                             console.log(res.data);
-                            $state.reload();
+                            // $state.reload();
+                            $window.history.back();
                         });
                     }
                 }
@@ -183,9 +178,11 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                                 content: editor.txt.html(),
                                 url: $scope.url
                             },
-                            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                            headers: {'Content-Type': 'Application/json'}
                         }).then(function successCallback() {
-                            $state.reload();
+                            // $state.reload();
+                            $window.history.back();
+
                         });
                     }
                 }
@@ -213,7 +210,6 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                         $http({
                             method: 'post',
                             url: '/proxy/a/u/article',
-
                             params: {
                                 title: $scope.title,
                                 type: $scope.type,
@@ -222,10 +218,12 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                                 content: editor.txt.html(),
                                 url: $scope.url
                             },
-                            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                            headers: {'Content-Type': 'Application/json'}
                         }).then(function successCallback(res) {
                             console.log(res.data);
-                            $state.reload();
+                            // $state.reload();
+                            $window.history.back();
+
                         });
                     }
                 }

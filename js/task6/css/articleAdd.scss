@@ -1,3 +1,4 @@
+
 .articleAdd {
   label {
 	display: flex;
@@ -43,8 +44,30 @@
 	width: 100%;
   }
 
-  th, td {
-	text-align: center;
+  .form-group.select {
+	button {
+	  position: relative;
+	  text-align: left;
+	  padding: 0 1em;
+	  .caret {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 1em;
+		margin: auto;
+	  }
+	}
   }
 
+  .table {
+	//max-width: 100%;
+	.imgName {
+	  width: 30%;
+	}
+	th, td {
+	  min-width: 4em;
+	  text-align: center;
+	  vertical-align: middle;
+	}
+  }
 }
