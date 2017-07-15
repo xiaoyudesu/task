@@ -28,10 +28,12 @@
 	}
 
 	.date-and {
-	  text-align-last: center;
-	  -moz-text-align-last: center;
-	  -ms-text-align-last: center;
+	  text-align-last: auto !important;
+	  -moz-text-align-last: auto;
+	  -ms-text-align-last: auto;
+	  text-align: center;
 	}
+
   }
   .search-btns {
 	text-align: right;
