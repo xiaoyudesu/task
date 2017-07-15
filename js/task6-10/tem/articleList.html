@@ -1,7 +1,7 @@
 <div ng-controller="listCtrl" class="articleList">
     <div class="panel panel-default forms">
         <div class="panel-body">
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" name="listForm">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -45,6 +45,7 @@
                             <div class="col-md-9">
                                 <input type="text"
                                        id="endAt"
+                                       name="endAt"
                                        ng-model="endAt"
                                        ng-blur="inputChange()"
                                        class="form-control input-sm"
