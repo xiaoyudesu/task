@@ -261,7 +261,7 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
         bootbox.confirm({
             title: "<h4 class='bootTitle' style='color:red;text-align: left;'>提示</h4>",
             message: "<p class='bootMessage' style='text-align: center'>确认" + (b === 1 ? '上线' : '下线') + "吗？</p>",
-            size: "small",
+            size: "large",
             buttons: {
                 confirm: {
                     label: '<i class="fa fa-times"></i> 确定',
@@ -296,7 +296,7 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
         bootbox.confirm({
             title: "<h4 class='bootTitle' style='color:red;text-align: left;'>提示</h4>",
             message: "<p class='bootMessage' style='text-align: center'>确认删除吗？</p>",
-            size: "small",
+            size: "large",
             buttons: {
                 confirm: {
                     label: '<i class="fa fa-times"></i> 删除',
