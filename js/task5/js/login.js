@@ -51,19 +51,19 @@
 //方法二，jquery的ajax
 function ajax() {
 
-    //判断输入框是否正确，切是否已经循环。
+    //判断输入框是否正确，且是否已经循环。
     if ((a[0] == 1 && b[0] == 1)) {
 
         if (!(a[1] || b[1])) {
             $("button").on("click", function () {
                 $.post("/proxy/a/login", {
                     name: $(".name").val(),
-                    pwd: $(".pwd").val(),
+                    pwd: $(".pwd").val()
                 }, function (data) {
                     alert(JSON.parse(data).message);
                     console.log($(".name").val());
                     console.log($(".pwd").val());
-                    if (JSON.parse(data).message == "success") {
+                    if (JSON.parse(data).message === "success") {
                         location.href = "http://dev.admin.carrots.ptteng.com/";
                     }
                 });

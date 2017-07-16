@@ -70,7 +70,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
             bootbox.confirm({
                 title: "<h4 class='bootTitle' style='color:red;text-align: left;'>提示</h4>",
                 message: "<p class='bootMessage' style='text-align: center'>确认上传吗？</p>",
-                size: "small",
+                size: "large",
                 buttons: {
                     confirm: {
                         label: '<i class="fa fa-check"></i>上线',
@@ -111,7 +111,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
             bootbox.confirm({
                 title: "<h4 class='bootTitle' style='color:red;text-align: left;'>提示</h4>",
                 message: "<p class='bootMessage' style='text-align: center'>存入草稿吗？</p>",
-                size: "small",
+                size: "large",
                 buttons: {
                     confirm: {
                         label: '<i class="fa fa-check"></i>存为草稿',
@@ -140,7 +140,6 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                             headers: {'Content-Type': 'Application/json'}
                         }).then(function successCallback(res) {
                             console.log(res.data);
-                            // $state.reload();
                             $window.history.back();
                         });
                     }
@@ -154,7 +153,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
             bootbox.confirm({
                 title: "<h4 class='bootTitle' style='color:red;text-align: left;'>提示</h4>",
                 message: "<p class='bootMessage' style='text-align: center'>确认上传吗？</p>",
-                size: "small",
+                size: "large",
                 buttons: {
                     confirm: {
                         label: '<i class="fa fa-check"></i>上线',
@@ -183,6 +182,11 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                             // $state.reload();
                             $window.history.back();
 
+                            bootbox.alert({
+                                title: "<h4 class='bootTitle' style='color:red;text-align: left;'>提示</h4>",
+                                message: "<p class='bootMessage' style='text-align: center'>新增成功~</p>",
+                                size: "large"
+                            })
                         });
                     }
                 }
@@ -194,7 +198,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
             bootbox.confirm({
                 title: "<h4 class='bootTitle' style='color:red;text-align: left;'>提示</h4>",
                 message: "<p class='bootMessage' style='text-align: center'>存入草稿吗？</p>",
-                size: "small",
+                size: "large",
                 buttons: {
                     confirm: {
                         label: '<i class="fa fa-check"></i>存为草稿',
@@ -223,6 +227,11 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                             console.log(res.data);
                             // $state.reload();
                             $window.history.back();
+                            bootbox.alert({
+                                title: "<h4 class='bootTitle' style='color:red;text-align: left;'>提示</h4>",
+                                message: "<p class='bootMessage' style='text-align: center'>新增成功~</p>",
+                                size: "large"
+                            })
 
                         });
                     }
