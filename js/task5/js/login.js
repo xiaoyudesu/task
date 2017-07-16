@@ -118,6 +118,13 @@ $(".name").keyup(function () {
     ajax();
 });
 
+function enterPress(e) {
+    var e = e || window.event;
+    if (e.keyCode == 13) {
+        $(".loginBtn").click();
+    }
+}
+
 $(".pwd").keyup(function () {
 
     // console.log("a"+a);

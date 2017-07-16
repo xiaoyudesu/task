@@ -334,6 +334,14 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
 });
 
 
+function enterPress(e) {
+    var e = e || window.event;
+    if (e.keyCode == 13) {
+        $(".ensure").click();
+    }
+}
+
+
 //注入过滤器
 indexApp.filter('statusFil', function () {
     return function (a) {

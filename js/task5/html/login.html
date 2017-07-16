@@ -15,15 +15,15 @@
     <p class="title">喝我水站后台登录</p>
     <p class="input-box input-box1">
         <img src="../img/user.png" alt="">
-        <input class="name" type="text" maxlength="16" placeholder="用户名">
+        <input class="name" type="text" maxlength="16" placeholder="用户名" onkeypress="enterPress(event)">
     </p>
     <p class="tip p1"></p>
     <p class="input-box">
         <img src="../img/lock.png" alt="">
-        <input class="pwd" type="password" maxlength="16" minlength="4" placeholder="密码">
+        <input class="pwd" type="password" maxlength="16" minlength="4" placeholder="密码" onkeypress="enterPress(event)">
     </p>
     <p class="tip p2"></p>
-    <button>登录</button>
+    <button class="loginBtn">登录</button>
 </div>
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>

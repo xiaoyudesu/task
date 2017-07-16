@@ -150,7 +150,8 @@
     <div class="pageNav">
         <form class="pageForm form-inline">
             <span>每页显示</span>
-            <input type="text" class="form size form-control input-sm" ng-model="size" ng-change="sizeCheck()">
+            <input type="text" class="form size form-control input-sm" ng-model="size" onkeypress="enterPress(event)"
+                   ng-change="sizeCheck()">
             <span>条</span>
         </form>
         <div class="pageIndexes">
@@ -175,7 +176,8 @@
         </div>
         <form class="pageForm form-inline">
             <span>去第</span>
-            <input type="text" class="form form-control input-sm page" ng-model="pageChosen" ng-change="pageCheck()">
+            <input type="text" class="form form-control input-sm page" ng-model="pageChosen"
+                   onkeypress="enterPress(event)" ng-change="pageCheck()">
             <span>页</span>
         </form>
         <button class="btn btn-default btn-sm ensure" ng-click="ensure()">确定</button>
