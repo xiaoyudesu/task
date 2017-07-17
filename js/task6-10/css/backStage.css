@@ -45,7 +45,6 @@ body .backStage nav.side::-webkit-scrollbar {
 body .backStage nav.side .title {
 	padding: .5em;
 	line-height: 1.5;
-	font-size: .24rem;
 }
 
 body .backStage nav.side .title .bars {

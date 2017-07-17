@@ -11,13 +11,26 @@
 	}
   }
 
+  #type + ul, #industry + ul {
+	z-index: 999999999;
+  }
+
+  .has-success {
+	border-color: #3c763d !important;
+  }
+
+  .has-error {
+	border-color: #a94442 !important;
+  }
+
   .imgSel {
 	display: inline-block;
   }
 
   #content {
 	.w-e-toolbar, .w-e-droplist {
-	  z-index: 1;
+	  //z-index: 1;
+
 	}
 
 	.w-e-text-container {

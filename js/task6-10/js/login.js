@@ -5,6 +5,7 @@ console.log('加载登录页');
 // console.log("a");
 var indexApp = angular.module('indexApp');
 indexApp.controller('loginCtrl', ['$scope', '$http', '$state', '$location', function ($scope, $http, $state) {
+    localStorage.clear();
     $scope.login = function () {
         console.log($scope.name);
         console.log($scope.pwd);

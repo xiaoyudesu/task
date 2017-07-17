@@ -10,16 +10,16 @@
                    ng-minlength='3'
                    ng-maxlength='16'
                    ng-model="name"
-                   ng-pattern="/^[0-9a-zA-Z\u4e00-\u9fa5_]{3,16}$/"
-                   required
-            >
+                   ng-pattern="/^[0-9a-zA-Z\u4e00-\u9fa5_]*$/"
+                   required>
         </div>
-
-        <div class="tip" ng-messages="form.text.$error">
-            <p ng-message="required" ng-if="form.text.$touched">请输入姓名</p>
-            <p ng-message="minlength">最少输入3位</p>
-            <p ng-message="maxlength">最多输入16位</p>
-            <p ng-message="pattern">请输入字母数字或汉字、下划线</p>
+        <div class="tip">
+            <div class="tip" ng-messages="form.text.$error" ng-show="form.text.$touched">
+                <p ng-message="required" ng-if="form.text.$touched">请输入姓名</p>
+                <p ng-message="pattern">请输入字母数字或汉字、下划线</p>
+                <p ng-message="minlength">最少输入3位</p>
+                <p ng-message="maxlength">最多输入16位</p>
+            </div>
         </div>
 
 
@@ -32,17 +32,19 @@
                    ng-model="pwd"
                    ng-minlength='3'
                    ng-maxlength='16'
-                   ng-pattern="/^\w{3,16}$/"
-                   required
-            >
+                   ng-pattern="/^\w*$/"
+                   required>
         </div>
 
-        <div class="tip" ng-messages="form.pwd.$error">
-            <p ng-message="required" ng-if="form.pwd.$touched">请输入密码</p>
-            <p ng-message="minlength">最少输入6位</p>
-            <p ng-message="maxlength">最多输入16位</p>
-            <p ng-message="pattern">请输入字母数字或下划线</p>
+        <div class="tip">
+            <div class="tip" ng-messages="form.pwd.$error" ng-if="form.pwd.$touched">
+                <p ng-message="required">请输入密码</p>
+                <p ng-message="pattern">请输入字母数字或下划线</p>
+                <p ng-message="minlength">最少输入6位</p>
+                <p ng-message="maxlength">最多输入16位</p>
+            </div>
         </div>
+
 
         <button type="submit" ng-disabled="form.$invalid" class="btn" ng-click="login()">登录</button>
     </form>

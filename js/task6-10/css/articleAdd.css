@@ -7,11 +7,20 @@
 	color: red;
 	font-size: .5em;
 }
+
+.articleAdd #type + ul, .articleAdd #industry + ul {
+	z-index: 999999999;
+}
+
+.articleAdd .has-success {
+	border-color: #3c763d !important;
+}
+
+.articleAdd .has-error {
+	border-color: #a94442 !important;
+}
 .articleAdd .imgSel {
 	display: inline-block;
-}
-.articleAdd #content .w-e-toolbar, .articleAdd #content .w-e-droplist {
-	z-index: 1;
 }
 .articleAdd #content .w-e-text-container {
 	z-index: 0 !important;
@@ -32,7 +41,6 @@
 	box-sizing: border-box;
 	width: 100%;
 }
-
 .articleAdd .form-group.select button {
 	position: relative;
 	text-align: left;
@@ -46,11 +54,9 @@
 	right: 1em;
 	margin: auto;
 }
-
 .articleAdd .table .imgName {
 	width: 30%;
 }
-
 .articleAdd .table th, .articleAdd .table td {
 	min-width: 4em;
 	text-align: center;

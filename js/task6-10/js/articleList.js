@@ -180,19 +180,29 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
             }
         }
 
+        $scope.hasPaging = Boolean($scope.page !== 0);
 
     }, function errorCallback() {
         console.log("错误");
     });
 
 
-
     //日历默认格式
     $scope.date = function (date) {
         var a = new Date(Number(date));
         //月数从零开始，需先加一，并且在小于零的数前加0
-        return (a.getFullYear() + '-' + (a.getMonth() + 1 < 10 ? '0' + String(a.getMonth() + 1) : a.getMonth() + 1) + '-' + (a.getDate() < 10 ? '0' + String(a.getDate()) : a.getDate()));
+        return (a.getFullYear() + '/' + (a.getMonth() + 1 < 10 ? '0' + String(a.getMonth() + 1) : a.getMonth() + 1) + '/' + (a.getDate() < 10 ? '0' + String(a.getDate()) : a.getDate()));
     };
+
+    console.log(Date.parse('2017/07/08'));
+    console.log(Date.parse('2017/7/8'));
+
+    console.log($scope.date(1499443200000));
+
+    console.log(Date.parse($scope.date(1499443200000)));
+
+    console.log($scope.date(Date.parse($scope.date(1499443200000))));
+
 
     //将url中的数据渲染到页面中。
     // 根据url参数指定page和size
@@ -203,8 +213,9 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
     $scope.status = $stateParams.status && Number($stateParams.status);
     $scope.title = $stateParams.title;
     $scope.author = $stateParams.author;
-    $scope.startAt = $stateParams.startAt;
-    $scope.endAt = $stateParams.endAt;
+    $scope.startAt = $stateParams.startAt === '' ? '' : $scope.date($stateParams.startAt);
+    $scope.endAt = $stateParams.endAt === '' ? '' : $scope.date($stateParams.endAt);
+
 
 
     $scope.types = [
@@ -221,8 +232,6 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
         {value: 2, label: '上线'}
     ];
 
-    $scope.startAt = $stateParams.startAt === '' ? '' : $scope.date($stateParams.startAt);
-    $scope.endAt = $stateParams.endAt === '' ? '' : $scope.date($stateParams.endAt);
 
     //url参数为空则返回值为空，否则运算
 
@@ -248,12 +257,24 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
             size: $stateParams.size,
             title: $scope.title,
             author: $scope.author,
-            startAt: $scope.startAt,
-            endAt: $scope.endAt,
+            startAt: isNaN($scope.startAt) ? Date.parse($scope.startAt) : $scope.startAt,
+            endAt: isNaN($scope.endAt) ? Date.parse($scope.endAt) : $scope.endAt,
             type: $scope.type,
             status: $scope.status
         });
     };
+
+
+    console.log($scope.startAt === '');
+
+    console.log(isNaN($scope.endAt) ? Date.parse($scope.endAt) : $scope.endAt);
+
+    console.log(Date.parse(''))
+
+
+    console.log(isNaN(''))
+
+
 
 
     //上线/下线

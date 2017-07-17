@@ -1,7 +1,7 @@
 <div class="articleAdd" ng-controller="addCtrl">
     <div class="panel panel-default addLists">
         <div class="panel-heading">
-            <span class="title">新增Article</span>
+            <span class="title">{{ titleContent }}Article</span>
         </div>
         <div class="panel">
             <div class="panel-body forms">
@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="form-group"
-                                 ng-class="{'has-success': form.title.$dirty&&form.title.$valid, 'has-error': form.title.$dirty&&form.title.$invalid}">
+                            >
                                 <label for="title" class=" col-md-2 control-label"><i class="fa fa-asterisk"
                                                                                       aria-hidden="true"></i>标题名称</label>
                                 <div class=" col-md-10 input">
@@ -31,13 +31,30 @@
                                 <label class=" col-md-2 control-label" for="type"><i class="fa fa-asterisk"
                                                                                      aria-hidden="true"></i>类型</label>
 
-                                <div class="col-md-10">
+                                <div class="col-md-5">
                                     <button type="button"
                                             ng-model="type"
                                             name="type"
                                             id="type"
                                             class="btn btn-default btn-block btn-md input-md form-control"
                                             bs-options="type.value as type.label for type in types"
+                                            bs-select
+                                            placeholder="请选择"
+                                            required>
+                                        <span class="caret"></span>
+                                    </button>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <button type="button"
+                                            ng-model="industry"
+                                            name="industry"
+                                            id="industry"
+                                            ng-blur="a()"
+                                            ng-show="type==3"
+                                            ng-class="{true:'has-success',false:'has-error'}[hasIndustry]"
+                                            class="btn btn-default btn-block btn-md input-md form-control"
+                                            bs-options="industry.value as industry.label for industry in industries"
                                             bs-select
                                             placeholder="请选择"
                                             required>
@@ -58,8 +75,8 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="form-group"
                                  ng-class="{'has-success': form.url.$dirty&&form.url.$valid, 'has-error': form.url.$dirty&&form.url.$invalid}">
-                                <label for="url" class=" col-md-2 control-label"><i class="fa fa-asterisk"
-                                                                                    aria-hidden="true"></i>跳转链接</label>
+                                <label for="url" class=" col-md-2 control-label">
+                                    <i class="fa fa-asterisk" aria-hidden="true"></i>跳转链接</label>
                                 <div class=" col-md-10">
                                     <input type="url"
                                            class="form-control input-xs"
@@ -140,18 +157,14 @@
 
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
-                                    <div class="btn-group">
-                                        <button class="btn btn-success btn-sm" type="submit" ng-click="onLineNow()"
-                                                ng-disabled="form.$invalid||!imgLoad">立即上线
-                                        </button>
-                                        <button class="btn btn-info btn-sm" ng-click="draftSave()"
-                                                ng-disabled="form.$invalid||!imgLoad">存为草稿
-                                        </button>
-                                    </div>
+                                    <button class="btn btn-success btn-sm" type="submit" ng-click="onLineNow()"
+                                            ng-disabled="(form.$invalid||!imgLoad)||(type==3&&industry=='')">立即上线
+                                    </button>
+                                    <button class="btn btn-info btn-sm" ng-click="draftSave()"
+                                            ng-disabled="(form.$invalid||!imgLoad)||(type==3&&industry=='')">存为草稿
+                                    </button>
 
                                     <button class="btn btn-default btn-sm pull-right" ng-click="goBack()">取消</button>
-
-
                                 </div>
                             </div>
 

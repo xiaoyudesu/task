@@ -48,6 +48,7 @@
 .articleList .dataLists .panel-body .noData {
 	text-align: center !important;
 	font-size: 2em;
+	padding: .5em 0;
 }
 .articleList .dataLists .panel-body table {
 	font-size: .14rem;

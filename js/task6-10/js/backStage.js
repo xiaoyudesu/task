@@ -11,6 +11,26 @@ indexApp.controller('backCtrl', function ($state, $scope, $http, $stateParams) {
         $state.go('login');
     }
 
+    if (localStorage.getItem('liIndex')) {
+        $(".side .body li").eq(localStorage.getItem('liIndex')).css("background-color", "#54698c");
+    }
+
+    $(".side .body li[active=actived]").css("background-color", "#54698c");
+    $(".side .body li").click(function () {
+
+        $(".side .body li").css("background-color", "#08090c");
+        $(this).css("background-color", "#54698c");
+
+        console.log($(".side .body li"));
+        for (var i = 0; i < $(".side .body li").length; i++) {
+            $(".side .body li").eq(i).attr("index", i);
+        }
+        // console.log($(this).attr("index"));
+        localStorage.setItem("liIndex", $(this).attr("index"));
+    });
+
+
+
     $scope.user = $stateParams.name;
     $scope.loginout = function () {
         $http({
@@ -67,17 +87,6 @@ indexApp.controller('backCtrl', function ($state, $scope, $http, $stateParams) {
         $(this).parents(".downMenu").find(".body").slideToggle(200);
     });
 
-
-    $(".body").find("aside.a").click(function () {
-
-        $("aside.a").css({
-            "background-color": "#08090c"
-        });
-
-        $(this).css({
-            "background-color": "#54698c"
-        });
-    });
 
 
     $(".bars").click(function () {

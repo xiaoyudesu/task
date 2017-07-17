@@ -20,6 +20,22 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
         {value: 3, label: '行业大图'}
     ];
 
+    $scope.industries = [
+        {value: 0, label: '移动互联网'},
+        {value: 1, label: '电子商务'},
+        {value: 2, label: '企业服务'},
+        {value: 3, label: 'O2O'},
+        {value: 4, label: '教育'},
+        {value: 5, label: '金融'},
+        {value: 6, label: '游戏'}
+    ];
+
+    $scope.hasIndustry = false;
+    $scope.a = function () {
+        $scope.hasIndustry = Boolean($scope.industry) || $scope.industry == 0;
+    };
+
+
     var uploader = $scope.uploader = new FileUploader({
         method: 'post',
         url: '/proxy/a/u/img/task',
@@ -48,6 +64,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
     //编辑功能
     if ($stateParams.id) {
         // $scope.name="编辑";
+        $scope.titleContent = "编辑";
         $http({
             method: 'get',
             url: '/proxy/a/article/' + $stateParams.id,
@@ -93,7 +110,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                                 img: $scope.imgLoad,
                                 content: editor.txt.html(),
                                 url: $scope.url,
-                                industry: $scope.industry,
+                                industry: $scope.type == 3 ? '' : $scope.industry,
                                 createAt: $scope.createAt
                             },
                             headers: {'Content-Type': 'Application/json'}
@@ -134,7 +151,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                                 img: $scope.imgLoad,
                                 content: editor.txt.html(),
                                 url: $scope.url,
-                                industry: $scope.industry,
+                                industry: $scope.type == 3 ? '' : $scope.industry,
                                 createAt: $scope.createAt
                             },
                             headers: {'Content-Type': 'Application/json'}
@@ -147,6 +164,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
             });
         };
     } else {
+        $scope.titleContent = "新增";
 
         //上线
         $scope.onLineNow = function () {
@@ -175,7 +193,8 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                                 status: 2,
                                 img: $scope.imgLoad,
                                 content: editor.txt.html(),
-                                url: $scope.url
+                                url: $scope.url,
+                                industry: $scope.type == 3 ? '' : $scope.industry
                             },
                             headers: {'Content-Type': 'Application/json'}
                         }).then(function successCallback() {
@@ -220,7 +239,8 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                                 status: 1,
                                 img: $scope.imgLoad,
                                 content: editor.txt.html(),
-                                url: $scope.url
+                                url: $scope.url,
+                                industry: $scope.type == 3 ? '' : $scope.industry
                             },
                             headers: {'Content-Type': 'Application/json'}
                         }).then(function successCallback(res) {
