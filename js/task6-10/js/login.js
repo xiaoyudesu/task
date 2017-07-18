@@ -11,7 +11,7 @@ indexApp.controller('loginCtrl', ['$scope', '$http', '$state', '$location', func
         console.log($scope.pwd);
         $http({
             method: 'post',
-            url: '/proxy/a/login',
+            url: '/carrots-admin-ajax/a/login',
             params: {
                 name: $scope.name,
                 pwd: $scope.pwd

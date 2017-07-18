@@ -68,6 +68,14 @@
 	float: right;
 }
 
+.articleList .pageNav .pagingHave {
+	display: block;
+}
+
+.articleList .pageNav .pagingNotHave {
+	display: none;
+}
+
 .articleList .pageNav .pageForm {
 	display: inline-block;
 }

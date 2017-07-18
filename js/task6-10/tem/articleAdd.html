@@ -28,9 +28,8 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class=" form-group select"
                                  ng-class="{'has-success': form.type.$dirty&&form.type.$valid, 'has-error': form.type.$dirty&&form.type.$invalid}">
-                                <label class=" col-md-2 control-label" for="type"><i class="fa fa-asterisk"
-                                                                                     aria-hidden="true"></i>类型</label>
-
+                                <label class=" col-md-2 control-label" for="type">
+                                    <i class="fa fa-asterisk" aria-hidden="true"></i>类型</label>
                                 <div class="col-md-5">
                                     <button type="button"
                                             ng-model="type"
@@ -50,19 +49,19 @@
                                             ng-model="industry"
                                             name="industry"
                                             id="industry"
-                                            ng-blur="a()"
+                                            ng-change="a()"
                                             ng-show="type==3"
                                             ng-class="{true:'has-success',false:'has-error'}[hasIndustry]"
                                             class="btn btn-default btn-block btn-md input-md form-control"
                                             bs-options="industry.value as industry.label for industry in industries"
                                             bs-select
-                                            placeholder="请选择"
-                                            required>
+                                            placeholder="请选择">
                                         <span class="caret"></span>
                                     </button>
                                 </div>
                             </div>
                         </div>
+
 
                         <div class="col-md-10 col-md-offset-1">
                             <div class="form-group "
@@ -158,10 +157,10 @@
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <button class="btn btn-success btn-sm" type="submit" ng-click="onLineNow()"
-                                            ng-disabled="(form.$invalid||!imgLoad)||(type==3&&industry=='')">立即上线
+                                            ng-disabled="(form.$invalid||!imgLoad)||((type==3)&&(!hasIndustry))">立即上线
                                     </button>
                                     <button class="btn btn-info btn-sm" ng-click="draftSave()"
-                                            ng-disabled="(form.$invalid||!imgLoad)||(type==3&&industry=='')">存为草稿
+                                            ng-disabled="(form.$invalid||!imgLoad)||((type==3)&&(!hasIndustry))">存为草稿
                                     </button>
 
                                     <button class="btn btn-default btn-sm pull-right" ng-click="goBack()">取消</button>

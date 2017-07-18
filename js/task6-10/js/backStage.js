@@ -35,7 +35,7 @@ indexApp.controller('backCtrl', function ($state, $scope, $http, $stateParams) {
     $scope.loginout = function () {
         $http({
             method: 'post',
-            url: '/proxy/a/logout',
+            url: '/carrots-admin-ajax/a/logout',
             headers: {'Content-Type': 'Application/json'}
         }).then(function successCallback(res) {
             if (res.data.message === 'success') {

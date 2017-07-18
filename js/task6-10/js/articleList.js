@@ -11,7 +11,7 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
     //请求后台数据
     $http({
         method: 'get',
-        url: '/proxy/a/article/search',
+        url: '/carrots-admin-ajax/a/article/search',
         //根据url地址栏的参数变化刷线http，获取后台数据。
         params: {
             page: $stateParams.page,
@@ -85,25 +85,29 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
                 page: num,
                 size: $scope.size
             });
-            // console.log($scope.pageIndex(num));
         };
 
         var pattern = /^[1-9][0-9]*$/;
+
         $scope.sizeCheck = function () {
-            if (!($scope.size.match(pattern))) {
+            if (!(String($scope.size).match(pattern))) {
                 $scope.size = '';
             }
-            // console.log($scope.size);
+            console.log($scope.size);
         };
 
+
+        // $scope.pageChosen='';
         $scope.pageCheck = function () {
-            if (!($scope.pageChosen.match(pattern))) {
+            if (!($scope.pageChosen.match(/^[1-9][0-9]*$/))) {
+                console.log($scope.pageChosen);
                 $scope.pageChosen = '';
-            } else if ($scope.pageChosen > $scope.apg) {
+            } else if (Number($scope.pageChosen) > Number($scope.apg)) {
+                console.log(typeof $scope.pageChosen);
+
                 $scope.pageChosen = $scope.apg;
             }
         };
-
 
         $scope.pageFirst = function () {
             $state.go($state.current, {
@@ -152,7 +156,6 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
 
 
         $scope.ensure = function () {
-
             if ($scope.pageChosen) {
                 if ($scope.pageChosen <= $scope.apg) {
                     $state.go($state.current, {
@@ -179,6 +182,7 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
                 }
             }
         }
+
 
         $scope.hasPaging = Boolean($scope.page !== 0);
 
@@ -207,15 +211,14 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
     //将url中的数据渲染到页面中。
     // 根据url参数指定page和size
     //将数字字符串转换为数字
-    $scope.page = $stateParams.page && Number($stateParams.page);
-    $scope.size = $stateParams.size && Number($stateParams.size);
+    $scope.page = $stateParams.page;
+    $scope.size = $stateParams.size;
     $scope.type = $stateParams.type && Number($stateParams.type);
     $scope.status = $stateParams.status && Number($stateParams.status);
     $scope.title = $stateParams.title;
     $scope.author = $stateParams.author;
     $scope.startAt = $stateParams.startAt === '' ? '' : $scope.date($stateParams.startAt);
-    $scope.endAt = $stateParams.endAt === '' ? '' : $scope.date($stateParams.endAt);
-
+    $scope.endAt = $stateParams.endAt === '' ? '' : $scope.date(Number($stateParams.endAt));
 
 
     $scope.types = [
@@ -251,17 +254,57 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
 
 
     //搜索
+
+    $scope.startTime = function (a) {
+        var a = String(a);
+        if (a.match(/[0-9]{4}\/(0[0-9]|1[012])\/([1-2][0-9]|0[1-9]|3[01])/)) {
+            return Date.parse(a);
+        } else if (a == '' || a == 'undefined') {
+            return '';
+        } else if (a.match(/^[0-9]*$/)) {
+            return Number(a);
+        } else {
+            return '';
+        }
+    };
+
+    $scope.endTime = function (x) {
+        var a = String(x);
+        // console.log(a);
+        if (a.match(/[0-9]{4}\/(0[0-9]|1[012])\/([1-2][0-9]|0[1-9]|3[01])/)) {
+            // console.log(a);
+            return Date.parse(a) + 86400000 - 1;
+        } else if (a == '' || a == 'undefined') {
+
+            // console.log(a);
+            // console.log(x);
+            return '';
+        } else if (a.match(/^[0-9]*$/)) {
+            // console.log(a);
+            return Number(a) + 86400000 - 1;
+        } else {
+            // console.log(a);
+            return '';
+        }
+    };
+
+
     $scope.search = function () {
         $state.go($state.current, {
             page: 1,
             size: $stateParams.size,
             title: $scope.title,
             author: $scope.author,
-            startAt: isNaN($scope.startAt) ? Date.parse($scope.startAt) : $scope.startAt,
-            endAt: isNaN($scope.endAt) ? Date.parse($scope.endAt) : $scope.endAt,
+            startAt: $scope.startTime($scope.startAt),
+            endAt: $scope.endTime($scope.endAt),
             type: $scope.type,
             status: $scope.status
         });
+        // console.log(typeof $scope.endAt);
+        // console.log($scope.startAt);
+        // console.log($scope.endAt);
+        // console.log($scope.startTime($scope.startAt));
+        // console.log($scope.endTime($scope.endAt));
     };
 
 
@@ -269,7 +312,6 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
 
     // console.log(isNaN($scope.startAt) ? Date.parse($scope.startAt) : $scope.startAt);
     // console.log(isNaN($scope.endAt) ? Date.parse($scope.endAt) : $scope.endAt);
-
 
 
     //上线/下线
@@ -292,7 +334,7 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
                 if (result) {
                     $http({
                         method: 'put',
-                        url: '/proxy/a/u/article/status',
+                        url: '/carrots-admin-ajax/a/u/article/status',
                         params: {
                             id: a,
                             status: b === 1 ? 2 : 1
@@ -327,7 +369,7 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
                 if (result) {
                     $http({
                         method: 'delete',
-                        url: '/proxy/a/u/article/' + id,
+                        url: '/carrots-admin-ajax/a/u/article/' + id,
                         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                     }).then(function successCallback() {
                         $state.reload();
@@ -345,7 +387,6 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
         });
         console.log(id);
     };
-
 
 });
 
@@ -417,7 +458,7 @@ indexApp.filter('imgLoad', function () {
 
  $http({
  method: 'get',
- url: '/proxy/a/article/search',
+ url: '/carrots-admin-ajax/a/article/search',
  //根据url地址栏的参数变化刷线http，获取后台数据。
  params: {
  page: $stateParams.page,

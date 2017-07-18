@@ -89,6 +89,14 @@
   .pageNav {
 	float: right;
 
+	.pagingHave {
+	  display: block;
+	}
+
+	.pagingNotHave {
+	  display: none;
+	}
+
 	.pageForm {
 	  display: inline-block;
 

@@ -32,13 +32,19 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
 
     $scope.hasIndustry = false;
     $scope.a = function () {
-        $scope.hasIndustry = Boolean($scope.industry) || $scope.industry == 0;
+        console.log(typeof $scope.industry);
+        console.log($scope.industry);
+        if ($scope.industry) {
+            $scope.hasIndustry = true;
+        } else {
+            $scope.hasIndustry = false;
+        }
     };
 
 
     var uploader = $scope.uploader = new FileUploader({
         method: 'post',
-        url: '/proxy/a/u/img/task',
+        url: '/carrots-admin-ajax/a/u/img/task',
         queueLimit: 1,
         params: {
             file: $scope.imgLoad
@@ -67,7 +73,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
         $scope.titleContent = "编辑";
         $http({
             method: 'get',
-            url: '/proxy/a/article/' + $stateParams.id,
+            url: '/carrots-admin-ajax/a/article/' + $stateParams.id,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).then(function successCallback(res) {
             $scope.imgLoad = res.data.data.article.img;
@@ -102,7 +108,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                     if (result) {
                         $http({
                             method: 'put',
-                            url: '/proxy/a/u/article/' + $stateParams.id,
+                            url: '/carrots-admin-ajax/a/u/article/' + $stateParams.id,
                             params: {
                                 title: $scope.title,
                                 type: $scope.type,
@@ -143,7 +149,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                     if (result) {
                         $http({
                             method: 'put',
-                            url: '/proxy/a/u/article/' + $stateParams.id,
+                            url: '/carrots-admin-ajax/a/u/article/' + $stateParams.id,
                             params: {
                                 title: $scope.title,
                                 type: $scope.type,
@@ -186,7 +192,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                     if (result) {
                         $http({
                             method: 'post',
-                            url: '/proxy/a/u/article',
+                            url: '/carrots-admin-ajax/a/u/article',
                             params: {
                                 title: $scope.title,
                                 type: $scope.type,
@@ -232,7 +238,7 @@ indexApp.controller('addCtrl', function ($scope, $state, $stateParams, $http, Fi
                     if (result) {
                         $http({
                             method: 'post',
-                            url: '/proxy/a/u/article',
+                            url: '/carrots-admin-ajax/a/u/article',
                             params: {
                                 title: $scope.title,
                                 type: $scope.type,

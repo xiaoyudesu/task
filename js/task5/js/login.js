@@ -42,12 +42,6 @@
 
 
 
-
-
-
-
-
-
 //方法二，jquery的ajax
 function ajax() {
 
@@ -56,7 +50,7 @@ function ajax() {
 
         if (!(a[1] || b[1])) {
             $("button").on("click", function () {
-                $.post("/proxy/a/login", {
+                $.post("/carrots-admin-ajax/a/login", {
                     name: $(".name").val(),
                     pwd: $(".pwd").val()
                 }, function (data) {
