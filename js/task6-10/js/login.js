@@ -26,6 +26,12 @@ indexApp.controller('loginCtrl', ['$scope', '$http', '$state', '$location', func
                 $state.go('backStage', {name: $scope.name});
             } else {
                 localStorage.setItem('loginStatus', '0');
+
+                bootbox.alert({
+                    title: "<h4 class='bootTitle' style='color:red;text-align: left;'>提示</h4>",
+                    message: "<p class='bootMessage' style='text-align: center'>" + response.data.message + "</p>",
+                    size: "large",
+                })
             }
         }, function errorCallback() {
             // 请求失败执行代码
