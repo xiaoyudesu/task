@@ -40,7 +40,7 @@ indexApp.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('backStage.articleList', {
             //再地址栏中显示参数
-            url: '/articleList/{page:[1-9][0-9]*}/{size:[1-9][0-9]*}/:title/:author/{startAt:[0-9]*}/:endAt/:type/:status',
+            url: '/articleList/{page:[1-9][0-9]*}/{size:[1-9][0-9]*}/:title/:author/{startAt:-?[0-9]*}/:endAt/:type/:status',
             templateUrl: 'tem/articleList.html',
             // 实际控制。
             params: {

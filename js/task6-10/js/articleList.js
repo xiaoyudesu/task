@@ -32,7 +32,7 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
         $scope.size = res.data.data.size;
 
         $scope.apg = Math.ceil($scope.total / $scope.size);
-        console.log($scope.apg);
+        // console.log($scope.apg);
 
         // console.log($scope.apg);
         // console.log($scope.page);
@@ -194,14 +194,14 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
         return (a.getFullYear() + '/' + (a.getMonth() + 1 < 10 ? '0' + String(a.getMonth() + 1) : a.getMonth() + 1) + '/' + (a.getDate() < 10 ? '0' + String(a.getDate()) : a.getDate()));
     };
 
-    console.log(Date.parse('2017/07/08'));
-    console.log(Date.parse('2017/7/8'));
+    // console.log(Date.parse('2017/07/08'));
+    // console.log(Date.parse('2017/7/8'));
 
-    console.log($scope.date(1499443200000));
+    // console.log($scope.date(1499443200000));
 
-    console.log(Date.parse($scope.date(1499443200000)));
+    // console.log(Date.parse($scope.date(1499443200000)));
 
-    console.log($scope.date(Date.parse($scope.date(1499443200000))));
+    // console.log($scope.date(Date.parse($scope.date(1499443200000))));
 
 
     //将url中的数据渲染到页面中。
@@ -265,15 +265,10 @@ indexApp.controller('listCtrl', function ($scope, $http, $state, $stateParams) {
     };
 
 
-    console.log($scope.startAt === '');
+    // console.log($scope.startAt === '');
 
-    console.log(isNaN($scope.endAt) ? Date.parse($scope.endAt) : $scope.endAt);
-
-    console.log(Date.parse(''))
-
-
-    console.log(isNaN(''))
-
+    // console.log(isNaN($scope.startAt) ? Date.parse($scope.startAt) : $scope.startAt);
+    // console.log(isNaN($scope.endAt) ? Date.parse($scope.endAt) : $scope.endAt);
 
 
 
