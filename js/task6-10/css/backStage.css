@@ -1,152 +1,101 @@
 body {
-	background-color: #eee;
-}
-
-body .backStage .backStageView {
-	margin-left: 2.5rem;
-	padding: .2rem;
-	overflow: hidden;
-}
-
-@media (max-width: 700px) {
-	body .backStage .backStageView {
-		margin-left: 0;
-	}
-}
-
-body .backStage nav.side {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	z-index: 2;
-	overflow: auto;
-	float: left;
-	width: 2.5rem;
-	background-color: #2e394c;
-	text-align: center;
-	color: #fff;
-	box-shadow: #242d3c 0.02rem 0.04rem 0.02rem;
-}
-
-@media (max-width: 700px) {
-	body .backStage nav.side {
-		position: relative;
-		width: 100%;
-		bottom: auto;
-		text-align: left;
-	}
-}
-
-body .backStage nav.side::-webkit-scrollbar {
-	display: none;
-}
-
-body .backStage nav.side .title {
-	padding: .5em;
-	line-height: 1.5;
-}
-
-body .backStage nav.side .title .bars {
-	float: right;
-	cursor: pointer;
-}
-
-@media (min-width: 700px) {
-	body .backStage nav.side .title .bars {
-		display: none;
-	}
-}
-
-@media (max-width: 700px) {
-	body .backStage nav.side ul.menus {
-		display: none;
-	}
-}
-
-body .backStage nav.side ul.menus .downMenu {
-	border-top: 1px solid #242d3c;
-}
-
-body .backStage nav.side ul.menus .downMenu .head {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: .5em 3em;
-	font-size: .16rem;
-	line-height: 2em;
-}
-
-body .backStage nav.side ul.menus .downMenu .head:hover {
-	padding-left: calc(3em - .05rem);
-	border-left: .05rem solid #1a53a1;
-	background-color: #242d3c;
-}
-
-body .backStage nav.side ul.menus .downMenu .head .turn {
-	transition: all .3s;
-}
-
-body .backStage nav.side ul.menus .downMenu .body {
-	display: none;
-	overflow: hidden;
-	background-color: #08090c;
-	font-size: .14rem;
-}
-
-body .backStage nav.side ul.menus .downMenu .body a {
-	display: block;
-	padding-left: 1em;
-	line-height: 3em;
-	text-align: center;
-	color: #5fc0cd;
-}
-
-body .backStage nav.side ul.menus .downMenu .body a:hover {
-	background-color: #54698c;
-}
-
-body .backStage nav.loginBar {
-	display: block;
-	padding: 0 .5em;
-	line-height: 3em;
-	border-bottom: .01rem solid #ccc;
-	overflow: hidden;
-	background-color: #fff;
-}
-
-body .backStage nav.loginBar ul {
-	float: right;
-	display: flex;
-	align-items: center;
-	overflow: hidden;
-}
-
-body .backStage nav.loginBar ul .loginout {
-	cursor: pointer;
-}
-
-body .backStage nav.loginBar ul li {
-	display: inline-block;
-	float: left;
-	padding: 0 1em;
-	font-size: .2rem;
-}
-
-body .backStage nav.loginBar ul li:hover {
-	background-color: #ccc;
-}
-
-body .backStage nav.loginBar ul .line {
-	display: flex;
-	align-items: center;
-	border-left: .01rem solid #ccc;
-	height: 1em;
-	padding: 0;
-}
-
-body .backStage nav.loginBar ul .fa-power-off {
-	color: #000;
-}
+  background-color: #eee; }
+  body .backStage .backStageView {
+    margin-left: 2.5rem;
+    padding: .2rem;
+    overflow: hidden; }
+    @media (max-width: 700px) {
+      body .backStage .backStageView {
+        margin-left: 0; } }
+  body .backStage nav.side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    overflow: auto;
+    float: left;
+    width: 2.5rem;
+    background-color: #2e394c;
+    text-align: center;
+    color: #fff;
+    box-shadow: #242d3c 0.02rem 0.04rem 0.02rem; }
+    @media (max-width: 700px) {
+      body .backStage nav.side {
+        position: relative;
+        width: 100%;
+        bottom: auto;
+        text-align: left; } }
+    body .backStage nav.side::-webkit-scrollbar {
+      display: none; }
+    body .backStage nav.side .title {
+      padding: .5em;
+      line-height: 1.5; }
+      body .backStage nav.side .title .bars {
+        float: right;
+        cursor: pointer; }
+        @media (min-width: 700px) {
+          body .backStage nav.side .title .bars {
+            display: none; } }
+    @media (max-width: 700px) {
+      body .backStage nav.side ul.menus {
+        display: none; } }
+    body .backStage nav.side ul.menus .downMenu {
+      border-top: 1px solid #242d3c; }
+      body .backStage nav.side ul.menus .downMenu .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .5em 3em;
+        font-size: .16rem;
+        line-height: 2em; }
+        body .backStage nav.side ul.menus .downMenu .head:hover {
+          padding-left: calc(3em - .05rem);
+          border-left: .05rem solid #1a53a1;
+          background-color: #242d3c; }
+        body .backStage nav.side ul.menus .downMenu .head .turn {
+          transition: all .3s; }
+      body .backStage nav.side ul.menus .downMenu .body {
+        display: none;
+        overflow: hidden;
+        background-color: #08090c;
+        font-size: .14rem; }
+        body .backStage nav.side ul.menus .downMenu .body a {
+          display: block;
+          padding-left: 1em;
+          line-height: 3em;
+          text-align: center;
+          color: #5fc0cd; }
+          body .backStage nav.side ul.menus .downMenu .body a:hover {
+            background-color: #54698c; }
+  body .backStage nav.loginBar {
+    display: block;
+    padding: 0 .5em;
+    line-height: 3em;
+    border-bottom: .01rem solid #ccc;
+    overflow: hidden;
+    background-color: #fff; }
+    body .backStage nav.loginBar ul {
+      float: right;
+      display: flex;
+      align-items: center;
+      overflow: hidden; }
+      body .backStage nav.loginBar ul .logout {
+        cursor: pointer; }
+      body .backStage nav.loginBar ul li {
+        display: inline-block;
+        float: left;
+        padding: 0 1em;
+        font-size: .2rem; }
+        body .backStage nav.loginBar ul li:hover {
+          background-color: #ccc; }
+      body .backStage nav.loginBar ul .line {
+        display: flex;
+        align-items: center;
+        border-left: .01rem solid #ccc;
+        height: 1em;
+        padding: 0; }
+      body .backStage nav.loginBar ul .fa-power-off {
+        color: #000; }
 
 /*# sourceMappingURL=backStage.css.map */

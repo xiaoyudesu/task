@@ -32,7 +32,7 @@ indexApp.controller('backCtrl', function ($state, $scope, $http, $stateParams) {
 
 
     $scope.user = $stateParams.name;
-    $scope.loginout = function () {
+    $scope.logout = function () {
         $http({
             method: 'post',
             url: '/carrots-admin-ajax/a/logout',
