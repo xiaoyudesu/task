@@ -1,6 +1,7 @@
 console.log('加载app.js');
 var indexApp = angular.module('indexApp', ['ui.router', 'oc.lazyLoad', 'ngMessages', 'ngSanitize', 'angularFileUpload', 'mgcrea.ngStrap']);
 
+
 indexApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/login');
 
@@ -19,7 +20,7 @@ indexApp.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         .state('backStage', {
-            url: '/backState/:name',
+            url: '/backStage/:name',
             views: {
                 '': {
                     templateUrl: 'tem/backStage.html'
